@@ -9,8 +9,24 @@ export default function Page() {
   return (
     <div>
       <h1>Home Page</h1>
+      {theme === "restaurant" ? (
+        <>
+          <h2>restaurant</h2>
+          <h2>restaurant</h2>
+          <h2>restaurant</h2>
+          <h2>restaurant</h2>
+          <h2>restaurant</h2>
+        </>
+      ) : (
+        <>
+          <h2>clinic</h2>
+          <h2>clinic</h2>
+          <h2>clinic</h2>
+          <h2>clinic</h2>
+          <h2>clinic</h2>
+        </>
+      )}
 
-      <p>Current Theme: {theme}</p>
       <div
         className="text-3xl bg-red-500 cursor-pointer"
         onClick={() => setTheme("click")}
