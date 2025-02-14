@@ -13,17 +13,21 @@ const Footer: React.FC = () => {
 
   return (
     <footer
-      className={`flex flex-col items-center bg-black py-5 ${
+      className={`flex flex-col items-center bg-black py-10 ${
         locale === "ar" ? "rtl" : "ltr"
       }`}
     >
       <div className="flex flex-col lg:flex-row justify-between items-center w-full max-w-6xl px-4">
-        {/* Logo Section */}
-        <div className="mb-6 lg:mb-0">
-          <Image src={logo} alt="Logo" className="w-32" />
+        <div className="mb-6 lg:mb-4">
+          <Image
+            src={logo}
+            loading="lazy"
+            alt="Logo"
+            width={225}
+            height={115}
+          />
         </div>
-
-        <div className="flex flex-col items-center lg:items-start gap-5">
+        <div className="flex flex-col items-center justify-center  gap-5">
           <div className="flex items-center gap-4 text-white">
             <p className="mb-0">
               <Link href="/ContactUs" className="hover:underline">
@@ -31,10 +35,10 @@ const Footer: React.FC = () => {
               </Link>
             </p>
             <p className="mb-0">{t("Follow Us")}</p>
-            <Icon icon="logos:facebook" width="256" height="256" />
-            <Icon icon="skill-icons:instagram" width="256" height="256" />
+            <Icon icon="logos:facebook" width="30" height="30" />
+            <Icon icon="skill-icons:instagram" width="30" height="30" />
           </div>
-          <div className="flex gap-4">
+          <div className="flex mt-7 gap-4">
             <button className="border-0">
               <Image
                 src={appStore}
@@ -53,7 +57,7 @@ const Footer: React.FC = () => {
         </div>
       </div>
 
-      <div className="w-full max-w-6xl mt-5 text-center">
+      <div className="w-full max-w-6xl mt-5  text-center lg:ltr:text-left lg:rtl:text-right">
         <p className="text-gray-500">
           {t("Copyright © 2023 LOGO Design & Develop by Majec Soft")}
         </p>
