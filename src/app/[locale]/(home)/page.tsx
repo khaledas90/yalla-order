@@ -1,13 +1,15 @@
 "use client";
-
-import useMainContext from "@/app/context/MainContext";
+import Footer from "@/components/layout/Footer";
+import Header from "@/components/layout/Header";
+import useMainContext from "@/context/MainContext";
 import React from "react";
 
 export default function Page() {
   const { theme, setTheme } = useMainContext();
 
   return (
-    <div>
+    <>
+      <Header />
       <h1>Home Page</h1>
       {theme === "restaurant" ? (
         <>
@@ -40,6 +42,7 @@ export default function Page() {
       >
         Go to the restaurant page
       </div>
-    </div>
+      <Footer />
+    </>
   );
 }
