@@ -1,6 +1,9 @@
 {
   "restaurant": {
-    "title": "اهلا",
-    "about": "اذهب إلى صفحة المعلومات"
+    "footer": {
+      "Contact us": "تواصل معنا",
+      "Follow Us": "تابعنا",
+      "Copyright © 2023 LOGO Design & Develop by Majec Soft": "حقوق النشر © 2023 LOGO Design & Develop by Majec Soft"
+    }
   }
 }

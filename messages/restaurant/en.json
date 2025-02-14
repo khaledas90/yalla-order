@@ -1,6 +1,9 @@
 {
   "restaurant": {
-    "title": "Hello world!",
-    "about": "Go to the about page"
+    "footer": {
+      "Contact us": "Contact us",
+      "Follow Us": "Follow Us",
+      "Copyright © 2023 LOGO Design & Develop by Majec Soft": "Copyright © 2023 LOGO Design & Develop by Majec Soft"
+    }
   }
 }
