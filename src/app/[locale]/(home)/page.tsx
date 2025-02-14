@@ -1,16 +1,18 @@
 "use client";
+import Hero from "@/components/Hero";
 import Footer from "@/components/layout/Footer";
 import Header from "@/components/layout/Header";
-import useMainContext from "@/context/MainContext";
+// import useMainContext from "@/context/MainContext";
 import React from "react";
 
 export default function Page() {
-  const { theme, setTheme } = useMainContext();
+  // const { theme, setTheme } = useMainContext();
 
   return (
     <>
+      <Hero />
       <Header />
-      <h1>Home Page</h1>
+      {/* <h1>Home Page</h1>
       {theme === "restaurant" ? (
         <>
           <h2>restaurant</h2>
@@ -41,7 +43,7 @@ export default function Page() {
         onClick={() => setTheme("restaurant")}
       >
         Go to the restaurant page
-      </div>
+      </div> */}
       <Footer />
     </>
   );

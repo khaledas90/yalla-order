@@ -8,6 +8,9 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        "cabin-sketch": ["cabin-sketch", "sans-serif"],
+      },
       colors: {
         main: "#FD7E7E",
         primary: "#3A98EA",
