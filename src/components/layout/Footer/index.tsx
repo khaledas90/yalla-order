@@ -39,7 +39,7 @@ const Footer: React.FC = () => {
             <Icon icon="skill-icons:instagram" width="30" height="30" />
           </div>
           <div className="flex mt-7 gap-4">
-            <button className="border-0">
+            <button type="button" title="btn" className="border-0">
               <Image
                 src={appStore}
                 alt="Download on the App Store"

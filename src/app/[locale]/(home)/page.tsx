@@ -10,8 +10,8 @@ export default function Page() {
 
   return (
     <>
-      <Hero />
       <Header />
+      <Hero />
       {/* <h1>Home Page</h1>
       {theme === "restaurant" ? (
         <>
