@@ -5,10 +5,8 @@ import React from "react";
 export default function layout({ children }: { children: React.ReactNode }) {
   return (
     <>
-      <div>
-        <Header />
-      </div>
-      <main className="pt-20">{children} </main>
+      <Header />
+      <main>{children} </main>
       <Footer />
     </>
   );

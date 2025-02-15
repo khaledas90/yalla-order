@@ -22,6 +22,10 @@
       "What": "What",
       "are you waiting for some?": "are you waiting for some?",
       "Login a partner": "Login a partner"
+    },
+    "aboutUs": {
+      "About us": "About us",
+      "description-about-us": "Foodc is a website and mobile app for ordering food and booking  medical consultations, and it provides its services in various  locations. Whether you find yourself immersed in the bustling heart of the city, residing in the suburbs, or in the  surrounding areas, our services are readily available to meet  your needs. Enjoy the unparalleled convenience of having food delivered directly to your door and booking your medical consultations with ease"
     }
   }
 }

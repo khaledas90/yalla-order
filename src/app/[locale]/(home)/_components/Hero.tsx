@@ -15,7 +15,7 @@ const Hero: React.FC = () => {
       <div className="container mx-auto px-4 py-8">
         <div className="flex flex-col lg:flex-row">
           <div className="lg:w-1/2">
-            <div className="mt-32 lg:ms-[100px] md:ms-[80px] ">
+            <div className="mt-32 lg:ms-[100px] ms-0 ">
               <h1
                 className={`sm:text-5xl text-4xl lg:text-7xl md:text-6xl ltr:lg:text-left rtl:lg:text-right text-center ${cabinSketch.className}  font-light  `}
               >

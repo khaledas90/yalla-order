@@ -100,7 +100,10 @@ const NavRestaurants: React.FC = () => {
             height={115}
           />
         </Link>
-        <div className="lg:hidden cursor-pointer text-2xl z-50 text-white" onClick={toggleMenu}>
+        <div
+          className="lg:hidden cursor-pointer text-2xl z-50 text-white"
+          onClick={toggleMenu}
+        >
           {menuOpen ? "✖" : "☰"}
         </div>
         <ul className="hidden lg:flex gap-6 text-white">
@@ -116,22 +119,40 @@ const NavRestaurants: React.FC = () => {
           </li>
           <li>
             <Link href="/BecomeAPartner">
-              <p className="hover:text-red-400 font-semibold">Become a Partner</p>
+              <p className="hover:text-red-400 font-semibold">
+                Become a Partner
+              </p>
             </Link>
           </li>
           <li>
-            <Link href="/AboutUs">
+            <Link href="/about-us">
               <p className="hover:text-red-400 font-semibold">About Us</p>
             </Link>
           </li>
         </ul>
         <div className="hidden lg:flex justify-center items-center text-white gap-5">
           <div className="two-icons flex gap-3">
-            <button className="rounded-full hover:scale-105 transition-all duration-300" title="fav" type="button"><Icon icon="solar:heart-linear" width="25" height="25" /></button>
-            <button className="rounded-full hover:scale-105 transition-all duration-300" title="bag" type="button"><Icon icon="solar:global-outline" width="25" height="25" /></button>
+            <button
+              className="rounded-full hover:scale-105 transition-all duration-300"
+              title="fav"
+              type="button"
+            >
+              <Icon icon="solar:heart-linear" width="25" height="25" />
+            </button>
+            <button
+              className="rounded-full hover:scale-105 transition-all duration-300"
+              title="bag"
+              type="button"
+            >
+              <Icon icon="solar:global-outline" width="25" height="25" />
+            </button>
           </div>
           <div className="Login-button">
-            <button title="Login-button" type="submit" className="ring-[0.8px] ring-white px-16 py-2 rounded-3xl bg-transparent hover:bg-white/15 transition-all duration-300 text-sm">
+            <button
+              title="Login-button"
+              type="submit"
+              className="ring-[0.8px] ring-white px-16 py-2 rounded-3xl bg-transparent hover:bg-white/15 transition-all duration-300 text-sm"
+            >
               Login
             </button>
           </div>
@@ -161,12 +182,16 @@ const NavRestaurants: React.FC = () => {
               </li>
               <li>
                 <Link href="/restaurants">
-                  <p className="hover:text-red-400 font-semibold">Restaurants</p>
+                  <p className="hover:text-red-400 font-semibold">
+                    Restaurants
+                  </p>
                 </Link>
               </li>
               <li>
                 <Link href="/BecomeAPartner">
-                  <p className="hover:text-red-400 font-semibold">Become a Partner</p>
+                  <p className="hover:text-red-400 font-semibold">
+                    Become a Partner
+                  </p>
                 </Link>
               </li>
               <li>
