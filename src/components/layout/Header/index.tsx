@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState, useRef } from "react";
+import React, { useState, useRef } from "react";
 import Link from "next/link";
 import { Icon } from "@iconify/react";
 import logo from "@/assets/image/FOoDc.png";
@@ -61,33 +61,36 @@ const NavRestaurants: React.FC = () => {
     }));
   };
 
-  useEffect(() => {
-    const handleOutsideClick = (event: MouseEvent) => {
-      if (
-        favoriteRef.current &&
-        !favoriteRef.current.contains(event.target as Node) &&
-        bagRef.current &&
-        !bagRef.current.contains(event.target as Node)
-      ) {
-        setDropdownOpen({
-          favorite: false,
-          bag: false,
-          language: false,
-          profile: false,
-        });
-      }
-    };
+  const handleOutsideClick = (event: MouseEvent) => {
+    if (
+      favoriteRef.current &&
+      !favoriteRef.current.contains(event.target as Node) &&
+      bagRef.current &&
+      !bagRef.current.contains(event.target as Node)
+    ) {
+      setDropdownOpen({
+        favorite: false,
+        bag: false,
+        language: false,
+        profile: false,
+      });
+    }
+  };
 
-    document.addEventListener("click", handleOutsideClick);
-    return () => {
-      document.removeEventListener("click", handleOutsideClick);
-    };
+  document.addEventListener("click", handleOutsideClick);
+
+  const cleanup = () => {
+    document.removeEventListener("click", handleOutsideClick);
+  };
+
+  React.useEffect(() => {
+    return cleanup;
   }, []);
 
   return (
-    <nav className="fixed top-0 start-0 end-0 bg-transparent shadow-md px-4 py-3">
+    <nav className="fixed top-0 start-0 end-0 bg-transparent px-4 py-3">
       {/* Top Navbar */}
-      <div className="flex items-center justify-between px-20">
+      <div className="flex items-center justify-between px-5 lg:px-20">
         <Link href="/">
           <Image
             src={logo}
@@ -97,38 +100,38 @@ const NavRestaurants: React.FC = () => {
             height={115}
           />
         </Link>
-        <div className="lg:hidden cursor-pointer text-2xl z-50" onClick={toggleMenu}>
+        <div className="lg:hidden cursor-pointer text-2xl z-50 text-white" onClick={toggleMenu}>
           {menuOpen ? "✖" : "☰"}
         </div>
         <ul className="hidden lg:flex gap-6 text-white">
           <li>
             <Link href="/HomeRestaurants">
-              <p className="hover:text-red-400 hover:font-semibold">Home</p>
+              <p className="hover:text-red-400 font-semibold">Home</p>
             </Link>
           </li>
           <li>
             <Link href="/restaurants">
-              <p className="hover:text-red-400 hover:font-semibold">Restaurants</p>
+              <p className="hover:text-red-400 font-semibold">Restaurants</p>
             </Link>
           </li>
           <li>
             <Link href="/BecomeAPartner">
-              <p className="hover:text-red-400 hover:font-semibold">Become a Partner</p>
+              <p className="hover:text-red-400 font-semibold">Become a Partner</p>
             </Link>
           </li>
           <li>
             <Link href="/AboutUs">
-              <p className="hover:text-red-400 hover:font-semibold">About Us</p>
+              <p className="hover:text-red-400 font-semibold">About Us</p>
             </Link>
           </li>
         </ul>
-        <div className="hidden lg:flex justify-center items-center gap-5">
+        <div className="hidden lg:flex justify-center items-center text-white gap-5">
           <div className="two-icons flex gap-3">
-            <button className="rounded-full" title="fav" type="button"><Icon icon="solar:heart-linear" width="25" height="25" /></button>
-            <button className="rounded-full" title="bag" type="button"><Icon icon="solar:global-outline" width="25" height="25" /></button>
+            <button className="rounded-full hover:scale-105 transition-all duration-300" title="fav" type="button"><Icon icon="solar:heart-linear" width="25" height="25" /></button>
+            <button className="rounded-full hover:scale-105 transition-all duration-300" title="bag" type="button"><Icon icon="solar:global-outline" width="25" height="25" /></button>
           </div>
           <div className="Login-button">
-            <button title="Login-button" type="submit" className="ring-[0.8px] ring-white px-16 py-2 rounded-3xl bg-transparent text-sm">
+            <button title="Login-button" type="submit" className="ring-[0.8px] ring-white px-16 py-2 rounded-3xl bg-transparent hover:bg-white/15 transition-all duration-300 text-sm">
               Login
             </button>
           </div>
@@ -153,22 +156,22 @@ const NavRestaurants: React.FC = () => {
             <ul className="flex flex-col gap-4 text-white px-4">
               <li>
                 <Link href="/HomeRestaurants">
-                  <p className="hover:text-red-400 hover:font-semibold">Home</p>
+                  <p className="hover:text-red-400 font-semibold">Home</p>
                 </Link>
               </li>
               <li>
                 <Link href="/restaurants">
-                  <p className="hover:text-red-400 hover:font-semibold">Restaurants</p>
+                  <p className="hover:text-red-400 font-semibold">Restaurants</p>
                 </Link>
               </li>
               <li>
                 <Link href="/BecomeAPartner">
-                  <p className="hover:text-red-400 hover:font-semibold">Become a Partner</p>
+                  <p className="hover:text-red-400 font-semibold">Become a Partner</p>
                 </Link>
               </li>
               <li>
                 <Link href="/AboutUs">
-                  <p className="hover:text-red-400 hover:font-semibold">About Us</p>
+                  <p className="hover:text-red-400 font-semibold">About Us</p>
                 </Link>
               </li>
               <li>
