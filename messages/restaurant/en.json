@@ -8,9 +8,20 @@
     "hero": {
       "A unique": "A unique",
       "experience for": "experience for",
-      "food lovers": "food lovers"
-
-
+      "food lovers": "food lovers",
+      "Find your Location": "Find your Location...",
+      "Search": "Search",
+      "feature-Faster Delivery": "Faster Delivery",
+      "feature-Daily Discount": "Daily Discount",
+      "feature-100+ Restaurants": "100+ Restaurants",
+      "feature-100+ Cuisines": "100+ Cuisines",
+      "feature-100+ Delivery": "100+ Delivery"
+    },
+    "beWithUs": {
+      "BECOME ONE OF US?": "BECOME ONE OF US?",
+      "What": "What",
+      "are you waiting for some?": "are you waiting for some?",
+      "Login a partner": "Login a partner"
     }
   }
 }

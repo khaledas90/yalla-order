@@ -3,12 +3,19 @@
 @tailwind utilities;
 
 .hero {
-  background-image: url(/assets/image/main_bg.svg);
+  background-image: url(/assets/image/main_bg.webp);
   background-size: cover;
   background-position: bottom center;
   background-repeat: no-repeat;
 }
 
+.be-with-us {
+  background-image: url(/assets/image/BeWithUsLeft.webp);
+  background-size: cover;
+  background-position: bottom center;
+  background-repeat: no-repeat;
+
+}
 @layer base {
   :root {
     --radius: 0.5rem;

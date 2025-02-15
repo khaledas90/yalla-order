@@ -25,7 +25,7 @@ export default async function RootLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale} suppressHydrationWarning>
+    <html lang={locale} dir={locale === "ar" ? "rtl" : "ltr"} suppressHydrationWarning>
       <body className={`${cairoFont.className}`}>
         <NextIntlClientProvider locale={locale} messages={messages}>
           <MainContextProvider>{children}</MainContextProvider>
