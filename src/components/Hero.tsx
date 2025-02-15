@@ -9,6 +9,7 @@ import heroImg from "@/assets/image/hero_restaurant.png";
 // import locationOne from "../../assets/Location-One.svg";
 // import location from "../../assets/Location.svg";
 import { useTranslations } from "next-intl";
+import { cabinSketch } from "@/utils/fonts";
 
 const Hero: React.FC = () => {
   const t = useTranslations("restaurant.hero");
@@ -19,7 +20,9 @@ const Hero: React.FC = () => {
         <div className="flex flex-col lg:flex-row">
           <div className="lg:w-1/2">
             <div className="mt-32">
-              <h1 className={`text-4xl lg:text-6xl   font-light text-center `}>
+              <h1
+                className={`text-4xl lg:text-6xl ${cabinSketch.className}  font-light text-center `}
+              >
                 {t("A unique")}
                 <br />
                 {t("experience for")}
