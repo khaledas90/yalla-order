@@ -9,27 +9,19 @@ import heroImg from "@/assets/image/hero_restaurant.png";
 // import locationOne from "../../assets/Location-One.svg";
 // import location from "../../assets/Location.svg";
 import { useTranslations } from "next-intl";
-import { useParams } from "next/navigation";
+import { cabinSketch } from "@/utils/fonts";
 
 const Hero: React.FC = () => {
   const t = useTranslations("restaurant.hero");
-  const { locale } = useParams();
-  console.log(locale);
 
   return (
-    <div
-      className={`hero bg-gray-700 text-white ${
-        locale === "ar" ? "rtl" : "ltr"
-      } tish`}
-    >
+    <div className={`hero bg-gray-700 text-white`}>
       <div className="container mx-auto px-4 py-8">
         <div className="flex flex-col lg:flex-row">
           <div className="lg:w-1/2">
             <div className="mt-32">
               <h1
-                className={`text-4xl lg:text-6xl font-cabin-sketch font-light text-center lg:${
-                  locale === "ar" ? "text-right" : "text-left"
-                }`}
+                className={`text-4xl lg:text-6xl ${cabinSketch.className}  font-light text-center `}
               >
                 {t("A unique")}
                 <br />

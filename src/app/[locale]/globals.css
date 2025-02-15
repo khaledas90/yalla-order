@@ -2,30 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: "Roboto-R";
-  src: url("../../assets/fonts/Roboto/Roboto-Regular.ttf");
-}
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-  --Roboto-R: Roboto-R
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: var(--Roboto-R) !important;
-}
-
 .hero {
   background-image: url(/assets/image/main_bg.svg);
   background-size: cover;

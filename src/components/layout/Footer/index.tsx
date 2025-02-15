@@ -5,18 +5,12 @@ import appStore from "@/assets/image/appStore.svg";
 import googlePlay from "@/assets/image/googlePlay.svg";
 import logo from "@/assets/image/FOoDc.png";
 import { useTranslations } from "next-intl";
-import { useParams } from "next/navigation";
 import { Icon } from "@iconify/react";
 const Footer: React.FC = () => {
   const t = useTranslations("restaurant.footer");
-  const { locale } = useParams();
 
   return (
-    <footer
-      className={`flex flex-col items-center bg-black py-10 ${
-        locale === "ar" ? "rtl" : "ltr"
-      }`}
-    >
+    <footer className={`flex flex-col items-center bg-black py-10 `}>
       <div className="flex flex-col lg:flex-row justify-between items-center w-full max-w-6xl px-4">
         <div className="mb-6 lg:mb-4">
           <Image
@@ -67,29 +61,3 @@ const Footer: React.FC = () => {
 };
 
 export default Footer;
-
-/**
- * 
- * 
- * .footer {
-    background-color: #1f1f1f;
-}
-
-.footerLogo {
-    width: 267px;
-    height: 117px;
-}
-
-.appDownload img {
-    width: 150px;
-}
-
-.cobyRight p {
-    color: #afafaf;
-}
-
-.footer a {
-    text-decoration: none;
-    color: #afafaf;
-}
- */
