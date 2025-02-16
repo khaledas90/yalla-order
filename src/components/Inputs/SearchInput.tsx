@@ -25,7 +25,7 @@ const SearchInput: React.FC<SearchInputProps> = ({
   isIconLocation,
   location,
 }) => {
-  const t = useTranslations("restaurant.hero");
+  const t = useTranslations("common.hero");
   const { register, handleSubmit } = useForm<FormValues>();
 
   const onSubmit: SubmitHandler<FormValues> = (data) => {

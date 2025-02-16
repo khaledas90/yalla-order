@@ -1,6 +1,40 @@
 {
-  "HomePage": {
-    "title": "اهلا",
-    "about": "اذهب إلى صفحة المعلومات"
+  "common": {
+    "footer": {
+      "Contact us": "تواصل معنا",
+      "Follow Us": "تابعنا",
+      "Copyright © 2023 LOGO Design & Develop by Majec Soft": " جميع الحقوق محفوظة لدي شركه ماجيك سوفت © 2025"
+    },
+    "header": {
+      "Home": "الرئيسية",
+      "Restaurants": "المطاعم",
+      "Clinics": "العيادات",
+      "Become-a-Partner": "كن شريكنا",
+      "About": "من نحن"
+    },
+    "hero": {
+      "A unique experience for food lovers": "خبرة فريدة لمحبي الطعام",
+      "A unique": "خبرة",
+      "experience for": "فريدة ",
+      "food lovers": "محبي الطعام",
+      "Find your Location": "ابحث عن الموقعك ...",
+      "Search": "ابحث",
+      "feature-Faster Delivery": "توصيل سريع",
+      "feature-Daily Discount": "خصم يومي",
+      "feature-100+ Restaurants": "مطاعم 100+",
+      "feature-100+ Cuisines": "وجبات 100+",
+      "feature-100+ Delivery": "توصيل 100+"
+    },
+    "beWithUs": {
+      "BECOME ONE OF US?": "كن شريكنا؟",
+      "What": "ماذا",
+      "are you waiting for some?": "هل تنتظر شي؟",
+      "Login a partner": "تسجيل كشريك",
+      "Join us": "انضم لنا"
+    },
+    "aboutUs": {
+      "About us": "من نحن",
+      "description-about-us": "فود هو موقع ويب وتطبيق جوال لطلب الطعام وحجز الاستشارات الطبية، ويقدم خدماته في مواقع مختلفة. سواء كنت منغمسًا في قلب المدينة الصاخب، أو تقيم في الضواحي، أو في المناطق المحيطة، فإن خدماتنا متاحة بسهولة لتلبية احتياجاتك. استمتع بالراحة التي لا مثيل لها من خلال توصيل الطعام مباشرة إلى بابك وحجز استشاراتك الطبية بسهولة"
+    }
   }
 }

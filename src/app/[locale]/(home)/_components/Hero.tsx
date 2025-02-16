@@ -9,7 +9,7 @@ import { Icon } from "@iconify/react";
 import { FeatureHeroRestaurants } from "@/utils/FeatureHero";
 import LineWithDot from "@/components/LineWithDot/LineWithDot";
 const Hero: React.FC = () => {
-  const t = useTranslations("restaurant.hero");
+  const t = useTranslations("common.hero");
 
   return (
     <div className={`hero text-white`}>

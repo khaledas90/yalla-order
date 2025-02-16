@@ -4,7 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useTranslations } from "next-intl";
 
 const AboutUs = () => {
-  const t = useTranslations("restaurant.aboutUs");
+  const t = useTranslations("common.aboutUs");
 
   return (
     <>

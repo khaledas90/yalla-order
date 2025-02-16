@@ -1,6 +1,39 @@
 {
   "common": {
-    "title": "Hello world!",
-    "about": "Go to the about page"
+    "footer": {
+      "Contact us": "Contact us",
+      "Follow Us": "Follow Us",
+      "Copyright © 2023 LOGO Design & Develop by Majec Soft": "All rights reserved to Magic Soft © 2025"
+    },
+    "header": {
+      "Home": "Home",
+      "Restaurants": "Restaurants",
+      "Clinics": "Clinics",
+      "Become-a-Partner": "Become a Partner",
+      "About": "About"
+    },
+    "hero": {
+      "A unique": "A unique",
+      "experience for": "experience for",
+      "food lovers": "food lovers",
+      "Find your Location": "Find your Location...",
+      "Search": "Search",
+      "feature-Faster Delivery": "Faster Delivery",
+      "feature-Daily Discount": "Daily Discount",
+      "feature-100+ Restaurants": "100+ Restaurants",
+      "feature-100+ Cuisines": "100+ Cuisines",
+      "feature-100+ Delivery": "100+ Delivery"
+    },
+    "beWithUs": {
+      "BECOME ONE OF US?": "BECOME ONE OF US?",
+      "What": "What",
+      "are you waiting for some?": "are you waiting for some?",
+      "Login a partner": "Login a partner",
+      "Join us": "Join us"
+    },
+    "aboutUs": {
+      "About us": "About us",
+      "description-about-us": "Food is a website and mobile app for ordering food and booking  medical consultations, and it provides its services in various  locations. Whether you find yourself immersed in the bustling heart of the city, residing in the suburbs, or in the  surrounding areas, our services are readily available to meet  your needs. Enjoy the unparalleled convenience of having food delivered directly to your door and booking your medical consultations with ease"
+    }
   }
 }

@@ -1,12 +1,11 @@
-import Link from "next/link";
 import pizzaImg from "@/assets/image/pizzaImg.png";
-
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { cabinSketch } from "@/utils/fonts";
+import Button from "@/components/Buttons/Button";
 
 const BeWithUs: React.FC = () => {
-  const t = useTranslations("restaurant.beWithUs");
+  const t = useTranslations("common.beWithUs");
 
   return (
     <div className={`py-20 w-full bg-white`} dir="ltr">
@@ -21,12 +20,14 @@ const BeWithUs: React.FC = () => {
             <span className="text-main text-4xl">{t("What")} </span>
             {t("are you waiting for some?")}
           </p>
-          <Link
-            href="/LoginAPartner"
-            className="mt-4 bg-white text-dark-color rounded-[22px] py-3 px-8 font-bold text-sm"
-          >
-            {/* {t("Login a partner")} */}
-          </Link>
+          <span className=" mt-8">
+            <Button
+              text={t("Join us")}
+              href="/ContactUs"
+              variant="contained"
+              className="mt-10"
+            />
+          </span>
         </div>
         <div className="w-1/2  hidden md:block">
           <Image

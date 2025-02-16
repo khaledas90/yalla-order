@@ -7,7 +7,7 @@ import logo from "@/assets/image/FOoDc.png";
 import { useTranslations } from "next-intl";
 import { Icon } from "@iconify/react";
 const Footer: React.FC = () => {
-  const t = useTranslations("restaurant.footer");
+  const t = useTranslations("common.footer");
 
   return (
     <footer className={`flex flex-col items-center bg-black py-10 `}>
