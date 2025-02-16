@@ -16,6 +16,14 @@
   background-repeat: no-repeat;
 }
 
+.background-pan {
+  background-image: url(/assets/image/pan.png);
+  background-size: 40%;
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  z-index: 20;
+}
+
 /* scrollbar */
 ::-webkit-scrollbar {
   width: 12px;
@@ -38,5 +46,11 @@
 @layer base {
   :root {
     --radius: 0.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .background-pan {
+    background-size: 60%;
   }
 }

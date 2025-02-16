@@ -10,7 +10,8 @@
       "Restaurants": "Restaurants",
       "Clinics": "Clinics",
       "Become-a-Partner": "Become a Partner",
-      "About": "About"
+      "About": "About",
+      "Login": "Login"
     },
     "hero": {
       "A unique": "A unique",
@@ -34,6 +35,19 @@
     "aboutUs": {
       "About us": "About us",
       "description-about-us": "Food is a website and mobile app for ordering food and booking  medical consultations, and it provides its services in various  locations. Whether you find yourself immersed in the bustling heart of the city, residing in the suburbs, or in the  surrounding areas, our services are readily available to meet  your needs. Enjoy the unparalleled convenience of having food delivered directly to your door and booking your medical consultations with ease"
+    },
+    "howWeWork": {
+      "How We Work":"How We Work",
+      "We Value":"We Value",
+      "Our":"Our",
+      "Clients & Customers":"Clients & Customers",
+      "Register or login in our portal":"Register or login in our portal",
+      "Search your location":"Search your location",
+      "Find your preferred restaurant":"Find your preferred restaurant",
+      "Choose your cuisine":"Choose your cuisine",
+      "Get your food delivered to your address":"Get your food delivered to your address",
+      "Customer Favorite Cuisine":"Customer Favorite Cuisine",
+      "Burger":"Burger"
     }
   }
 }

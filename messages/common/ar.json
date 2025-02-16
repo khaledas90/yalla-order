@@ -10,7 +10,8 @@
       "Restaurants": "المطاعم",
       "Clinics": "العيادات",
       "Become-a-Partner": "كن شريكنا",
-      "About": "من نحن"
+      "About": "من نحن",
+      "Login": "تسجيل الدخول"
     },
     "hero": {
       "A unique experience for food lovers": "خبرة فريدة لمحبي الطعام",
@@ -35,6 +36,19 @@
     "aboutUs": {
       "About us": "من نحن",
       "description-about-us": "فود هو موقع ويب وتطبيق جوال لطلب الطعام وحجز الاستشارات الطبية، ويقدم خدماته في مواقع مختلفة. سواء كنت منغمسًا في قلب المدينة الصاخب، أو تقيم في الضواحي، أو في المناطق المحيطة، فإن خدماتنا متاحة بسهولة لتلبية احتياجاتك. استمتع بالراحة التي لا مثيل لها من خلال توصيل الطعام مباشرة إلى بابك وحجز استشاراتك الطبية بسهولة"
+    },
+    "howWeWork": {
+      "How We Work": "كيف نعمل",
+      "We Value": "نحن نقدر",
+      "Our": "لدينا",
+      "Clients & Customers": "العملاء والزوار",
+      "Register or login in our portal": "سجل أو قم بتسجيل الدخول في بوابتنا",
+      "Search your location": "ابحث عن موقعك",
+      "Find your preferred restaurant": "ابحث عن مطعمك المفضل",
+      "Choose your cuisine": "اختر وجبتك",
+      "Get your food delivered to your address": "احصل على طعامك موصلًا إلى عنوانك",
+      "Customer Favorite Cuisine": "الوجبة المفضلة للعميل",
+      "Burger": "برجر"
     }
   }
 }

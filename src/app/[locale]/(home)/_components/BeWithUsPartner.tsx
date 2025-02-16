@@ -16,7 +16,7 @@ const BeWithUs: React.FC = () => {
           >
             {t("BECOME ONE OF US?")}
           </h1>
-          <p className="font-medium text-white text-4xl text-center rtl:text-right ltr:lg:text-left   mt-10">
+          <p className="font-medium text-white text-4xl text-center rtl:text-right ltr:lg:text-left mt-10">
             <span className="text-main text-4xl">{t("What")} </span>
             {t("are you waiting for some?")}
           </p>
