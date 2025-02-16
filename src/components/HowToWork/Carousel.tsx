@@ -3,8 +3,11 @@ import React, { useCallback, useEffect, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import { Icon } from "@iconify/react";
+import { useTranslations } from "next-intl";
+
 
 const Carousel = () => {
+        const t = useTranslations("common.howWeWork");
     const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [Autoplay({ delay: 3000 })]);
 
     const [slidesToShow, setSlidesToShow] = useState(6);
@@ -34,7 +37,7 @@ const Carousel = () => {
     }, [emblaApi]);
 
     return (
-        <section className="w-full flex justify-center items-center gap-1">
+        <section className="w-full flex justify-center items-center gap-1" dir="ltr">
             <button
                 type="button"
                 title="arrow-left"
@@ -54,7 +57,7 @@ const Carousel = () => {
                             >
                                 <div className="bg-black py-5 rounded-2xl shadow-lg flex flex-col justify-center items-center gap-5 border-2 text-gray-200 border-gray-200">
                                     <Icon icon="stash:burger" width="60" height="60" />
-                                    <p className="text-lg font-semibold">Burger</p>
+                                    <p className="text-lg font-semibold">{t("Burger")}</p>
                                 </div>
                             </div>
                         ))}

@@ -31,9 +31,8 @@ const Header: React.FC = () => {
   return (
     <nav className="fixed top-0 start-0 end-0 z-40 transition-all duration-300 ">
       <div
-        className={`flex items-center justify-between px-5 py-3 lg:px-20 ${
-          scrolled ? " backdrop-blur-lg bg-black/30" : "bg-transparent"
-        }`}
+        className={`flex items-center justify-between px-5 py-3 lg:px-20 ${scrolled ? " backdrop-blur-lg bg-black/30" : "bg-transparent"
+          }`}
       >
         <Link href="/">
           <Image
@@ -78,8 +77,7 @@ const Header: React.FC = () => {
           >
             <Icon icon="solar:global-outline" width="28" height="28" />
           </button>
-
-          <Button text="Login" href="/login" />
+          <Button text={t("Login")} href="/login" />
         </div>
       </div>
 
@@ -98,8 +96,8 @@ const Header: React.FC = () => {
                   </li>
                 )
               )}
-              <li>
-                <Button text="Login"  href="/login" />
+              <li className="mt-3">
+                <Button text={t("Login")} href="/login" />
               </li>
             </ul>
           </div>

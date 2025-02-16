@@ -68,7 +68,7 @@ const SearchInput: React.FC<SearchInputProps> = ({
         {isIconLocation && (
           <Icon
             icon="mage:location"
-            className="text-black mr-3 cursor-pointer"
+            className="text-black mx-3 cursor-pointer"
             width="38"
             height="38"
           />
