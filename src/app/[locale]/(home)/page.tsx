@@ -10,8 +10,8 @@ export default function Page() {
     <>
       <Header />
       <Hero />
-      <BeWithUs />
       <HowWeWork />
+      <BeWithUs />
       <Footer />
     </>
   );

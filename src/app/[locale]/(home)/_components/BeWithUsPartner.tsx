@@ -9,7 +9,7 @@ const BeWithUs: React.FC = () => {
   const t = useTranslations("restaurant.beWithUs");
 
   return (
-    <div className={`py-12 mt-12 w-full`} dir="ltr">
+    <div className={`py-20 w-full bg-white`} dir="ltr">
       <div className="relative lg:w-4/5 md:w-3/4 w-full h-[450px] be-with-us flex justify-center">
         <div className="p-16 text-white flex flex-col justify-center">
           <h1

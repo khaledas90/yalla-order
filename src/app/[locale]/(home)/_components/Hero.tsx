@@ -7,17 +7,19 @@ import { cabinSketch } from "@/utils/fonts";
 import SearchInput from "../../../../components/Inputs/SearchInput";
 import { Icon } from "@iconify/react";
 import { FeatureHeroRestaurants } from "@/utils/FeatureHero";
+import LineWithDot from "@/components/LineWithDot/LineWithDot";
 const Hero: React.FC = () => {
   const t = useTranslations("restaurant.hero");
 
   return (
-    <div className={`hero bg-gray-700 text-white`}>
+    <div className={`hero text-white`}>
       <div className="container mx-auto px-4 py-8">
         <div className="flex flex-col lg:flex-row">
           <div className="lg:w-1/2">
-            <div className="mt-32 lg:ms-[100px] ms-0 ">
+            <div className="mt-20 lg:ms-[100px] ms-0 md:ps-16 md:pt-10 ps-10 pt-5 relative">
+            <LineWithDot />
               <h1
-                className={`sm:text-5xl text-4xl lg:text-7xl md:text-6xl ltr:lg:text-left rtl:lg:text-right text-center ${cabinSketch.className}  font-light  `}
+                className={`sm:text-5xl text-4xl lg:text-7xl md:text-6xl ltr:lg:text-left rtl:lg:text-right ${cabinSketch.className} font-light`}
               >
                 {t("A unique")}
                 <br />
@@ -43,26 +45,28 @@ const Hero: React.FC = () => {
         </div>
       </div>
 
-      <div className="features bg-white shadow-lg rounded-2xl p-5 mt-8 mx-4">
-        <div className="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-2 gap-4">
-          {FeatureHeroRestaurants.map((feature) => (
-            <div
-              className="flex items-center justify-center"
-              key={feature.title}
-            >
-              <span className="bg-main p-4 rounded-full">
-                <Icon
-                  className="text-white"
-                  icon={feature.icon}
-                  width="44"
-                  height="44"
-                />
-              </span>
-              <h6 className="text-black ps-3 text-[18px] font-semibold">
-                {t("feature-" + feature.title)}
-              </h6>
-            </div>
-          ))}
+      <div className="features w-full px-6">
+        <div className="bg-white shadow-lg translate-y-1/4 rounded-2xl md:w-5/6 w-full p-5 mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-2 gap-4">
+            {FeatureHeroRestaurants.map((feature) => (
+              <div
+                className="flex items-center justify-center"
+                key={feature.title}
+              >
+                <span className="bg-main p-4 rounded-full">
+                  <Icon
+                    className="text-white"
+                    icon={feature.icon}
+                    width="44"
+                    height="44"
+                  />
+                </span>
+                <h6 className="text-black ps-3 text-[18px] font-semibold">
+                  {t("feature-" + feature.title)}
+                </h6>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>

@@ -40,7 +40,7 @@ const SearchInput: React.FC<SearchInputProps> = ({
   return (
     <div className="SearchInput w-full">
       <form
-        className="relative flex items-center bg-white rounded-full px-4 py-2 shadow-md w-full"
+        className="relative flex items-center bg-white rounded-full py-1 pe-1 ps-4 shadow-md w-full"
         onSubmit={handleSubmit(onSubmit)}
       >
         <input
