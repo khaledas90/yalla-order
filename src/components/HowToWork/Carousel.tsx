@@ -46,7 +46,7 @@ const Carousel = () => {
             >
                 <Icon icon="gravity-ui:arrow-left" width="20" height="20" />
             </button>
-            <div className="relative w-full">
+            <div className="relative w-full z-30">
                 <div className="overflow-hidden" ref={emblaRef}>
                     <div className="flex">
                         {[...Array(8)].map((_, index) => (
@@ -55,7 +55,7 @@ const Carousel = () => {
                                 style={{ flex: `0 0 ${100 / slidesToShow}%` }}
                                 className="px-2 w-full"
                             >
-                                <div className="bg-transparent z-30 py-5 rounded-2xl shadow-lg flex flex-col justify-center items-center gap-5 border-2 text-gray-200 border-gray-200">
+                                <div className="bg-transparent py-5 rounded-2xl shadow-lg flex flex-col justify-center items-center gap-5 border-2 text-gray-200 border-gray-200">
                                     <Icon icon="stash:burger" width="60" height="60" />
                                     <p className="text-lg font-semibold">{t("Burger")}</p>
                                 </div>
