@@ -51,7 +51,10 @@
       "Burger": "برجر"
     },
     "login": {
-      "login": "Login"
+      "login": "تسجيل الدخول",
+      "Forget password?": "نسيت كلمة المرور؟",
+      "Don’t have an account?": "ليس لديك حساب؟",
+      "Sign Up": "إنشاء حساب"
     },
     "downloadApp": {
       "Enjoy": "استمتع",

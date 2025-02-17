@@ -51,7 +51,10 @@
     },
 
     "login": {
-      "login": "Login"
+      "login": "Login",
+      "Forget password?":"Forget password?",
+      "Don’t have an account?":"Don’t have an account?",
+      "Sign Up":"Sign Up"
     },
     "downloadApp": {
       "Enjoy": "Enjoy",

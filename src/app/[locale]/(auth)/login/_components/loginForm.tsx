@@ -55,13 +55,13 @@ export default function LoginForm() {
             touched={formik.touched.password}
           />
 
-          <Link href="#" className="text-right text-sm text-gray-500">Forget password?</Link>
+          <Link href="#" className="text-right text-sm text-gray-500">{t("Forget password?")}</Link>
 
           <button
             type="submit"
             className="w-full bg-red-400 text-white p-3 rounded-md font-semibold hover:bg-red-500"
           >
-            Login
+            {t("login")}
           </button>
 
           <div className="flex items-center my-4">
@@ -77,7 +77,7 @@ export default function LoginForm() {
           </div>
 
           <p className="text-center text-sm text-gray-500">
-            Don’t have an account? <Link href="#" className="text-blue-500 cursor-pointer">Sign Up</Link>
+            {t("Don’t have an account?")} <Link href="#" className="text-blue-500 cursor-pointer">{t("Sign Up")}</Link>
           </p>
         </form>
       </div>
