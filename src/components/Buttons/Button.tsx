@@ -3,7 +3,7 @@ import React from "react";
 
 interface ButtonProps {
   text: string;
-  href: string;
+  href?: string | undefined;
   variant?: "contained" | "outlined";
   className?: string;
 }
@@ -12,7 +12,7 @@ const Button: React.FC<ButtonProps> = ({ text, href, variant, className }) => {
   return (
     <div className="button">
       <Link
-        href={href}
+        href={href || "#"}
         title="button"
         type="submit"
         className={`ring-[0.8px]  px-16 py-1 rounded-3xl  ${

@@ -48,7 +48,7 @@ const SearchInput: React.FC<SearchInputProps> = ({
           {...register("query")}
           defaultValue={query}
           placeholder={t("Find your Location")}
-          className="w-full border-0 my-3 text-black ms-8 focus:outline-none font-monospace"
+          className="w-full border-0 my-3 py-4 text-black ms-8 focus:outline-none font-monospace"
         />
         {isIconSearch ? (
           <Icon

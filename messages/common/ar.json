@@ -49,6 +49,9 @@
       "Get your food delivered to your address": "احصل على طعامك موصلًا إلى عنوانك",
       "Customer Favorite Cuisine": "الوجبة المفضلة للعميل",
       "Burger": "برجر"
+    },
+    "login": {
+      "login": "Login"
     }
   }
 }
