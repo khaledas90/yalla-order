@@ -15,7 +15,7 @@ const DownloadApp = () => {
     return (
         <>
             <section className='pb-16'>
-                <div className='Navigate-Cards w-full md:py-32 pt-0 pb-10 px-5 background-download flex flex-col md:flex-row justify-center items-center gap-7'>
+                <div className='Navigate-Cards w-full md:pb-32 md:pt-10 pt-0 pb-20 px-5 background-download flex flex-col md:flex-row justify-center items-center gap-7'>
                     {/* Food Button */}
                     <NavigateCard
                         url="#"
@@ -37,7 +37,7 @@ const DownloadApp = () => {
                     <div className="relative lg:w-4/5 md:w-3/4 w-full h-[450px] download-app flex justify-center">
                         <div className="py-16 ps-16 text-white flex flex-col justify-between">
                             <h1
-                                className={`text-5xl leading-snug text-center rtl:text-right ltr:lg:text-left font-light`}
+                                className={`md:text-5xl text-4xl leading-snug rtl:text-right ltr:lg:text-left font-light`}
                             >
                                 <span className={`${cairoFont.className} rtl:inline ltr:hidden`}>
                                     {t("Download Our")}
@@ -49,7 +49,7 @@ const DownloadApp = () => {
                                     {t("Application now !")}
                                 </span>
                             </h1>
-                            <p className="font-medium text-white text-3xl text-center rtl:text-right ltr:lg:text-left">
+                            <p className="font-medium text-white text-3xl rtl:text-right ltr:lg:text-left">
                                 <span className="text-main">{t("Enjoy")} </span>
                                 {t("the best meal")}
                             </p>

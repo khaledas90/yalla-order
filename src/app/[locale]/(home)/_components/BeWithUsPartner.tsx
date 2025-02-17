@@ -25,7 +25,7 @@ const BeWithUs: React.FC = () => {
             <span className="text-main text-4xl">{t("What")} </span>
             {t("are you waiting for some?")}
           </p>
-          <span className=" mt-8">
+          <span className="mt-8 flex justify-center md:justify-start items-center">
             <Button
               text={t("Join us")}
               href="/ContactUs"
@@ -34,7 +34,7 @@ const BeWithUs: React.FC = () => {
             />
           </span>
         </div>
-        <div className="w-1/2  hidden md:block">
+        <div className="w-1/2 hidden md:block">
           <Image
             src={pizzaImg}
             alt="pizza"
