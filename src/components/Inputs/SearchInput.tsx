@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { useForm, SubmitHandler } from "react-hook-form";
+import { useFormik } from "formik";
 import { useTranslations } from "next-intl";
 import { Icon } from "@iconify/react";
 
@@ -13,10 +13,6 @@ interface SearchInputProps {
   location?: string;
 }
 
-interface FormValues {
-  query: string;
-}
-
 const SearchInput: React.FC<SearchInputProps> = ({
   onSearch,
   onLocationChange,
@@ -26,27 +22,30 @@ const SearchInput: React.FC<SearchInputProps> = ({
   location,
 }) => {
   const t = useTranslations("common.hero");
-  const { register, handleSubmit } = useForm<FormValues>();
 
-  const onSubmit: SubmitHandler<FormValues> = (data) => {
-    if (onSearch) {
-      onSearch(data.query);
-    }
-    if (onLocationChange) {
-      onLocationChange(location || "");
-    }
-  };
+  const formik = useFormik({
+    initialValues: {
+      query: query || "",
+    },
+    onSubmit: (values) => {
+      if (onSearch) {
+        onSearch(values.query);
+      }
+      if (onLocationChange) {
+        onLocationChange(location || "");
+      }
+    },
+  });
 
   return (
     <div className="SearchInput lg:w-[80%] w-full">
       <form
         className="relative flex items-center bg-white rounded-full lg:ms-20 ms-0 py-1 pe-1 ps-4 shadow-md w-full"
-        onSubmit={handleSubmit(onSubmit)}
+        onSubmit={formik.handleSubmit}
       >
         <input
           type="text"
-          {...register("query")}
-          defaultValue={query}
+          {...formik.getFieldProps("query")}
           placeholder={t("Find your Location")}
           className="w-full border-0 my-3 text-black ms-8 focus:outline-none font-monospace"
         />
