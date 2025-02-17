@@ -1,38 +1,45 @@
 import React from "react";
-import { FieldErrors, UseFormRegister } from "react-hook-form";
-import { LoginForm } from "./loginForm";
+import { Icon } from "@iconify/react";
 
-export interface InputGroupItem {
-  name: keyof LoginForm;
-  required: boolean;
+interface CustomInputProps {
+  name: string;
   type: string;
+  placeholder: string;
+  icon: string;
+  value: string;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onBlur: (e: React.FocusEvent<HTMLInputElement>) => void;
+  error?: string;
+  touched?: boolean;
 }
 
-export const CustomLoginInput = ({
-  input,
-  register,
+const CustomInput: React.FC<CustomInputProps> = ({
+  name,
+  type,
   placeholder,
-  errors,
-}: {
-  input: InputGroupItem;
-  register: UseFormRegister<LoginForm>;
-  placeholder: string;
-  errors: FieldErrors<LoginForm>;
+  icon,
+  value,
+  onChange,
+  onBlur,
+  error,
+  touched,
 }) => {
   return (
-    <>
+    <div className="relative">
+      <Icon icon={icon} className="absolute left-3 top-4 text-gray-500 text-xl" />
       <input
-        type={input.type}
-        id={input.name}
+        type={type}
+        name={name}
+        id={name}
         placeholder={placeholder}
-        {...register(input.name, { required: input.required })}
-        className="w-full input rounded-[30px] my-3  px-8 py-[18px] border-2  focus:outline-none border-[#E6E6E6] placeholder-gray-400 transition-all duration-300 "
+        className="w-full pl-10 p-3 border rounded-3xl focus:outline-none focus:ring-2 focus:ring-gray-400"
+        onChange={onChange}
+        onBlur={onBlur}
+        value={value}
       />
-      {errors[input.name] && (
-        <p className="text-red-500">
-          {errors[input.name]?.message || `${input.name} is required`}
-        </p>
-      )}
-    </>
+      {touched && error ? <p className="text-red-500 text-sm">{error}</p> : null}
+    </div>
   );
 };
+
+export default CustomInput;
