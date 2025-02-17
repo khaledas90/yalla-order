@@ -4,7 +4,8 @@ import { usePathname } from "@/i18n/routing";
 import clsx from "clsx";
 import { Links } from "@/utils/Links";
 import Link from "next/link";
-const NavLinks = ({ id, name, href }: Links) => {
+import { Icon } from "@iconify/react";
+const NavLinks = ({ id, name, icon, href }: Links) => {
   const pathname = usePathname();
   return (
     <>
@@ -13,11 +14,11 @@ const NavLinks = ({ id, name, href }: Links) => {
         title={name}
         key={id}
         className={clsx(
-          "relative block text-lg font-medium transition-all duration-[0.4s] hover:text-red-500 ",
+          "relative flex  gap-2 text-lg font-medium transition-all duration-[0.4s] hover:text-red-500 ",
           pathname === href ? "text-main" : "text-text-main"
         )}
       >
-        {name}
+        <Icon icon={icon as string} width="24" height="24" /> {name}
       </Link>
     </>
   );

@@ -2,12 +2,33 @@ export interface Links {
   id: number;
   name: string;
   href: string;
+  icon?: string;
 }
 
 export const links: Links[] = [
-  { id: 1, name: "Home", href: "/" },
-  { id: 2, name: "Restaurants", href: "/restaurants" },
-  { id: 3, name: "Clinics", href: "/clinics" },
-  { id: 4, name: "Become-a-Partner", href: "/become-a-partner" },
-  { id: 5, name: "About", href: "/about-us" },
+  { id: 1, name: "Home", icon: "tabler:home", href: "/" },
+  {
+    id: 2,
+    name: "Restaurants",
+    icon: "hugeicons:restaurant-01",
+    href: "/restaurants",
+  },
+  {
+    id: 3,
+    name: "Clinics",
+    icon: "healthicons:ambulatory-clinic-outline",
+    href: "/clinics",
+  },
+  {
+    id: 4,
+    name: "Become-a-Partner",
+    icon: "material-symbols-light:partner-exchange-rounded",
+    href: "/become-a-partner",
+  },
+  {
+    id: 5,
+    name: "About",
+    icon: "ix:about",
+    href: "/about-us",
+  },
 ];

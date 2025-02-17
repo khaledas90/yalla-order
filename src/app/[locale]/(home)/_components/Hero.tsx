@@ -21,14 +21,18 @@ const Hero: React.FC = () => {
               <h1
                 className={`text-4xl md:text-6xl ltr:text-left rtl:right-0 pe-5 md:pe-10 font-light`}
               >
-                <span className={`${cairoFont.className} font-bold rtl:inline ltr:hidden`}>
+                <span
+                  className={`${cairoFont.className} font-bold rtl:inline ltr:hidden`}
+                >
                   {t("A unique")}
                   <br />
                   {t("experience for")}
                   <br />
                   {t("food lovers")}
                 </span>
-                <span className={`${cabinSketch.className} rtl:hidden ltr:inline`}>
+                <span
+                  className={`${cabinSketch.className} rtl:hidden ltr:inline`}
+                >
                   {t("A unique")}
                   <br />
                   {t("experience for")}
@@ -37,7 +41,7 @@ const Hero: React.FC = () => {
                 </span>
               </h1>
             </div>
-            <div className="flex justify-center lg:justify-start mt-16">
+            <div className="flex justify-center lg:justify-start  mt-16">
               <SearchInput query="" isIconSearch isIconLocation />
             </div>
           </div>
@@ -63,7 +67,12 @@ const Hero: React.FC = () => {
                 key={feature.title}
               >
                 <span className="bg-main p-4 rounded-full flex items-center justify-center">
-                  <Icon className="text-white" icon={feature.icon} width="44" height="44" />
+                  <Icon
+                    className="text-white"
+                    icon={feature.icon}
+                    width="44"
+                    height="44"
+                  />
                 </span>
                 <h6 className="text-black text-[18px] font-semibold text-center sm:text-left">
                   {t("feature-" + feature.title)}
@@ -73,7 +82,6 @@ const Hero: React.FC = () => {
           </div>
         </div>
       </div>
-
     </div>
   );
 };

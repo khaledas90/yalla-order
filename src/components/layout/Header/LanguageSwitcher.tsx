@@ -7,18 +7,16 @@ const LanguageSwitcher = () => {
     const [isOpen, setIsOpen] = useState(false);
     const pathname = usePathname();
 
-    // Language options
     const languages = [
         { code: "en", label: "English" },
         { code: "ar", label: "عربي" },
     ];
 
-    // Get current language from pathname (assuming locale in URL)
     const currentLang = pathname.startsWith("/ar") ? "ar" : "en";
 
     return (
         <div className="relative">
-            {/* Button to toggle dropdown */}
+          
             <button
                 title="Language"
                 type="button"

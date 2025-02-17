@@ -6,6 +6,7 @@ import HowWeWork from "@/app/[locale]/(home)/_components/HowWeWork";
 
 import BeWithUs from "./_components/BeWithUsPartner";
 import DownloadApp from "./_components/DownloadApp";
+import ExploreCategory from "./_components/ExploreCategory";
 export default function Page() {
   return (
     <>
@@ -13,6 +14,7 @@ export default function Page() {
       <Hero />
       <HowWeWork />
       <BeWithUs />
+      <ExploreCategory />
       <DownloadApp />
       <Footer />
     </>
