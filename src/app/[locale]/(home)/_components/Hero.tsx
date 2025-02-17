@@ -19,7 +19,7 @@ const Hero: React.FC = () => {
             <div className="mt-20 lg:ms-[100px] ms-0 md:ps-16 md:pt-10 ps-10 pt-5 relative">
               <LineWithDot />
               <h1
-                className={`text-4xl md:text-6xl text-left pe-5 md:pe-10 font-light`}
+                className={`text-4xl md:text-6xl ltr:text-left rtl:right-0 pe-5 md:pe-10 font-light`}
               >
                 <span className={`${cairoFont.className} font-bold rtl:inline ltr:hidden`}>
                   {t("A unique")}

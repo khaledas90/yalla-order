@@ -14,7 +14,7 @@ const HowWeWork = () => {
                 <div className='container mx-auto px-4 my-8 relative'>
                     <div className='absolute inset-0 background-pan'></div>
                     <div className='w-full flex flex-col lg:flex-row justify-center items-center mb-5'>
-                        <div className='Big-image w-full lg:w-1/2 mb-8 lg:mb-0'>
+                        <div className='Big-image w-full lg:w-1/2 mb-8 lg:mb-0 z-30'>
                             <Image
                                 src={burgerFrizze}
                                 alt="Hero Image"
@@ -24,7 +24,7 @@ const HowWeWork = () => {
                             />
                         </div>
                         <div className="Content w-full lg:w-1/2 flex justify-center items-center">
-                            <div className="w-full ltr:ps-10 rtl:pe-10 relative text-left">
+                            <div className="w-full ps-10 relative ltr:text-left rtl:text-right">
                                 <LineWithDot />
                                 <h2 className={`text-5xl mb-3`}>
                                     <span className={`${cairoFont.className} rtl:inline ltr:hidden`}>

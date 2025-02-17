@@ -7,24 +7,22 @@ const AboutUs = () => {
   const t = useTranslations("common.aboutUs");
 
   return (
-    <>
-      <div className={`hero bg-gray-700 h-screen `}>
-        <div className="container mx-auto flex justify-center items-center px-4 py-16">
-          <Card className="lg:w-1/2 md:w-full mt-[5rem] ">
-            <CardHeader>
-              <CardTitle className="text-center text-3xl font-semibold">
-                {t("About us")}
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-xl font-normal text-center leading-[1] md:text-xl md:leading-[2]">
-                {t("description-about-us")}
-              </p>
-            </CardContent>
-          </Card>
-        </div>
+    <div className="hero bg-gray-700 h-full py-20 px-4 flex justify-center items-center">
+      <div className="container flex justify-center items-center">
+        <Card className="w-full max-w-md md:p-6 p-2 rounded-2xl shadow-lg bg-white">
+          <CardHeader>
+            <CardTitle className="text-center text-3xl font-bold uppercase">
+              {t("About us")}
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p className="text-xl font-normal leading-snug text-gray-700">
+              {t("description-about-us")}
+            </p>
+          </CardContent>
+        </Card>
       </div>
-    </>
+    </div>
   );
 };
 

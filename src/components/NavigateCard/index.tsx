@@ -18,7 +18,7 @@ const Index = (props: Props) => {
         <>
             <Link
                 href={props.url}
-                className="w-full sm:h-40 h-48 max-w-md flex items-center bg-black/90 rounded-xl overflow-hidden transition-transform duration-300 hover:scale-95"
+                className="w-full sm:h-40 h-48 max-w-md flex items-center bg-black/90 rounded-xl overflow-hidden"
             >
                 {/* Text Section */}
                 <div className="p-5 w-2/3 h-full flex flex-col justify-between">
