@@ -1,7 +1,7 @@
 import React from 'react'
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-import { cabinSketch } from "@/utils/fonts";
+import { cabinSketch, cairoFont } from "@/utils/fonts";
 import appStore from "@/assets/image/app-store.png";
 import googlePlay from "@/assets/image/google-play.png";
 import Phone from "@/assets/image/OnePlus.png";
@@ -15,7 +15,7 @@ const DownloadApp = () => {
     return (
         <>
             <section className='pb-16'>
-                <div className='Navigate-Cards w-full py-32 px-5 background-download flex flex-col md:flex-row justify-center items-center gap-7'>
+                <div className='Navigate-Cards w-full md:py-32 pt-0 pb-10 px-5 background-download flex flex-col md:flex-row justify-center items-center gap-7'>
                     {/* Food Button */}
                     <NavigateCard
                         url="#"
@@ -37,10 +37,17 @@ const DownloadApp = () => {
                     <div className="relative lg:w-4/5 md:w-3/4 w-full h-[450px] download-app flex justify-center">
                         <div className="py-16 ps-16 text-white flex flex-col justify-between">
                             <h1
-                                className={`${cabinSketch.className} sm:text-5xl text-4xl text-center rtl:text-right ltr:lg:text-left font-light `}
+                                className={`text-5xl leading-snug text-center rtl:text-right ltr:lg:text-left font-light`}
                             >
-                                {t("Download Our")}<br />
-                                {t("Application now !")}
+                                <span className={`${cairoFont.className} rtl:inline ltr:hidden`}>
+                                    {t("Download Our")}
+                                    <span className="hidden md:inline"><br /></span>{" "}
+                                    {t("Application now !")}
+                                </span>
+                                <span className={`${cabinSketch.className} rtl:hidden ltr:inline`}>
+                                    {t("Download Our")}<span className="hidden md:inline"><br /></span>{" "}
+                                    {t("Application now !")}
+                                </span>
                             </h1>
                             <p className="font-medium text-white text-3xl text-center rtl:text-right ltr:lg:text-left">
                                 <span className="text-main">{t("Enjoy")} </span>

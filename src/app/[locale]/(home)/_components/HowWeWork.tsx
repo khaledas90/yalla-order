@@ -2,7 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import burgerFrizze from "@/assets/image/burger-frizze.png";
 import Carousel from '../../../../components/Carousel/Carousel';
-import { cabinSketch } from "@/utils/fonts";
+import { cabinSketch, cairoFont } from "@/utils/fonts";
 import LineWithDot from "../../../../components/LineWithDot/LineWithDot";
 import { useTranslations } from "next-intl";
 
@@ -10,7 +10,7 @@ const HowWeWork = () => {
     const t = useTranslations("common.howWeWork");
     return (
         <>
-            <section className='how-we-work pt-16'>
+            <section className='how-we-work md:pt-16 pt-40'>
                 <div className='container mx-auto px-4 my-8 relative'>
                     <div className='absolute inset-0 background-pan'></div>
                     <div className='w-full flex flex-col lg:flex-row justify-center items-center mb-5'>
@@ -26,7 +26,14 @@ const HowWeWork = () => {
                         <div className="Content w-full lg:w-1/2 flex justify-center items-center">
                             <div className="w-full ltr:ps-10 rtl:pe-10 relative text-left">
                                 <LineWithDot />
-                                <h2 className={`text-5xl ${cabinSketch.className}`}>{t("How We Work")}</h2>
+                                <h2 className={`text-5xl mb-3`}>
+                                    <span className={`${cairoFont.className} rtl:inline ltr:hidden`}>
+                                        {t("How We Work")}
+                                    </span>
+                                    <span className={`${cabinSketch.className} rtl:hidden ltr:inline`}>
+                                        {t("How We Work")}
+                                    </span>
+                                </h2>
                                 <h4 className="text-4xl font-bold">
                                     <span className="text-[#fe7e7e] font-semibold">{t("We Value")}</span>{" "}
                                     <span>{t("Our")}</span>{" "}
@@ -44,7 +51,14 @@ const HowWeWork = () => {
                     </div>
                     <div className='customer-fav-cuisine w-full  mx-auto p-12 flex-col gap-10 bg-black rounded-xl'>
                         <div className='title-customer-fav-cuisine'>
-                            <h2 className={`text-center text-5xl text-white ${cabinSketch.className}`}>{t("Customer Favorite Cuisine")}</h2>
+                            <h2 className={`text-center text-5xl text-white`}>
+                                <span className={`${cairoFont.className} rtl:inline ltr:hidden`}>
+                                    {t("Customer Favorite Cuisine")}
+                                </span>
+                                <span className={`${cabinSketch.className} rtl:hidden ltr:inline`}>
+                                    {t("Customer Favorite Cuisine")}
+                                </span>
+                            </h2>
                         </div>
                         <div className='Carousel pt-10'>
                             <Carousel />

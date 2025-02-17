@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import { StaticImageData } from 'next/image'
+import { useTranslations } from "next-intl";
 
 type Props = {
     url: string
@@ -11,7 +12,8 @@ type Props = {
     PContent: string
 }
 
-const index = (props: Props) => {
+const Index = (props: Props) => {
+    const t = useTranslations("common.downloadApp");
     return (
         <>
             <Link
@@ -25,7 +27,7 @@ const index = (props: Props) => {
                     </h1>
                     <p className="text-sm text-gray-300">{props.PContent}</p>
                     <h5 className={`mt-2 text-sm font-semibold ${props.textColor}`}>
-                        Explore
+                        {t("Explore")}
                     </h5>
                 </div>
 
@@ -44,4 +46,4 @@ const index = (props: Props) => {
     )
 }
 
-export default index
+export default Index
