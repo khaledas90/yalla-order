@@ -1,9 +1,9 @@
 import React from 'react'
 import Image from 'next/image'
 import burgerFrizze from "@/assets/image/burger-frizze.png";
-import Carousel from './Carousel';
+import Carousel from '../../../../components/Carousel/Carousel';
 import { cabinSketch } from "@/utils/fonts";
-import LineWithDot from "../LineWithDot/LineWithDot";
+import LineWithDot from "../../../../components/LineWithDot/LineWithDot";
 import { useTranslations } from "next-intl";
 
 const HowWeWork = () => {

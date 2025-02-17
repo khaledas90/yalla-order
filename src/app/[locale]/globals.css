@@ -9,6 +9,12 @@
   background-repeat: no-repeat;
 }
 
+.download-app {
+  background-image: url(/assets/image/downloadApp.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 .be-with-us {
   background-image: url(/assets/image/BeWithUsLeft.webp);
   background-size: cover;
@@ -20,6 +26,14 @@
   background-image: url(/assets/image/pan.png);
   background-size: 40%;
   background-position: bottom right;
+  background-repeat: no-repeat;
+  z-index: 20;
+}
+
+.background-download {
+  background-image: url(/assets/image/pan.png);
+  background-size: 40%;
+  background-position: bottom left;
   background-repeat: no-repeat;
   z-index: 20;
 }
@@ -51,6 +65,9 @@
 
 @media (max-width: 640px) {
   .background-pan {
+    background-size: 60%;
+  }
+  .background-download {
     background-size: 60%;
   }
 }

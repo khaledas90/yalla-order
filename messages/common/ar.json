@@ -49,6 +49,16 @@
       "Get your food delivered to your address": "احصل على طعامك موصلًا إلى عنوانك",
       "Customer Favorite Cuisine": "الوجبة المفضلة للعميل",
       "Burger": "برجر"
+    },
+    "downloadApp": {
+      "Enjoy": "استمتع",
+      "the best meal": "بأفضل وجبة",
+      "Download Our": "حمل تطبيقنا",
+      "Application now !": "الآن !",
+      "Are you hungry?":"هل أنت جائع؟",
+      "Do you have a cold?":"هل لديك نزلة برد؟",
+      "content-food":"فريقنا دائمًا مستعد لتحضير طعامك في أي وقت. اكتشف مطاعمنا الآن! لدينا توصيل، عروض وخصومات",
+      "content-clinic":"لا تقلق، نحن هنا لمساعدتك. احجز استشارتك بسرعة وسهولة"
     }
   }
 }
