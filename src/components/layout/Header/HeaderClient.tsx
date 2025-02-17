@@ -16,14 +16,6 @@ const HeaderClient: React.FC = () => {
     const [scrolled, setScrolled] = useState(false);
     const t = useTranslations("common.header");
 
-    const sidebarRef = useRef<HTMLDivElement>(null);
-
-    const handleClickOutside = (event: MouseEvent) => {
-        if (sidebarRef.current && !sidebarRef.current.contains(event.target as Node)) {
-            setMenuOpen(false);
-        }
-    };
-
     useEffect(() => {
         const handleScroll = () => {
             setScrolled(window.scrollY > 50);
@@ -37,20 +29,27 @@ const HeaderClient: React.FC = () => {
         setMenuOpen((prev) => !prev);
     };
 
+    const sidebarRef = useRef<HTMLDivElement>(null);
+
+    const handleClickOutside = (event: MouseEvent) => {
+        if (sidebarRef.current && !sidebarRef.current.contains(event.target as Node)) {
+            setMenuOpen(false);
+        }
+    };
     useEffect(() => {
         if (menuOpen) {
-            document.addEventListener("mousedown", handleClickOutside);
+            document.addEventListener("mouseup", handleClickOutside);
         } else {
-            document.removeEventListener("mousedown", handleClickOutside);
+            document.removeEventListener("mouseup", handleClickOutside);
         }
         return () => {
-            document.removeEventListener("mousedown", handleClickOutside);
+            document.removeEventListener("mouseup", handleClickOutside);
         };
     }, [menuOpen]);
 
     return (
         <div
-            className={`fixed top-0 start-0 end-0 z-40 transition-all duration-300 ${scrolled ? "backdrop-blur-lg bg-black/30" : "bg-transparent"
+            className={`fixed top-0 start-0 end-0 z-40 transition-all duration-300 ${scrolled ? "bg-black/30" : "bg-transparent"
                 }`}
         >
             <div className="flex items-center justify-between p-5 lg:px-20">
@@ -87,10 +86,10 @@ const HeaderClient: React.FC = () => {
                 <div className="fixed inset-0 bg-black bg-opacity-50 -z-20 lg:hidden">
                     <div ref={sidebarRef} className="fixed top-0 left-0 h-full w-64 bg-black shadow-lg z-20">
                         <ul className="flex flex-col gap-4 mt-[90px] text-white px-4">
-                            <div className="flex justify-end gap-5 text-white">
+                            <li className="flex justify-end gap-5 text-white">
                                 <FavoriteDropdown />
                                 <LanguageSwitcher />
-                            </div>
+                            </li>
                             {links.map((link) =>
                                 link.name === "Clinics" ? null : (
                                     <li key={link.name}>

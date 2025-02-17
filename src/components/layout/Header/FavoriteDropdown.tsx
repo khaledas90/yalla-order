@@ -28,7 +28,7 @@ const FavoriteDropdown = () => {
             </button>
 
             {isOpen && (
-                <div className="absolute z-40 right-0 mt-2 w-52 bg-white shadow-lg rounded-lg">
+                <div className="absolute z-40 ltr:-right-6 rtl:-left-6 mt-2 w-52 bg-white shadow-lg rounded-lg">
                     <div className="bg-main text-white p-2 rounded-t-lg font-bold">
                         My Favorite
                     </div>

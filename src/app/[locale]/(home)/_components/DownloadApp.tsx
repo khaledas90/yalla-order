@@ -15,7 +15,7 @@ const DownloadApp = () => {
     return (
         <>
             <section className='pb-16'>
-                <div className='Navigate-Cards w-full py-32 background-download flex flex-col md:flex-row justify-center items-center gap-7'>
+                <div className='Navigate-Cards w-full py-32 px-5 background-download flex flex-col md:flex-row justify-center items-center gap-7'>
                     {/* Food Button */}
                     <NavigateCard
                         url="#"

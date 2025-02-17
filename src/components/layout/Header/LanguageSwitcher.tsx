@@ -30,7 +30,7 @@ const LanguageSwitcher = () => {
 
             {/* Dropdown Menu */}
             {isOpen && (
-                <div className="absolute ltr:right-0 rtl:left-0 mt-2 w-28 bg-white shadow-lg rounded-lg border border-gray-200">
+                <div className="absolute z-40 ltr:right-0 rtl:left-0 mt-2 w-28 bg-white shadow-lg rounded-lg border border-gray-200">
                     {languages.map((lang) => (
                         <Link
                             key={lang.code}
