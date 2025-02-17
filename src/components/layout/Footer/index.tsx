@@ -52,7 +52,7 @@ const Footer: React.FC = () => {
       </div>
 
       <div className="w-full max-w-6xl mt-5">
-        <p className="text-gray-300 text-lg">
+        <p className="text-gray-300 text-lg md:text-start text-center">
           {t("Copyright © 2023 LOGO Design & Develop by Majec Soft")}
         </p>
       </div>

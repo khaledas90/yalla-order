@@ -49,8 +49,20 @@
       "Customer Favorite Cuisine": "Customer Favorite Cuisine",
       "Burger": "Burger"
     },
+
     "login": {
       "login": "Login"
+    },
+    "downloadApp": {
+      "Enjoy": "Enjoy",
+      "the best meal": "the best meal",
+      "Download Our": "Download Our",
+      "Application now !": "Application now !",
+      "Are you hungry?": "Are you hungry?",
+      "Do you have a cold?": "Do you have a cold?",
+      "content-food": "Our team is always ready to prepare your food at any time. Discover our restaurants now! We have delivery, offers and discounts",
+      "content-clinic": "Don't worry, we are here to help you. Book your consultation quickly and easily",
+      "Explore": "Explore"
     }
   }
 }
