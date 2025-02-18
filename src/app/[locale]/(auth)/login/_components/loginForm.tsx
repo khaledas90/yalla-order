@@ -2,14 +2,18 @@
 import React from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import CustomInput from "./CustomLoginInput";
+import CustomInput from "../../../../../components/Inputs/CustomInputForm";
 import { Icon } from "@iconify/react";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 
 const validationSchema = Yup.object({
-  email: Yup.string().email("Invalid email format").required("Email is required"),
-  password: Yup.string().min(6, "Password must be at least 6 characters").required("Password is required"),
+  email: Yup.string()
+    .email("Invalid email format")
+    .required("Email is required"),
+  password: Yup.string()
+    .min(6, "Password must be at least 6 characters")
+    .required("Password is required"),
 });
 
 export default function LoginForm() {
@@ -55,7 +59,9 @@ export default function LoginForm() {
             touched={formik.touched.password}
           />
 
-          <Link href="#" className="text-right text-sm text-gray-500">{t("Forget password?")}</Link>
+          <Link href="#" className="text-right text-sm text-gray-500">
+            {t("Forget password?")}
+          </Link>
 
           <button
             type="submit"
@@ -71,13 +77,19 @@ export default function LoginForm() {
           </div>
 
           <div className="flex justify-center gap-4">
-            <Icon icon="flat-color-icons:google" className="text-3xl cursor-pointer" />
+            <Icon
+              icon="flat-color-icons:google"
+              className="text-3xl cursor-pointer"
+            />
             <Icon icon="logos:facebook" className="text-3xl cursor-pointer" />
             <Icon icon="cib:apple" className="text-3xl cursor-pointer" />
           </div>
 
           <p className="text-center text-sm text-gray-500">
-            {t("Don’t have an account?")} <Link href="#" className="text-blue-500 cursor-pointer">{t("Sign Up")}</Link>
+            {t("Don’t have an account?")}{" "}
+            <Link href="#" className="text-blue-500 cursor-pointer">
+              {t("Sign Up")}
+            </Link>
           </p>
         </form>
       </div>
