@@ -54,7 +54,11 @@
       "login": "تسجيل الدخول",
       "Forget password?": "نسيت كلمة المرور؟",
       "Don’t have an account?": "ليس لديك حساب؟",
-      "Sign Up": "إنشاء حساب"
+      "Sign Up": "إنشاء حساب",
+      "Email Address Required": "البريد الالكتروني مطلوب",
+      "Password Required": "كلمة المرور مطلوبة",
+      "Password must be at least 6 characters": "يجب أن تكون كلمة المرور مكونة من 6 أحرف على الأقل",
+      "Invalid email format": "تنسيق البريد الإلكتروني غير صالح"
     },
     "downloadApp": {
       "Enjoy": "استمتع",
