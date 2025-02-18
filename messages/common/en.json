@@ -11,7 +11,10 @@
       "Clinics": "Clinics",
       "Become-a-Partner": "Become a Partner",
       "About": "About",
-      "Login": "Login"
+      "Login": "Login",
+      "My Favorite": "My Favorite",
+      "Chocolate Pie": "Chocolate Pie",
+      "Sausage Hawawshi": "Sausage Hawawshi"
     },
     "hero": {
       "A unique": "A unique",
@@ -49,16 +52,15 @@
       "Customer Favorite Cuisine": "Customer Favorite Cuisine",
       "Burger": "Burger"
     },
-
     "login": {
       "login": "Login",
-      "Forget password?":"Forget password?",
-      "Don’t have an account?":"Don’t have an account?",
-      "Sign Up":"Sign Up",
-      "Email Address Required":"Email Address Required",
-      "Password Required":"Password Required",
-      "Password must be at least 6 characters":"Password must be at least 6 characters",
-      "Invalid email format":"Invalid email format"
+      "Forget password?": "Forget password?",
+      "Don’t have an account?": "Don’t have an account?",
+      "Sign Up": "Sign Up",
+      "Email Address Required": "Email Address Required",
+      "Password Required": "Password Required",
+      "Password must be at least 6 characters": "Password must be at least 6 characters",
+      "Invalid email format": "Invalid email format"
     },
     "downloadApp": {
       "Enjoy": "Enjoy",
