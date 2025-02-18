@@ -1,11 +1,15 @@
 import { useState } from "react";
 import { Icon } from "@iconify/react";
+import { useTranslations } from "next-intl";
+
 
 const FavoriteDropdown = () => {
+    const t = useTranslations("common.header");
+
     const [isOpen, setIsOpen] = useState(false);
     const [items, setItems] = useState([
-        { name: "Sausage Hawawshi", quantity: 1 },
-        { name: "Chocolate Pie", quantity: 1 }
+        { name: t("Sausage Hawawshi"), quantity: 1 },
+        { name: t("Chocolate Pie"), quantity: 1 }
     ]);
 
     const updateQuantity = (index: number, delta: number) => {
@@ -30,7 +34,7 @@ const FavoriteDropdown = () => {
             {isOpen && (
                 <div className="absolute z-40 ltr:-right-6 rtl:-left-6 mt-2 w-52 bg-white shadow-lg rounded-lg">
                     <div className="bg-main text-white p-2 rounded-t-lg font-bold">
-                        My Favorite
+                        {t("My Favorite")}
                     </div>
 
                     {items.map((item, index) => (

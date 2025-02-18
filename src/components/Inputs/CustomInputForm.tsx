@@ -37,7 +37,7 @@ const CustomInput: React.FC<CustomInputProps> = ({
         onBlur={onBlur}
         value={value}
       />
-      {touched && error ? <p className="text-red-500 text-sm">{error}</p> : null}
+      {touched && error ? <p className="text-red-500 text-sm ps-3">{error}</p> : null}
     </div>
   );
 };
