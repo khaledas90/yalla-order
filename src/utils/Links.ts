@@ -23,7 +23,7 @@ export const links: Links[] = [
     id: 4,
     name: "Become-a-Partner",
     icon: "material-symbols-light:partner-exchange-rounded",
-    href: "/become-a-partner",
+    href: "/be-partner",
   },
   {
     id: 5,

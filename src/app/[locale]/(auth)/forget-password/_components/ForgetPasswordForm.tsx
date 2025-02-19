@@ -6,22 +6,17 @@ import Link from "next/link";
 import { useTranslations } from "next-intl";
 import CustomInput from "@/components/Inputs/CustomInputForm";
 
-export default function LoginForm() {
-  const t = useTranslations("common.login");
+export default function ForgetPasswordForm() {
+
+  const t = useTranslations("common.forget-password");
 
   const validationSchema = Yup.object({
-    email: Yup.string()
-      .email(t("Invalid email format"))
-      .required(t("Email Address Required")),
-    password: Yup.string()
-      .min(6, t("Password must be at least 6 characters"))
-      .required(t("Password Required")),
+    email: Yup.string().email(t("Invalid email format")).required(t("Email Address Required")),
   });
 
   const formik = useFormik({
     initialValues: {
       email: "",
-      password: "",
     },
     validationSchema,
     onSubmit: (values) => {
@@ -32,6 +27,7 @@ export default function LoginForm() {
   return (
     <>
       <form onSubmit={formik.handleSubmit} className="space-y-4">
+
         <CustomInput
           name="email"
           type="email"
@@ -44,29 +40,24 @@ export default function LoginForm() {
           touched={formik.touched.email}
         />
 
-        <CustomInput
-          name="password"
-          type="password"
-          placeholder={t("Password")}
-          icon="mdi:lock-outline"
-          value={formik.values.password}
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-          error={formik.errors.password}
-          touched={formik.touched.password}
-        />
-
-        <p className="text-end text-sm text-gray-500 w-full">
-          <Link href="/forget-password">{t("Forget password?")}</Link>
-        </p>
-
         <button
           type="submit"
           className="w-full bg-red-400 text-white p-3 rounded-3xl font-semibold hover:bg-red-500"
         >
-          {t("login")}
+          {t("Rest Password")}
         </button>
+
+        <Link href="/login">
+          <button
+            type="button"
+            className="w-full mt-3 text-blue-400 bg-white hover:ring-1 hover:ring-blue-500 transition-all duration-300 p-3 rounded-3xl font-semibold"
+          >
+            {t("back to login")}
+          </button>
+        </Link>
+
       </form>
     </>
+
   );
 }

@@ -2,24 +2,22 @@
 import React from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import Link from "next/link";
 import { useTranslations } from "next-intl";
 import CustomInput from "@/components/Inputs/CustomInputForm";
 
-export default function LoginForm() {
-  const t = useTranslations("common.login");
+export default function RegisterForm() {
+
+  const t = useTranslations("common.register");
 
   const validationSchema = Yup.object({
-    email: Yup.string()
-      .email(t("Invalid email format"))
-      .required(t("Email Address Required")),
-    password: Yup.string()
-      .min(6, t("Password must be at least 6 characters"))
-      .required(t("Password Required")),
+    name: Yup.string().min(3, t("Name must be at least 3 characters")).required(t("Name Required")),
+    email: Yup.string().email(t("Invalid email format")).required(t("Email Address Required")),
+    password: Yup.string().min(6, t("Password must be at least 6 characters")).required(t("Password Required")),
   });
 
   const formik = useFormik({
     initialValues: {
+      name: "",
       email: "",
       password: "",
     },
@@ -32,6 +30,18 @@ export default function LoginForm() {
   return (
     <>
       <form onSubmit={formik.handleSubmit} className="space-y-4">
+        <CustomInput
+          name="name"
+          type="name"
+          placeholder={t("Name")}
+          icon="wpf:name"
+          value={formik.values.name}
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          error={formik.errors.name}
+          touched={formik.touched.name}
+        />
+
         <CustomInput
           name="email"
           type="email"
@@ -56,17 +66,14 @@ export default function LoginForm() {
           touched={formik.touched.password}
         />
 
-        <p className="text-end text-sm text-gray-500 w-full">
-          <Link href="/forget-password">{t("Forget password?")}</Link>
-        </p>
-
         <button
           type="submit"
           className="w-full bg-red-400 text-white p-3 rounded-3xl font-semibold hover:bg-red-500"
         >
-          {t("login")}
+          {t("Create Account")}
         </button>
       </form>
     </>
+
   );
 }

@@ -1,20 +1,20 @@
 import * as React from "react";
 import { useTranslations } from "next-intl";
-import LoginForm from "./_components/loginForm";
+import RegisterForm from "./_components/RegisterForm";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import Link from "next/link";
 
-const Login = () => {
-  const t = useTranslations("common.login");
+const Register = () => {
+  const t = useTranslations("common.register");
 
   return (
     <>
-      <div className={`hero h-screen py-9`}>
+      <div className={`hero min-h-screen py-16`}>
         <div className="flex justify-center items-center min-h-screen">
           <div className="bg-white p-8 rounded-2xl shadow-lg w-full max-w-sm">
-            <h2 className="text-center text-2xl font-bold mb-6">{t("login")}</h2>
+            <h2 className="text-center text-2xl font-bold mb-6">{t("Create Account")}</h2>
 
-            <LoginForm />
+            <RegisterForm />
 
             <div className="flex items-center my-4">
               <div className="flex-grow border-t"></div>
@@ -29,7 +29,7 @@ const Login = () => {
             </div>
 
             <p className="text-center text-sm text-gray-500">
-              {t("Don’t have an account?")} <Link href="/register" className="text-blue-500 cursor-pointer">{t("Sign Up")}</Link>
+              {t("Already have an account")} <Link href="/login" className="text-blue-500 cursor-pointer">{t("Sign In")}</Link>
             </p>
 
           </div>
@@ -39,4 +39,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;

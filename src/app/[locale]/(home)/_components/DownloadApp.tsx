@@ -17,9 +17,9 @@ const DownloadApp = () => {
           dir="ltr"
         >
           <div className="relative lg:w-4/5 md:w-3/4 w-full h-[450px] download-app flex justify-center">
-            <div className="py-16 ps-16 text-white flex flex-col justify-between">
+            <div className="py-16 md:ps-16 ps-10 md:pe-0 pe-10 text-white flex flex-col justify-between">
               <h1
-                className={`md:text-5xl text-4xl leading-snug rtl:text-right ltr:lg:text-left font-light`}
+                className={`md:text-5xl text-4xl ltr:leading-snug rtl:leading-normal rtl:text-right ltr:lg:text-left font-light`}
               >
                 <span
                   className={`${cairoFont.className} rtl:inline ltr:hidden`}

@@ -24,7 +24,7 @@ const Footer: React.FC = () => {
         <div className="flex flex-col items-center justify-center  gap-5">
           <div className="flex items-center gap-4 text-white">
             <p className="mb-0">
-              <Link href="/ContactUs" className="hover:underline">
+              <Link href="/contact-us" className="hover:underline">
                 {t("Contact us")}
               </Link>
             </p>

@@ -18,10 +18,10 @@ const ExploreCard = (props: Props) => {
     <>
       <Link
         href={props.url}
-        className="w-full sm:h-[250px] h-[200px] max-w-xl flex items-center bg-black/90 rounded-xl overflow-hidden"
+        className="w-full sm:h-[250px] h-[230px] 2xl:max-w-xl max-w-md flex items-center bg-black/90 rounded-xl overflow-hidden"
       >
         {/* Text Section */}
-        <div className="p-5 w-2/3 h-full flex flex-col space-y-4 justify-center">
+        <div className="p-5 w-2/3 h-full flex flex-col justify-between">
           <h1 className={`lg:text-3xl text-lg font-bold ${props.textColor}`}>
             {props.h1Content}
           </h1>

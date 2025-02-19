@@ -6,8 +6,8 @@ import Link from "next/link";
 import { useTranslations } from "next-intl";
 import CustomInput from "@/components/Inputs/CustomInputForm";
 
-export default function LoginForm() {
-  const t = useTranslations("common.login");
+export default function BePartnerForm() {
+  const t = useTranslations("common.be-partner");
 
   const validationSchema = Yup.object({
     email: Yup.string()
