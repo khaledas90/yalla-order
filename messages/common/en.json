@@ -26,7 +26,10 @@
       "feature-Daily Discount": "Daily Discount",
       "feature-100+ Restaurants": "100+ Restaurants",
       "feature-100+ Cuisines": "100+ Cuisines",
-      "feature-100+ Delivery": "100+ Delivery"
+      "feature-100+ Delivery": "100+ Delivery",
+      "Book your medical": "Book your medical",
+      "consultation now": "consultation now",
+      "and enjoy comfort and safety": "and enjoy comfort and safety"
     },
     "beWithUs": {
       "BECOME ONE OF US?": "BECOME ONE OF US?",
@@ -99,6 +102,7 @@
       "Invalid email format": "Invalid email format",
       "Rest Password": "Rest Password",
       "back to login": "Back to login",
+      "Email Address": "Email Address",
       "Don't worry, we'll send you reset instructions": "Don't worry, we'll send you reset instructions"
     },
     "new-password": {

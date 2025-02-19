@@ -10,7 +10,7 @@ export default function ExploreCategory() {
       <div className="Navigate-Cards w-full md:pb-32 md:pt-10 pt-0 pb-20 px-5 background-download flex flex-col md:flex-row justify-center items-center gap-7">
         {/* Food Button */}
         <ExploreCard
-          url="#"
+          type="restaurant"
           textColor="text-main"
           h1Content={t("Are you hungry?")}
           PContent={t("content-food")}
@@ -18,7 +18,7 @@ export default function ExploreCategory() {
         />
         {/* Clinic Button */}
         <ExploreCard
-          url="#"
+          type="clinic"
           textColor="text-blue-600"
           h1Content={t("Do you have a cold?")}
           PContent={t("content-clinic")}
