@@ -5,7 +5,7 @@ interface CustomInputProps {
   name: string;
   type: string;
   placeholder: string;
-  icon: string;
+  icon?: string | undefined;
   value: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   onBlur: (e: React.FocusEvent<HTMLInputElement>) => void;
@@ -26,18 +26,23 @@ const CustomInput: React.FC<CustomInputProps> = ({
 }) => {
   return (
     <div className="relative">
-      <Icon icon={icon} className="absolute left-3 top-4 text-gray-500 text-xl" />
+      <Icon
+        icon={icon || ""}
+        className="absolute left-3 top-4 text-gray-500 text-xl"
+      />
       <input
         type={type}
         name={name}
         id={name}
         placeholder={placeholder}
-        className="w-full pl-10 p-3 border rounded-3xl focus:outline-none focus:ring-2 focus:ring-gray-400"
+        className="w-full pl-10 p-3 border rounded-3xl text-black focus:outline-none focus:ring-2 focus:ring-gray-400"
         onChange={onChange}
         onBlur={onBlur}
         value={value}
       />
-      {touched && error ? <p className="text-red-500 text-sm ps-3">{error}</p> : null}
+      {touched && error ? (
+        <p className="text-red-500 text-sm ps-3">{error}</p>
+      ) : null}
     </div>
   );
 };

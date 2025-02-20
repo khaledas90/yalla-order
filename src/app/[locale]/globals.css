@@ -38,6 +38,12 @@
   z-index: 20;
 }
 
+.background-work-with-us {
+  background-image: url(/assets/image/bgWorkWith.png);
+  background-size: 40%;
+  background-position: bottom left;
+  background-repeat: no-repeat;
+}
 /* scrollbar */
 ::-webkit-scrollbar {
   width: 12px;

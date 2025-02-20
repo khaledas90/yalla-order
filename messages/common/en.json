@@ -79,7 +79,26 @@
       "Email Address": "Email Address",
       "Password": "Password",
       "Password must be at least 6 characters": "Password must be at least 6 characters",
-      "Invalid email format": "Invalid email format"
+      "Invalid email format": "Invalid email format",
+      "20% commission for 60 days!": "20% commission for 60 days!",
+      "first name *": "first name *",
+      "last name *": "last name *",
+      "biasness email *": "biasness email *",
+      "mobile phone number *": "mobile phone number *",
+      "Create  Account": "Create  Account",
+      "Grow your business online with FOo": "Grow your business online with FOo",
+      "Dc": "Dc",
+      "Partner with us to reach more customers, earn more money and grow your business online - your success story begins here": "Partner with us to reach more customers, earn more money and grow your business online - your success story begins here",
+      "Why you should": "Why you should",
+      "partner with us": "partner with us",
+      "title-Earn more money": "Earn more money",
+      "title-Grow your business": "Grow your business",
+      "title-Reach more customers": "Reach more customers",
+      "description-We have thousands of hungry customers ready to order from your store": "We have thousands of hungry customers ready to order from your store",
+      "description-We help you serve more customers without additional costs to you": "We help you serve more customers without additional costs to you",
+      "description-Increase your revenue and expand your brand reach effortlessly": "Increase your revenue and expand your brand reach effortlessly",
+      "How we'll work to": "How we'll work to",
+      "gether": "gether"
     },
     "register": {
       "Create Account": "Create Account",
@@ -145,6 +164,10 @@
       "Mobile phone number": "Mobile phone number",
       "Message": "Message",
       "Send": "Send"
+    },
+    "profile": {
+      "My Profile": "My Profile",
+      "Edit Profile": "Edit Profile"
     },
     "downloadApp": {
       "Enjoy": "Enjoy",

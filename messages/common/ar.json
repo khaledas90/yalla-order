@@ -80,7 +80,26 @@
       "Email Address": "البريد الالكتروني",
       "Password": "كلمة المرور",
       "Password must be at least 6 characters": "يجب أن تكون كلمة المرور مكونة من 6 أحرف على الأقل",
-      "Invalid email format": "تنسيق البريد الإلكتروني غير صالح"
+      "Invalid email format": "تنسيق البريد الإلكتروني غير صالح",
+      "20% commission for 60 days!": "عمولة 20 لمدة 60 يوم%",
+      "first name *": "* الاسم الاول",
+      "last name *": "* الاسم الاخير",
+      "biasness email *": "* الاميل العمل",
+      "mobile phone number *": "* رقم الهاتف",
+      "Create  Account": "انشء حساب",
+      "Grow your business online with FOo": "قم بتنمية أعمالك عبر الإنترنت مع فو",
+      "Dc": "د",
+      "Partner with us to reach more customers, earn more money and grow your business online - your success story begins here": "انضم إلينا للوصول إلى المزيد من العملاء وكسب المزيد من المال وتنمية أعمالك عبر الإنترنت - تبدأ قصة نجاحك هنا",
+      "Why you should": " لماذا يجب عليك ان تكون",
+      "partner with us": "شريك معنا",
+      "title-Earn more money": " اكسب المزيد من المال",
+      "title-Grow your business": "تنمية اعمالك",
+      "title-Reach more customers": "وصول المزيد من العملاء",
+      "description-We have thousands of hungry customers ready to order from your store": "لدينا العديد من العملاء سعيدين للطلب من متجرك",
+      "description-We help you serve more customers without additional costs to you": "نحن نساعدك في تقديم المزيد من العملاء بدون تكاليف اضافية لك",
+      "description-Increase your revenue and expand your brand reach effortlessly": "زيادة مدخلاتك وتوسيع نطاق علامتك بسهولة",
+      "How we'll work to": "كيف سوف نعمل ل",
+      "gether": "واحدة"
     },
     "register": {
       "Create Account": "إنشاء حساب",
@@ -146,6 +165,10 @@
       "Mobile phone number": "رقم الهاتف المحمول",
       "Message": "الرسالة",
       "Send": "إرسال"
+    },
+    "profile": {
+      "My Profile": "حسابي",
+      "Edit Profile": "تحرير الحساب"
     },
     "downloadApp": {
       "Enjoy": "استمتع",

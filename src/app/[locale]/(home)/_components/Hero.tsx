@@ -2,20 +2,15 @@ import React from "react";
 import Image from "next/image";
 
 import heroImg from "@/assets/image/hero_restaurant.png";
-import heroImageMedical from "@/assets/image/heroImageMedical.png";
 import { useTranslations } from "next-intl";
 import { cabinSketch, cairoFont } from "@/utils/fonts";
 import SearchInput from "../../../../components/Inputs/SearchInput";
 import { Icon } from "@iconify/react";
 import { FeatureHeroRestaurants } from "@/utils/FeatureHero";
 import LineWithDot from "@/components/LineWithDot/LineWithDot";
-import { getCookie } from "cookies-next/client";
 const Hero: React.FC = () => {
   const t = useTranslations("common.hero");
 
-  const theme = getCookie("theme");
- console.log(theme);
- 
   return (
     <div className={`hero text-white`}>
       <div className="container mx-auto px-4 py-8">
@@ -29,23 +24,11 @@ const Hero: React.FC = () => {
                 <span
                   className={`${cairoFont.className} font-bold rtl:inline ltr:hidden`}
                 >
-                  {theme === "restaurant" ? (
-                    <>
-                      {t("A unique")}
-                      <br />
-                      {t("experience for")}
-                      <br />
-                      {t("food lovers")}
-                    </>
-                  ) : (
-                    <>
-                      {t("Book your medical")}
-                      <br />
-                      {t("consultation now")}
-                      <br />
-                      {t("and enjoy comfort and safety")}
-                    </>
-                  )}
+                  {t("A unique")}
+                  <br />
+                  {t("experience for")}
+                  <br />
+                  {t("food lovers")}
                 </span>
                 <span
                   className={`${cabinSketch.className} rtl:hidden ltr:inline`}
@@ -65,7 +48,7 @@ const Hero: React.FC = () => {
 
           <div className="lg:w-1/2 flex justify-center items-center">
             <Image
-              src={theme === "restaurant" ? heroImg : heroImageMedical}
+              src={heroImg}
               alt="Hero Image"
               width={400}
               height={400}
