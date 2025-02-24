@@ -16,7 +16,7 @@ const WorkWithUs: React.FC = () => {
           {t("How we'll work to")}
           <span className="text-red-400"> {t("gether")}</span>
         </h2>
-        <section className="w-full background-work-with-us h-[900px] py-10 text-center bg-no-repeat bg-left-bottom bg-auto">
+        <section className="w-full background-work-with-us lg:h-[900px] h-auto py-10 text-center bg-no-repeat bg-left-bottom bg-auto">
           <div className="grid grid-cols-1 bg-[url('./img/Group 1171276403.png')] md:grid-cols-2 gap-6 mt-6 max-w-4xl mx-auto">
             {WorkWithUsData.map((e) => (
               <div
