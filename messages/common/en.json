@@ -167,7 +167,13 @@
     },
     "profile": {
       "My Profile": "My Profile",
-      "Edit Profile": "Edit Profile"
+      "My Account": "My Account",
+      "Edit Profile": "Edit Profile",
+      "profile-Edit Profile": "Edit Profile",
+      "profile-My Order": "My Order",
+      "profile-Saved Address": "Saved Address",
+      "profile-My reservations":"My reservations",
+      "profile-logout":"logout"
     },
     "downloadApp": {
       "Enjoy": "Enjoy",

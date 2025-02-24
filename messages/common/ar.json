@@ -168,7 +168,12 @@
     },
     "profile": {
       "My Profile": "حسابي",
-      "Edit Profile": "تحرير الحساب"
+      "My Account": "حسابي",
+      "profile-Edit Profile": "تحرير الحساب",
+      "profile-My Order": "طلباتي",
+      "profile-Saved Address": "العناوين المحفوظة",
+      "profile-My reservations": "حجوزاتي",
+      "profile-logout": "تسجيل خروج"
     },
     "downloadApp": {
       "Enjoy": "استمتع",
