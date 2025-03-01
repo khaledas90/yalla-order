@@ -185,6 +185,29 @@
       "content-food": "فريقنا دائمًا مستعد لتحضير طعامك في أي وقت. اكتشف مطاعمنا الآن! لدينا توصيل، عروض وخصومات",
       "content-clinic": "لا تقلق، نحن هنا لمساعدتك. احجز استشارتك بسرعة وسهولة",
       "Explore": "استكشف"
+    },
+    "my-account": {
+      "First Name": "الاسم الأول",
+      "Last Name": "اسم العائلة",
+      "Email Address": "البريد الإلكتروني",
+      "Password": "كلمة المرور",
+      "Invalid email format": "تنسيق البريد الإلكتروني غير صالح",
+      "Email Address Required": "البريد الإلكتروني مطلوب",
+      "Password must be at least 6 characters": "يجب ان تكون كلمة المرور مكونة من 6 احرف على الاقل",
+      "Password Required": "كلمة المرور مطلوبة",
+      "First Name Required": "الاسم الأول مطلوب",
+      "Last Name Required": "اسم العائلة مطلوب",
+      "Change Password": "تغيير كلمة المرور",
+      "Change Email": "تغيير البريد الإلكتروني",
+      "Gender": "الجنس",
+      "Male": "ذكر",
+      "Female": "انثى",
+      "Date of Birth": "تاريخ الميلاد",
+      "Phone number": "رقم الهاتف",
+      "Address": "العنوان",
+      "City": "المدينة",
+      "Date of Birth Required": "تاريخ الميلاد مطلوب",
+      "Gender Required": "الجنس مطلوب"
     }
   }
 }

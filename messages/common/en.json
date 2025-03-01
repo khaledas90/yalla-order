@@ -172,8 +172,8 @@
       "profile-Edit Profile": "Edit Profile",
       "profile-My Order": "My Order",
       "profile-Saved Address": "Saved Address",
-      "profile-My reservations":"My reservations",
-      "profile-logout":"logout"
+      "profile-My reservations": "My reservations",
+      "profile-logout": "logout"
     },
     "downloadApp": {
       "Enjoy": "Enjoy",
@@ -185,6 +185,29 @@
       "content-food": "Our team is always ready to prepare your food at any time. Discover our restaurants now! We have delivery, offers and discounts",
       "content-clinic": "Don't worry, we are here to help you. Book your consultation quickly and easily",
       "Explore": "Explore"
+    },
+    "my-account": {
+      "First Name": "First Name",
+      "Last Name": "Last Name",
+      "Email Address": "Email Address",
+      "Password": "Password",
+      "Invalid email format": "Invalid email format",
+      "Email Address Required": "Email Address Required",
+      "Password must be at least 6 characters": "Password must be at least 6 characters",
+      "Password Required": "Password Required",
+      "First Name Required": "First Name Required",
+      "Last Name Required": "Last Name Required",
+      "Change Password": "Change Password",
+      "Change Email": "Change Email",
+      "Gender": "Gender",
+      "Male": "Male",
+      "Female": "Female",
+      "Date of Birth": "Date of birth",
+      "Phone number": "Phone number",
+      "Address": "Address",
+      "City": "City",
+      "Gender Required": "Gender Required",
+      "Date of Birth Required": "Date of Birth Required"
     }
   }
 }

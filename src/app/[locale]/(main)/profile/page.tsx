@@ -9,7 +9,7 @@ const Page = () => {
   return (
     <>
       <div
-        className={`hero h-[90vh] lg:mb-[20rem] md:mb-[48rem] sm:mb-[45rem] mb-[45rem]`}
+        className={`hero h-[90vh] lg:mb-[20rem] md:mb-[48rem] sm:mb-[55rem] mb-[55rem]`}
       >
         <div className="flex justify-center items-center lg:pt-[13rem] md:pt-[13rem] sm:pt-[10rem] pt-[8rem] ">
           <h2
