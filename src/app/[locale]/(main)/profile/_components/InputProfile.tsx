@@ -27,7 +27,7 @@ const CustomInput: React.FC<CustomInputProps> = ({
   error,
   touched,
 }) => {
-    const t = useTranslations("common.my-account");
+  const t = useTranslations("common.my-account");
   return (
     <div className="input w-full">
       <div className="flex relative lg:flex-row md:flex-row sm:flex-col lg:gap-0 md:gap-0 sm:gap-2 flex-col  items-center justify-between">
