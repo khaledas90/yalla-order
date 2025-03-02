@@ -12,7 +12,7 @@ const BeWithUs: React.FC = () => {
       <div className="relative lg:w-4/5 md:w-3/4 w-full h-[450px] be-with-us flex justify-center">
         <div className="p-16 text-white flex flex-col justify-center">
           <h1
-            className={`sm:text-5xl text-4xl lg:text-7xl md:text-6xl text-center rtl:text-right ltr:lg:text-left font-light`}
+            className={`sm:text-5xl text-4xl lg:text-7xl md:text-6xl text-center rtl:text-right lg:ltr:text-left font-light`}
           >
             <span className={`${cairoFont.className} rtl:inline ltr:hidden`}>
               {t("BECOME ONE OF US?")}
@@ -21,7 +21,7 @@ const BeWithUs: React.FC = () => {
               {t("BECOME ONE OF US?")}
             </span>
           </h1>
-          <p className="font-medium text-white text-4xl text-center rtl:text-right ltr:lg:text-left mt-10">
+          <p className="font-medium text-white text-4xl text-center rtl:text-right lg:ltr:text-left mt-10">
             <span className="text-main text-4xl">{t("What")} </span>
             {t("are you waiting for some?")}
           </p>

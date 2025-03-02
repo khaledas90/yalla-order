@@ -17,9 +17,9 @@ const Register = () => {
             <RegisterForm />
 
             <div className="flex items-center my-4">
-              <div className="flex-grow border-t"></div>
+              <div className="grow border-t"></div>
               <span className="mx-4 text-gray-400">Or</span>
-              <div className="flex-grow border-t"></div>
+              <div className="grow border-t"></div>
             </div>
 
             <div className="flex justify-center gap-4 py-3">

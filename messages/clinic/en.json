@@ -1,6 +1,50 @@
 {
   "clinic": {
-    "title": "Hello world!",
-    "about": "Go to the about page"
+      "header": {
+          "Home": "Home",
+          "Restaurants": "Restaurants",
+          "Clinics": "Clinics",
+          "Become-a-Partner": "Become a Partner",
+          "About": "About",
+          "Login": "Login",
+          "My Favorite": "My Favorite",
+          "Chocolate Pie": "Chocolate Pie",
+          "Sausage Hawawshi": "Sausage Hawawshi"
+      },
+      "hero": {
+          "Quality": "Book your medical",
+          "healthcare": "consultation now and",
+          "services": "enjoy comfort and safety",
+          "feature-Faster Delivery": "Faster Delivery",
+          "feature-Daily Discount": "Daily Discount",
+          "feature-100+ Restaurants": "100+ Restaurants",
+          "feature-100+ Cuisines": "100+ Cuisines",
+          "feature-100+ Delivery": "100+ Delivery",
+          "Book your medical": "Book your medical"
+      },
+      "beWithUs": {
+          "BECOME ONE OF US?": "BECOME ONE OF US?",
+          "What": "What",
+          "are you waiting for some?": "are you waiting for some?",
+          "Login a partner": "Login a partner",
+          "Join us": "Join us"
+      },
+      "aboutUs": {
+          "About us": "About us",
+          "description-about-us": "Food is a website and mobile app for ordering food and booking  medical consultations, and it provides its services in various  locations. Whether you find yourself immersed in the bustling heart of the city, residing in the suburbs, or in the  surrounding areas, our services are readily available to meet  your needs. Enjoy the unparalleled convenience of having food delivered directly to your door and booking your medical consultations with ease"
+      },
+      "howWeWork": {
+          "How We Work": "How We Work",
+          "We Value": "We Value",
+          "Our": "Our",
+          "Clients & Customers": "Clients & Customers",
+          "Register or login in our portal": "Register or login in our portal",
+          "Search your location": "Search your location",
+          "Find your preferred restaurant": "Find your preferred restaurant",
+          "Choose your cuisine": "Choose your cuisine",
+          "Get your food delivered to your address": "Get your food delivered to your address",
+          "Customer Favorite Cuisine": "Customer Favorite Cuisine",
+          "Burger": "Burger"
+      }
   }
 }

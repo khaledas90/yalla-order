@@ -76,7 +76,7 @@ export default function ContactUsForm() {
           name="phone"
           type="text"
           placeholder={t("Mobile phone number")}
-          className="w-full outline-none bg-transparent"
+          className="w-full outline-hidden bg-transparent"
           value={formik.values.phone}
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
@@ -89,7 +89,7 @@ export default function ContactUsForm() {
       <textarea
         name="message"
         placeholder={t("Message")}
-        className="w-full p-3 border border-gray-300 rounded-lg outline-none h-24"
+        className="w-full p-3 border border-gray-300 rounded-lg outline-hidden h-24"
         value={formik.values.message}
         onChange={formik.handleChange}
         onBlur={formik.handleBlur}

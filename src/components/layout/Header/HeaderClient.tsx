@@ -66,7 +66,7 @@ const HeaderClient: React.FC = () => {
             height={115}
           />
         </Link>
-        <div className="lg:hidden cursor-pointer flex items-center gap-3  text-2xl z-[600] text-white">
+        <div className="lg:hidden cursor-pointer flex items-center gap-3  text-2xl z-600 text-white">
           <FavoriteDropdown />
           <LanguageSwitcher />
           <Icon

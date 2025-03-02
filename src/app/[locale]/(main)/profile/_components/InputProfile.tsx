@@ -42,7 +42,7 @@ const CustomInput: React.FC<CustomInputProps> = ({
           onChange={onChange}
           onBlur={onBlur}
           value={value}
-          className="border w-full md:w-[70%] focus:outline-none px-4 py-3 rounded-lg"
+          className="border w-full md:w-[70%] focus:outline-hidden px-4 py-3 rounded-lg"
         />
         {hent && (
           <p className="text-red-400 lg:block hidden  text-sm md:text-base font-medium hover:text-red-500 absolute right-4 top-1/2 transform -translate-y-1/2">

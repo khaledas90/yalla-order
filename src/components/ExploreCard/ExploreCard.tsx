@@ -1,11 +1,8 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 import Image from "next/image";
 import React from "react";
 import { StaticImageData } from "next/image";
 import { useTranslations } from "next-intl";
-import useMainContext from "@/context/MainContext";
-import { setCookie } from "cookies-next/client";
 
 type Props = {
   type: string;
@@ -17,21 +14,6 @@ type Props = {
 
 const ExploreCard = ($: Props) => {
   const t = useTranslations("common.downloadApp");
-  const { setTheme } = useMainContext();
-
-  const handleClick = (type: string) => () => {
-    if (type === "restaurant") {
-      setTheme("restaurant");
-      localStorage.setItem("theme", "restaurant");
-      // setCookie("theme", "restaurant", { maxAge: 60 * 60 * 24 * 365 });
-    } else if (type === "clinic") {
-      setTheme("clinic");
-      localStorage.setItem("theme", "clinic");
-      // setCookie("theme", "clinic", { maxAge: 60 * 60 * 24 * 365 });
-    }
-
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
 
   return (
     <span className="w-full sm:h-[250px] h-[250px] 2xl:max-w-xl max-w-md flex items-center bg-black/90 rounded-xl overflow-hidden">
@@ -43,7 +25,6 @@ const ExploreCard = ($: Props) => {
         <p className="text-md text-gray-300">{$.PContent}</p>
         <button
           type="button"
-          onClick={handleClick($.type)}
           className={`mt-2 text-lg flex font-semibold ${$.textColor}`}
         >
           {t("Explore")}
