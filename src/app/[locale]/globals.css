@@ -1,66 +1,100 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
-.hero {
-  background-image: url(/assets/image/main_bg.webp);
-  background-size: cover;
-  background-position: bottom center;
-  background-repeat: no-repeat;
+@plugin 'tailwindcss-animate';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --color-main: #fd7e7e;
+  --color-primary: #3a98ea;
 }
 
-.download-app {
-  background-image: url(/assets/image/downloadApp.png);
-  background-size: cover;
-  background-repeat: no-repeat;
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
 }
 
-.be-with-us {
-  background-image: url(/assets/image/BeWithUsLeft.webp);
-  background-size: cover;
-  background-position: bottom center;
-  background-repeat: no-repeat;
+@layer base {
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
 }
 
-.background-pan {
-  background-image: url(/assets/image/pan.png);
-  background-size: 40%;
-  background-position: bottom right;
-  background-repeat: no-repeat;
-  z-index: 20;
-}
+@layer utilities {
+  .hero {
+    background-image: url(/assets/image/main_bg.webp);
+    background-size: cover;
+    background-position: bottom center;
+    background-repeat: no-repeat;
+  }
 
-.background-download {
-  background-image: url(/assets/image/pan.png);
-  background-size: 40%;
-  background-position: bottom left;
-  background-repeat: no-repeat;
-  z-index: 20;
-}
+  .download-app {
+    background-image: url(/assets/image/downloadApp.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
 
-.background-work-with-us {
-  background-image: url(/assets/image/bgWorkWith.png);
-  background-size: 40%;
-  background-position: bottom left;
-  background-repeat: no-repeat;
-}
-/* scrollbar */
-::-webkit-scrollbar {
-  width: 12px;
-}
+  .be-with-us {
+    background-image: url(/assets/image/BeWithUsLeft.webp);
+    background-size: cover;
+    background-position: bottom center;
+    background-repeat: no-repeat;
+  }
 
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
+  .background-pan {
+    background-image: url(/assets/image/pan.png);
+    background-size: 40%;
+    background-position: bottom right;
+    background-repeat: no-repeat;
+    z-index: 20;
+  }
 
-::-webkit-scrollbar-thumb {
-  background-color: #888;
-  border-radius: 10px;
-  border: 3px solid #f1f1f1;
-}
+  .background-download {
+    background-image: url(/assets/image/pan.png);
+    background-size: 40%;
+    background-position: bottom left;
+    background-repeat: no-repeat;
+    z-index: 20;
+  }
 
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  .background-work-with-us {
+    background-image: url(/assets/image/bgWorkWith.png);
+    background-size: 40%;
+    background-position: bottom left;
+    background-repeat: no-repeat;
+  }
+  /* scrollbar */
+  ::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 10px;
+    border: 3px solid #f1f1f1;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
 }
 
 @layer base {

@@ -19,7 +19,7 @@ const DownloadApp = () => {
           <div className="relative lg:w-4/5 md:w-3/4 w-full h-[450px] download-app flex justify-center">
             <div className="py-16 md:ps-16 ps-10 md:pe-0 pe-10 text-white flex flex-col justify-between">
               <h1
-                className={`md:text-5xl text-4xl ltr:leading-snug rtl:leading-normal rtl:text-right ltr:lg:text-left font-light`}
+                className={`md:text-5xl text-4xl ltr:leading-snug rtl:leading-normal rtl:text-right lg:ltr:text-left font-light`}
               >
                 <span
                   className={`${cairoFont.className} rtl:inline ltr:hidden`}
@@ -40,7 +40,7 @@ const DownloadApp = () => {
                   {t("Application now !")}
                 </span>
               </h1>
-              <p className="font-medium text-white text-3xl rtl:text-right ltr:lg:text-left">
+              <p className="font-medium text-white text-3xl rtl:text-right lg:ltr:text-left">
                 <span className="text-main">{t("Enjoy")} </span>
                 {t("the best meal")}
               </p>

@@ -121,7 +121,7 @@ const MyAccount = () => {
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             value={formik.values.birthDate}
-            className="border w-full md:w-[70%] focus:outline-none px-4 py-3 rounded-lg appearance-none"
+            className="border w-full md:w-[70%] focus:outline-hidden px-4 py-3 rounded-lg appearance-none"
           />
         </div>
       </form>
