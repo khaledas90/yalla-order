@@ -13,13 +13,14 @@ const Profile = () => {
     <div className="profile lg:mx-20 mx-5">
       <div className="grid grid-cols-1 w-full h-auto justify-center shadow-lg rounded-[20px] bg-white mt-6">
         <Tabs defaultValue="account" className="w-full lg:flex md:inline">
-          <div className="col-span-1 border rounded-[20px] w-full md:w-auto">
+          {/* Fixed Sidebar */}
+          <div className="col-span-1 border rounded-[20px]">
             <div className="text-center bg-black py-2 px-4 rounded-t-[20px] text-white">
               <h1 className="font-bold text-3xl px-4 py-4">
                 {t("My Account")}
               </h1>
             </div>
-            <TabsList className="h-auto md:h-[65vh] bg-white space-y-3 w-full flex flex-col justify-start items-start border rounded-b-[20px]">
+            <TabsList className="h-auto bg-white space-y-3 w-full flex flex-col justify-start items-start border rounded-b-[20px] overflow-y-auto">
               {TabLink.map((item) => {
                 const tabValue = item.title.toLowerCase().replace(" ", "-");
                 return (
@@ -27,7 +28,7 @@ const Profile = () => {
                     key={item.title}
                     value={tabValue}
                     className={clsx(
-                      "py-4 px-6 justify-start w-full md:text-2xl text-black hover:bg-main hover:border-primary border-white   hover:text-white cursor-pointer flex items-center gap-2 border-l-4",
+                      "py-4 px-6 justify-start w-full md:text-2xl text-black hover:bg-main hover:border-primary border-white hover:text-white cursor-pointer flex items-center gap-2 border-l-4",
                       "data-[state=active]:bg-main data-[state=active]:text-white data-[state=active]:border-primary"
                     )}
                   >
@@ -52,16 +53,19 @@ const Profile = () => {
               </TabsTrigger>
             </TabsList>
           </div>
-          <div className="col-span-3 w-full overflow-x-auto block">
-            <TabsContent value="account">
-              <MyAccount />
-            </TabsContent>
-            <TabsContent value="edit-profile">
-              <MyAccount />
-            </TabsContent>
-            <TabsContent value="my-order">
-              <MyOrder />
-            </TabsContent>
+          {/* Scrollable Content Area */}
+          <div className="col-span-3 w-full overflow-x-auto">
+            <div className="max-h-[calc(100vh-9rem)] overflow-y-auto">
+              <TabsContent value="account">
+                <MyAccount />
+              </TabsContent>
+              <TabsContent value="edit-profile">
+                <MyAccount />
+              </TabsContent>
+              <TabsContent value="my-order">
+                <MyOrder />
+              </TabsContent>
+            </div>
           </div>
         </Tabs>
       </div>

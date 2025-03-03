@@ -21,7 +21,6 @@ const CustomInput: React.FC<CustomInputProps> = ({
   placeholder,
   icon,
   hent,
-  value,
   onChange,
   onBlur,
   error,
@@ -41,7 +40,6 @@ const CustomInput: React.FC<CustomInputProps> = ({
           placeholder={placeholder}
           onChange={onChange}
           onBlur={onBlur}
-          value={value}
           className="border w-full md:w-[70%] focus:outline-hidden px-4 py-3 rounded-lg"
         />
         {hent && (
