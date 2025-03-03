@@ -1,17 +1,22 @@
-"use client"
+"use client";
 import React from "react";
-import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { cabinSketch, cairoFont } from "@/utils/fonts";
-import SearchInput from "../../../../components/Inputs/SearchInput";
+import SearchInput from "../Inputs/SearchInput";
 import { Icon } from "@iconify/react";
-import { FeatureHeroRestaurants } from "@/utils/FeatureHero";
 import LineWithDot from "@/components/LineWithDot/LineWithDot";
-import heroRestaurantImg from "@/assets/image/hero_restaurant.png";
+import { HeroProps } from "@/utils/Main";
+import Image from "next/image";
 
-const Hero: React.FC = () => {
+const Hero: React.FC<HeroProps> = ({
+  titleOne,
+  titleTwo,
+  titleThree,
+  titleFour,
+  image,
+  FeatureHero,
+}) => {
   const t = useTranslations("common.hero");
-
 
   return (
     <div className={`hero text-white`}>
@@ -26,20 +31,24 @@ const Hero: React.FC = () => {
                 <span
                   className={`${cairoFont.className} font-bold rtl:inline ltr:hidden`}
                 >
-                  {t("A unique")}
+                  {t(titleOne)}
                   <br />
-                  {t("experience for")}
+                  {t(titleTwo)}
                   <br />
-                  {t("food lovers")}
+                  {t(titleThree)}
+                  <br />
+                  {t(titleFour)}
                 </span>
                 <span
                   className={`${cabinSketch.className} rtl:hidden ltr:inline`}
                 >
-                  {t("A unique")}
+                  {t(titleOne)}
                   <br />
-                  {t("experience for")}
+                  {t(titleTwo)}
                   <br />
-                  {t("food lovers")}
+                  {t(titleThree)}
+                  <br />
+                  {t(titleFour)}
                 </span>
               </h1>
             </div>
@@ -50,7 +59,7 @@ const Hero: React.FC = () => {
 
           <div className="lg:w-1/2 flex justify-center items-center">
             <Image
-              src={heroRestaurantImg}
+              src={image}
               alt="Hero Image"
               width={400}
               height={400}
@@ -63,7 +72,7 @@ const Hero: React.FC = () => {
       <div className="features w-full px-6">
         <div className="bg-white shadow-lg translate-y-1/4 rounded-2xl md:w-5/6 w-full p-5 mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {FeatureHeroRestaurants.map((feature) => (
+            {FeatureHero.map((feature) => (
               <div
                 className="flex flex-col sm:flex-row items-center justify-start gap-3 p-4"
                 key={feature.title}

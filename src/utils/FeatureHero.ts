@@ -1,4 +1,10 @@
-export const FeatureHeroRestaurants = [
+export interface IFeatureHero {
+  id: number;
+  title: string;
+  icon: string;
+}
+
+export const FeatureHeroRestaurants: IFeatureHero[] = [
   {
     id: 1,
     title: "Faster Delivery",
@@ -21,7 +27,7 @@ export const FeatureHeroRestaurants = [
   },
 ];
 
-export const FeatureHeroClinics = [
+export const FeatureHeroClinics: IFeatureHero[] = [
   {
     id: 1,
     title: "Book Easily",

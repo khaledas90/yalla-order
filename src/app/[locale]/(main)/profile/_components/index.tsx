@@ -8,12 +8,10 @@ import MyOrder from "./MyOrder";
 
 const Profile = () => {
   const t = useTranslations("common.profile");
-
   return (
     <div className="profile lg:mx-20 mx-5">
       <div className="grid grid-cols-1 w-full h-auto justify-center shadow-lg rounded-[20px] bg-white mt-6">
         <Tabs defaultValue="account" className="w-full lg:flex md:inline">
-          {/* Fixed Sidebar */}
           <div className="col-span-1 border rounded-[20px]">
             <div className="text-center bg-black py-2 px-4 rounded-t-[20px] text-white">
               <h1 className="font-bold text-3xl px-4 py-4">
@@ -53,7 +51,6 @@ const Profile = () => {
               </TabsTrigger>
             </TabsList>
           </div>
-          {/* Scrollable Content Area */}
           <div className="col-span-3 w-full overflow-x-auto">
             <div className="max-h-[calc(100vh-9rem)] overflow-y-auto">
               <TabsContent value="account">

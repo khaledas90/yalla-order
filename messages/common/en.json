@@ -20,6 +20,7 @@
       "A unique": "A unique",
       "experience for": "experience for",
       "food lovers": "food lovers",
+      "": "",
       "Find your Location": "Find your Location...",
       "Search": "Search",
       "feature-Faster Delivery": "Faster Delivery",
@@ -27,9 +28,14 @@
       "feature-100+ Restaurants": "100+ Restaurants",
       "feature-100+ Cuisines": "100+ Cuisines",
       "feature-100+ Delivery": "100+ Delivery",
+      "feature-Book Easily": "Book Easily",
+      "feature-100+ clinics": "100+ clinics",
+      "feature-100+ Doctors": "100+ Doctors",
       "Book your medical": "Book your medical",
       "consultation now": "consultation now",
-      "and enjoy comfort and safety": "and enjoy comfort and safety"
+      "and enjoy comfort and safety": "and enjoy comfort and safety",
+      "and enjoy comfort": "and enjoy comfort",
+      "and safety": "and safety"
     },
     "beWithUs": {
       "BECOME ONE OF US?": "BECOME ONE OF US?",
@@ -53,7 +59,12 @@
       "Choose your cuisine": "Choose your cuisine",
       "Get your food delivered to your address": "Get your food delivered to your address",
       "Customer Favorite Cuisine": "Customer Favorite Cuisine",
-      "Burger": "Burger"
+      "Burger": "Burger",
+      "our patients and doctors": "our patients and doctors",
+      "Find the clinic you want": "Find the clinic you want",
+      "Choose the appropriate doctor and appointment": "Choose the appropriate doctor and appointment",
+      "Arrive on time and receive excellent service": "Arrive on time and receive excellent service",
+      "Best rated doctors": "Best rated doctors"
     },
     "login": {
       "login": "Login",

@@ -21,6 +21,7 @@
       "A unique": "خبرة",
       "experience for": "فريدة ",
       "food lovers": "محبي الطعام",
+      "": "",
       "Find your Location": "ابحث عن الموقعك ...",
       "Search": "ابحث",
       "feature-Faster Delivery": "توصيل سريع",
@@ -28,9 +29,14 @@
       "feature-100+ Restaurants": "مطاعم 100+",
       "feature-100+ Cuisines": "وجبات 100+",
       "feature-100+ Delivery": "توصيل 100+",
+      "feature-Book Easily": "حجز سهل",
+      "feature-100+ clinics": "عيادات 100+",
+      "feature-100+ Doctors": "اطباء 100+",
       "Book your medical": "حجز موعدك الطبي",
       "consultation now": "احجز الان",
-      "and enjoy comfort and safety": "واستمتع بالراحة والسلامة"
+      "and enjoy comfort and safety": "واستمتع بالراحة والسلامة",
+      "and enjoy comfort": "واستمتع بالراحة",
+      "and safety": "والامان"
     },
     "beWithUs": {
       "BECOME ONE OF US?": "كن شريكنا؟",
@@ -54,7 +60,12 @@
       "Choose your cuisine": "اختر وجبتك",
       "Get your food delivered to your address": "احصل على طعامك موصلًا إلى عنوانك",
       "Customer Favorite Cuisine": "الوجبة المفضلة للعميل",
-      "Burger": "برجر"
+      "Burger": "برجر",
+      "our patients and doctors": "عملاءنا واطباءنا",
+      "Find the clinic you want": "ابحث عن العيادة التي تريدها",
+      "Choose the appropriate doctor and appointment": "اختر الطبيب المناسب والموعد",
+      "Arrive on time and receive excellent service": "وصولك في الوقت المحدد واستقبال خدمة ممتازة",
+      "Best rated doctors": "الاطباء الافضل"
     },
     "login": {
       "login": "تسجيل الدخول",

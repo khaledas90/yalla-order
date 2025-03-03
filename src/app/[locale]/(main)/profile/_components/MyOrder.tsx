@@ -2,14 +2,14 @@ import React from "react";
 import NotFoundData from "./notFoundData";
 import NotFoundImage from "@/assets/image/not-found-location.webp";
 
-
 const orders = [
   {
     id: 1,
     restaurant: "El Maqam - Semouha",
     date: "14/08/2023",
     item: "Sausage Hawawshi",
-    address: "Alexandria, Smouha, Smouha Circle, Zohour Bargout Building, floor 4, Apartment 2",
+    address:
+      "Alexandria, Smouha, Smouha Circle, Zohour Bargout Building, floor 4, Apartment 2",
     subtotal: "95.00 EGP",
     deliveryFee: "11.99 EGP",
     total: "106.99 EGP",
@@ -19,7 +19,8 @@ const orders = [
     restaurant: "El Maqam - Semouha",
     date: "14/08/2023",
     item: "Sausage Hawawshi",
-    address: "Alexandria, Smouha, Smouha Circle, Zohour Bargout Building, floor 4, Apartment 2",
+    address:
+      "Alexandria, Smouha, Smouha Circle, Zohour Bargout Building, floor 4, Apartment 2",
     subtotal: "95.00 EGP",
     deliveryFee: "11.99 EGP",
     total: "106.99 EGP",
@@ -29,7 +30,8 @@ const orders = [
     restaurant: "El Maqam - Semouha",
     date: "14/08/2023",
     item: "Sausage Hawawshi",
-    address: "Alexandria, Smouha, Smouha Circle, Zohour Bargout Building, floor 4, Apartment 2",
+    address:
+      "Alexandria, Smouha, Smouha Circle, Zohour Bargout Building, floor 4, Apartment 2",
     subtotal: "95.00 EGP",
     deliveryFee: "11.99 EGP",
     total: "106.99 EGP",
@@ -48,7 +50,10 @@ export default function MyOrder() {
           />
         ) : (
           orders.map((order) => (
-            <div key={order.id} className="bg-white shadow-lg rounded-lg p-6 my-3">
+            <div
+              key={order.id}
+              className="bg-white shadow-lg rounded-lg p-6 my-3"
+            >
               <div className="flex justify-between items-center pb-3 mb-3">
                 <span className="font-bold text-xl text-gray-800">
                   {order.restaurant}
