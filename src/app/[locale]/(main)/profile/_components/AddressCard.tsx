@@ -55,7 +55,7 @@ const AddressCard = ({ address, onEdit, onDelete, onAdd }: AddressCardProps) => 
 
       {isModalOpen && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-[99]" role="dialog" aria-labelledby="modal-title">
-          <div className="p-5 w-1/2 mx-auto font-sans rounded-lg shadow-md relative">
+          <div className="p-5 md:w-3/4 lg:w-1/2 w-full mx-auto font-sans rounded-lg relative">
             <AddressSelector onLocationSelect={({ lat, lng, address }) => handleAddressSelected(address || `${lat}, ${lng}`)} onClose={handleCloseModal} />
           </div>
         </div>
