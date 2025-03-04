@@ -27,7 +27,7 @@ const AddressCard = ({ address, onEdit, onDelete, onAdd }: AddressCardProps) => 
   };
 
   return (
-    <div className="w-3/4 mx-auto p-5 font-sans">
+    <div className="md:w-3/4 w-full mx-auto p-5 font-sans">
       <div className="bg-white rounded-2xl ring-1 ring-gray-300 mb-4 flex flex-col gap-3 p-6">
         <div className="flex justify-start gap-3 text-gray-800 font-semibold">
           <div className="flex justify-center items-center gap-1 cursor-pointer" role="button" tabIndex={0} onKeyPress={(e) => e.key === "Enter" && onEdit()}>
