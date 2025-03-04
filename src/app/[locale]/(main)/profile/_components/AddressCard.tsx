@@ -135,7 +135,7 @@ const AddressCard = () => {
       <button
         type="button"
         onClick={handleAddClick}
-        className="bg-[#ff6f61] text-white px-6 py-3 rounded-full text-lg cursor-pointer w-1/2 shadow-md hover:bg-[#e65b50] transition-colors"
+        className="bg-[#ff6f61] text-white px-6 py-3 rounded-full text-lg cursor-pointer sm:w-1/2 w-3/4 shadow-md hover:bg-[#e65b50] transition-colors"
         aria-label="Add new address"
       >
         Add Address

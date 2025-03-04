@@ -220,7 +220,9 @@
       "Address": "العنوان",
       "City": "المدينة",
       "Date of Birth Required": "تاريخ الميلاد مطلوب",
-      "Gender Required": "الجنس مطلوب"
+      "Gender Required": "الجنس مطلوب",
+      "direction": "الاتجاهات",
+      "Save Changes": "حفظ التغييرات"
     }
   }
 }
