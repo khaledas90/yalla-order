@@ -1,3 +1,5 @@
+"use client"
+import { useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { TabLink } from "@/utils/Profile";
 import { Icon } from "@iconify/react";
@@ -5,9 +7,27 @@ import { useTranslations } from "next-intl";
 import MyAccount from "./MyAccount";
 import clsx from "clsx";
 import MyOrder from "./MyOrder";
+import AddressCard from "./AddressCard";
 
 const Profile = () => {
   const t = useTranslations("common.profile");
+  const [address, setAddress] = useState(
+    "Alexandria, Smouha, Smouha Circle, Zohour Bargaout Building, fourth 4, Apartment 2"
+  );
+
+  const handleEdit = () => {
+    console.log("Edit address");
+  };
+
+  const handleDelete = () => {
+    console.log("Delete address");
+    setAddress("");
+  };
+
+  const handleAdd = () => {
+    console.log("Add new address");
+  };
+
   return (
     <div className="profile lg:mx-20 mx-5">
       <div className="grid grid-cols-1 w-full h-auto justify-center shadow-lg rounded-[20px] bg-white mt-6">
@@ -61,6 +81,14 @@ const Profile = () => {
               </TabsContent>
               <TabsContent value="my-order">
                 <MyOrder />
+              </TabsContent>
+              <TabsContent value="saved-address">
+                <AddressCard
+                  address={address}
+                  onEdit={handleEdit}
+                  onDelete={handleDelete}
+                  onAdd={handleAdd}
+                />
               </TabsContent>
             </div>
           </div>

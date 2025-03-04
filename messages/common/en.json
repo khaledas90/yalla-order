@@ -68,6 +68,7 @@
     },
     "login": {
       "login": "Login",
+      "Or": "Or",
       "Forget password?": "Forget password?",
       "Don’t have an account?": "Don’t have an account?",
       "Sign Up": "Sign Up",
@@ -118,6 +119,7 @@
       "Email Address": "Email Address",
       "Password": "Password",
       "Name": "Name",
+      "Or": "Or",
       "Already have an account": "Already have an account",
       "Email Address Required": "Email Address Required",
       "Password Required": "Password Required",

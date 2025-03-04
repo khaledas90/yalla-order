@@ -77,7 +77,7 @@ const Hero: React.FC<HeroProps> = ({
                 className="flex flex-col sm:flex-row items-center justify-start gap-3 p-4"
                 key={feature.title}
               >
-                <span className="bg-main p-4 rounded-full flex items-center justify-center">
+                <span className="bg-primary p-4 rounded-full flex items-center justify-center">
                   <Icon
                     className="text-white"
                     icon={feature.icon}
