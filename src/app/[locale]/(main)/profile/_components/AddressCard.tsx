@@ -1,4 +1,3 @@
-// components/AddressCard.tsx
 "use client";
 import { useState, useEffect } from "react";
 import { Icon } from "@iconify/react/dist/iconify.js";
@@ -11,7 +10,6 @@ const AddressCard = () => {
   const [addresses, setAddresses] = useState<string[]>([]);
   const [editingIndex, setEditingIndex] = useState<number | null>(null);
 
-  // Load addresses from localStorage on mount
   useEffect(() => {
     const savedAddresses = localStorage.getItem("userAddresses");
     if (savedAddresses) {
@@ -19,7 +17,6 @@ const AddressCard = () => {
     }
   }, []);
 
-  // Save addresses to localStorage whenever they change
   useEffect(() => {
     if (addresses.length > 0) {
       localStorage.setItem("userAddresses", JSON.stringify(addresses));
@@ -27,7 +24,7 @@ const AddressCard = () => {
   }, [addresses]);
 
   const handleAddClick = () => {
-    setEditingIndex(null); // Reset editing index for adding new address
+    setEditingIndex(null);
     setIsModalOpen(true);
   };
 
@@ -36,18 +33,20 @@ const AddressCard = () => {
     setEditingIndex(null);
   };
 
-  const handleAddressSelected = (location: { lat: number; lng: number; address?: string }) => {
+  const handleAddressSelected = (location: {
+    lat: number;
+    lng: number;
+    address?: string;
+  }) => {
     const newAddress = location.address || `${location.lat}, ${location.lng}`;
     if (editingIndex !== null) {
-      // Update existing address
-      setAddresses(prev => {
+      setAddresses((prev) => {
         const newAddresses = [...prev];
         newAddresses[editingIndex] = newAddress;
         return newAddresses;
       });
     } else {
-      // Add new address
-      setAddresses(prev => [...prev, newAddress]);
+      setAddresses((prev) => [...prev, newAddress]);
     }
     setIsModalOpen(false);
     setEditingIndex(null);
@@ -59,7 +58,7 @@ const AddressCard = () => {
   };
 
   const handleDelete = (index: number) => {
-    setAddresses(prev => {
+    setAddresses((prev) => {
       const newAddresses = prev.filter((_, i) => i !== index);
       if (newAddresses.length === 0) {
         localStorage.removeItem("userAddresses");
@@ -78,7 +77,11 @@ const AddressCard = () => {
           onButtonClick={handleAddClick}
         />
         {isModalOpen && (
-          <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-[99]" role="dialog" aria-labelledby="modal-title">
+          <div
+            className="fixed inset-0 bg-black/50 flex items-center justify-center z-[99]"
+            role="dialog"
+            aria-labelledby="modal-title"
+          >
             <div className="p-5 md:w-3/4 lg:w-1/2 w-full mx-auto font-sans rounded-lg relative">
               <AddressSelector
                 onLocationSelect={handleAddressSelected}
@@ -94,7 +97,10 @@ const AddressCard = () => {
   return (
     <div className="md:w-3/4 w-full mx-auto p-5 font-sans">
       {addresses.map((address, index) => (
-        <div key={index} className="bg-white rounded-2xl ring-1 ring-gray-300 mb-4 flex flex-col gap-3 p-6">
+        <div
+          key={index}
+          className="bg-white rounded-2xl ring-1 ring-gray-300 mb-4 flex flex-col gap-3 p-6"
+        >
           <div className="flex justify-start gap-3 text-gray-800 font-semibold">
             <div
               className="flex justify-center items-center gap-1 cursor-pointer"
@@ -132,17 +138,20 @@ const AddressCard = () => {
           </p>
         </div>
       ))}
-      <button
-        type="button"
-        onClick={handleAddClick}
-        className="bg-[#ff6f61] text-white px-6 py-3 rounded-full text-lg cursor-pointer sm:w-1/2 w-3/4 shadow-md hover:bg-[#e65b50] transition-colors"
-        aria-label="Add new address"
-      >
-        Add Address
-      </button>
-
+          <button
+          type="button"
+          onClick={handleAddClick}
+          className="bg-[#ff6f61] text-white px-6 py-3 rounded-full text-lg cursor-pointer sm:w-full w-full shadow-md hover:bg-[#e65b50] transition-colors"
+          aria-label="Add new address"
+        >
+          Add Address
+        </button>
       {isModalOpen && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-[99]" role="dialog" aria-labelledby="modal-title">
+        <div
+          className="fixed inset-0 bg-black/50 flex items-center justify-center z-[99]"
+          role="dialog"
+          aria-labelledby="modal-title"
+        >
           <div className="p-5 md:w-3/4 lg:w-1/2 w-full mx-auto font-sans rounded-lg relative">
             <AddressSelector
               onLocationSelect={handleAddressSelected}
