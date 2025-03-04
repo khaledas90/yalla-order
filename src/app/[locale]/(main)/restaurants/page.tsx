@@ -15,7 +15,7 @@ const Page = () => {
                 >
                     <div className="flex flex-col justify-center items-center h-full ">
                         <h2
-                            className={`text-center text-6xl text-white ${cabinSketch.className} font-bold mb-[60px] `}
+                            className={`text-center text-3xl sm:text-4xl md:text-6xl text-white ${cabinSketch.className} font-bold mb-[60px]`}
                         >
                             {t("Restaurants")}
                         </h2>
