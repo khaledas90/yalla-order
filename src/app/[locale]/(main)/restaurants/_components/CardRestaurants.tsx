@@ -20,7 +20,7 @@ const CardRestaurants = () => {
                 {restaurants.map((restaurant, index) => (
                     <div
                         key={index}
-                        className="relative flex flex-col items-center justify-center bg-white rounded-lg shadow-md border border-gray-200 sm:w-[250px] w-[280px] hover:shadow-lg transition-shadow duration-300 overflow-hidden"
+                        className="relative flex flex-col items-center justify-center bg-white rounded-lg shadow-md border border-gray-200 sm:w-[250px] w-full hover:shadow-lg transition-shadow duration-300 overflow-hidden"
                     >
                         <div className='absolute inset-0 bg-white -rotate-[7deg] translate-y-[65%] translate-x-3 rounded-xl shadow-[0px_4px_16px_rgba(17,17,26,0.5),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)]'></div>
                         <div className="w-full h-[200px] bg-black rounded-t-lg flex items-center justify-center">
