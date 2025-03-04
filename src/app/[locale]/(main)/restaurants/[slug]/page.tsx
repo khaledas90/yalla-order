@@ -8,13 +8,11 @@ const Page = () => {
   const t = useTranslations("common.restaurants");
 
   return (
-    <>
-      <div
-        className={`hero h-[70vh] lg:mb-[100rem] md:mb-[100rem] sm:mb-[150rem] mb-[200rem]`}
-      >
+    <div className="h-full">
+      <div className={`hero h-[70vh]  `}>
         <div className="flex flex-col justify-center  items-center h-full ">
           <h2
-            className={`text-center lg:text-6xl md:text-6xl sm:text-4xl text-3xl  text-white ${cabinSketch.className} font-bold mb-[20px] mt-24 `}
+            className={`text-center lg:text-6xl md:text-6xl sm:text-4xl text-3xl  text-white ${cabinSketch.className} font-bold mb-[60px]   `}
           >
             {t("Restaurants")}
           </h2>
@@ -25,11 +23,11 @@ const Page = () => {
             <SearchInput query="" isIconSearch isIconLocation />
           </div>
         </div>
-        <div className="mt-[-50px] mb-[250px]">
-          <RestaurantDetails />
-        </div>
       </div>
-    </>
+      <div className="mt-[-50px] mb-[250px]">
+        <RestaurantDetails />
+      </div>
+    </div>
   );
 };
 
