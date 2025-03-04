@@ -21,7 +21,7 @@ const Profile = () => {
                 {t("My Account")}
               </h1>
             </div>
-            <TabsList className="h-auto bg-white space-y-3 w-full flex flex-col justify-start items-start border rounded-b-[20px] overflow-y-auto">
+            <TabsList className="h-auto bg-white space-y-3 w-full flex flex-col justify-start items-start overflow-y-auto">
               {TabLink.map((item) => {
                 const tabValue = item.title.toLowerCase().replace(" ", "-");
                 return (
@@ -29,12 +29,12 @@ const Profile = () => {
                     key={item.title}
                     value={tabValue}
                     className={clsx(
-                      "py-4 px-6 justify-start w-full md:text-2xl text-black hover:bg-main hover:border-primary border-white hover:text-white cursor-pointer flex items-center gap-2 border-l-4",
-                      "data-[state=active]:bg-main data-[state=active]:text-white data-[state=active]:border-primary"
+                      "py-4 px-6 justify-start w-full text-black hover:bg-main rounded-md border-white hover:text-white cursor-pointer flex items-center gap-2",
+                      "data-[state=active]:bg-main data-[state=active]:text-white"
                     )}
                   >
-                    <span className="p-2 rounded-full flex items-center justify-center">
-                      <Icon icon={item.icon} width="44" height="44" />
+                    <span className="p-2 rounded-full flex items-center justify-center text-2xl">
+                      <Icon icon={item.icon} />
                     </span>
                     <h4 className="text-2xl">{t(`profile-${item.title}`)}</h4>
                   </TabsTrigger>
@@ -43,12 +43,12 @@ const Profile = () => {
               <TabsTrigger
                 value="logout"
                 className={clsx(
-                  "py-4 px-6 justify-start w-full md:text-2xl cursor-pointer flex items-center gap-2 hover:bg-red-500 hover:text-white",
+                  "py-4 px-6 justify-start w-full cursor-pointer text-2xl flex items-center gap-2 rounded-md hover:bg-red-500 hover:text-white",
                   "data-[state=active]:bg-red-600 data-[state=active]:text-white"
                 )}
               >
                 <span className="p-2 rounded-full flex items-center justify-center">
-                  <Icon icon="humbleicons:logout" width="44" height="44" />
+                  <Icon icon="humbleicons:logout" />
                 </span>
                 <h4 className="text-2xl">{t("profile-logout")}</h4>
               </TabsTrigger>
