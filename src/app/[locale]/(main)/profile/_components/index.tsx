@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { TabLink } from "@/utils/Profile";
 import { Icon } from "@iconify/react";
@@ -7,6 +7,7 @@ import MyAccount from "./MyAccount";
 import clsx from "clsx";
 import MyOrder from "./MyOrder";
 import AddressCard from "./AddressCard";
+import MyReservations from "./MyReservation";
 
 const Profile = () => {
   const t = useTranslations("common.profile");
@@ -21,7 +22,7 @@ const Profile = () => {
                 {t("My Account")}
               </h1>
             </div>
-            <TabsList className="h-auto bg-white space-y-3 w-full flex flex-col justify-start items-start overflow-y-auto">
+            <TabsList className="h-auto bg-white space-y-3 my-1 w-full flex flex-col justify-start items-start overflow-y-auto">
               {TabLink.map((item) => {
                 const tabValue = item.title.toLowerCase().replace(" ", "-");
                 return (
@@ -54,8 +55,8 @@ const Profile = () => {
               </TabsTrigger>
             </TabsList>
           </div>
-          <div className="col-span-3 w-full overflow-x-auto">
-            <div className="max-h-[calc(100vh-7rem)] overflow-y-auto">
+          <div className="col-span-3 w-full overflow-x-auto ">
+            <div className="max-h-[calc(100vh-10rem)] overflow-y-auto">
               <TabsContent value="account">
                 <MyAccount />
               </TabsContent>
@@ -64,6 +65,9 @@ const Profile = () => {
               </TabsContent>
               <TabsContent value="my-order">
                 <MyOrder />
+              </TabsContent>
+              <TabsContent value="my-reservations">
+                <MyReservations />
               </TabsContent>
               <TabsContent value="saved-address">
                 <AddressCard />
