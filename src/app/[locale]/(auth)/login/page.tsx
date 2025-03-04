@@ -9,7 +9,7 @@ const Login = () => {
 
   return (
     <>
-      <div className={`hero h-screen py-9`}>
+      <div className={`hero h-screen px-1.5 py-9`}>
         <div className="flex justify-center items-center min-h-screen">
           <div className="bg-white p-8 rounded-2xl shadow-lg w-full max-w-sm">
             <h2 className="text-center text-2xl font-bold mb-6">{t("login")}</h2>

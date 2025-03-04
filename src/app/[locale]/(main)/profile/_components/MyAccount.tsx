@@ -80,11 +80,11 @@ const MyAccount = () => {
           error={formik.errors.email}
           touched={formik.touched.email}
         />
-        </div>
-        <div className="mb-4">
+      </div>
+      <div className="mb-4">
         <CustomInput
           name="password"
-          type="password" 
+          type="password"
           placeholder={t("Password")}
           value={formik.values.password}
           icon="iconamoon:edit"
@@ -94,10 +94,9 @@ const MyAccount = () => {
           touched={formik.touched.password}
         />
       </div>
-
-      {/* Gender Selection */}
-      <div className="flex items-center justify-start mb-4">
-        <label className="block text-xl w-1/2 font-medium text-gray-500">
+ 
+      <div className="lg:flex md:flex block  items-center justify-start mb-4">
+        <label className="block text-xl  font-medium text-gray-500 lg:w-[42%] md:w-[42%] w-full">
           {t("Gender")}
         </label>
         <div className="flex flex-col sm:flex-row gap-4 w-full">
@@ -110,10 +109,11 @@ const MyAccount = () => {
               className="hidden"
             />
             <span
-              className={`block text-center px-4 py-3 rounded-lg border transition-all duration-200 ease-in-out ${formik.values.gander === "male"
-                ? "bg-red-400 text-white"
-                : "bg-white text-gray-500 hover:bg-red-400 hover:text-white"
-                }`}
+              className={`block text-center px-4 py-3 rounded-lg border transition-all duration-200 ease-in-out ${
+                formik.values.gander === "male"
+                  ? "bg-red-400 text-white"
+                  : "bg-white text-gray-500 hover:bg-red-400 hover:text-white"
+              }`}
             >
               {t("Male")}
             </span>
@@ -127,10 +127,11 @@ const MyAccount = () => {
               className="hidden"
             />
             <span
-              className={`block text-center px-4 py-3 rounded-lg border transition-all duration-200 ease-in-out ${formik.values.gander === "female"
-                ? "bg-red-400 text-white"
-                : "bg-white text-gray-500 hover:bg-red-400 hover:text-white"
-                }`}
+              className={`block text-center px-4 py-3 rounded-lg border transition-all duration-200 ease-in-out ${
+                formik.values.gander === "female"
+                  ? "bg-red-400 text-white"
+                  : "bg-white text-gray-500 hover:bg-red-400 hover:text-white"
+              }`}
             >
               {t("Female")}
             </span>
@@ -140,10 +141,9 @@ const MyAccount = () => {
           <p className="text-red-500 text-sm">{formik.errors.gander}</p>
         )}
       </div>
-
-      {/* Date of Birth */}
-      <div className="flex justify-center items-center w-full mb-4">
-        <label className="block text-lg font-medium text-gray-500 w-1/6">
+ 
+      <div className="lg:flex md:flex block   justify-between items-center  mb-4">
+        <label className="block text-lg font-medium text-gray-500 lg:w-[42%] md:w-[42%] w-full">
           {t("Date of Birth")}
         </label>
         <input
@@ -161,13 +161,14 @@ const MyAccount = () => {
         )}
       </div>
 
-      {/* Submit Button */}
-      <button
-        type="submit"
-        className="w-full py-3 bg-red-400 text-white rounded-lg hover:bg-red-500 transition-all duration-200"
-      >
-        {t("Save Changes")}
-      </button>
+      <div className="w-full flex justify-end">
+        <button
+          type="submit"
+          className="lg:w-1/2 w-full py-3 bg-red-400 text-white rounded-lg hover:bg-red-500 transition-all duration-200"
+        >
+          {t("Save Changes")}
+        </button>
+      </div>
     </form>
   );
 };
