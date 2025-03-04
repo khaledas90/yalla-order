@@ -11,22 +11,6 @@ import AddressCard from "./AddressCard";
 
 const Profile = () => {
   const t = useTranslations("common.profile");
-  const [address, setAddress] = useState(
-    "Alexandria, Smouha, Smouha Circle, Zohour Bargaout Building, fourth 4, Apartment 2"
-  );
-
-  const handleEdit = () => {
-    console.log("Edit address");
-  };
-
-  const handleDelete = () => {
-    console.log("Delete address");
-    setAddress("");
-  };
-
-  const handleAdd = () => {
-    console.log("Add new address");
-  };
 
   return (
     <div className="profile lg:mx-20 mx-5">
@@ -83,12 +67,7 @@ const Profile = () => {
                 <MyOrder />
               </TabsContent>
               <TabsContent value="saved-address">
-                <AddressCard
-                  address={address}
-                  onEdit={handleEdit}
-                  onDelete={handleDelete}
-                  onAdd={handleAdd}
-                />
+                <AddressCard />
               </TabsContent>
             </div>
           </div>

@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import MapComponent from "./MapComponent";
+import { Icon } from "@iconify/react/dist/iconify.js";
 
 interface AddressSelectorProps {
     onLocationSelect: (location: { lat: number; lng: number; address?: string }) => void;
@@ -16,31 +17,39 @@ const AddressSelector = ({ onLocationSelect, onClose }: AddressSelectorProps) =>
 
     const handleDeliverHere = () => {
         if (selectedLocation) {
-            onLocationSelect(selectedLocation);
-            console.log("Delivering to:", selectedLocation.address || `Lat: ${selectedLocation.lat}, Lng: ${selectedLocation.lng}`);
+            onLocationSelect({
+                lat: selectedLocation.lat,
+                lng: selectedLocation.lng,
+                address: selectedLocation.address,
+            });
+            console.log(
+                "Saving location:",
+                `LAT: ${selectedLocation.lat}, LNG: ${selectedLocation.lng}`
+            );
         }
     };
 
     return (
         <div className="p-5 w-full mx-auto font-sans bg-white rounded-lg shadow-md relative">
-            {/* Close Button */}
-            <button
-                type="button"
-                onClick={onClose}
-                className="absolute top-2 right-2 bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-sm font-semibold hover:bg-gray-300 transition-colors"
-                aria-label="Close modal"
-            >
-                Cancel
-            </button>
-
-            <h2 className="text-gray-800 mb-2 text-lg font-bold text-center">Delivery Address</h2>
+            <div className="flex justify-between items-center mb-3">
+                <div></div>
+                <h2 className="text-gray-800 mb-2 text-lg font-bold text-center">Delivery Address</h2>
+                {/* Close Button */}
+                <button
+                    type="button"
+                    onClick={onClose}
+                    className="text-gray-900 rounded-full text-sm font-semibold hover:bg-gray-300 transition-colors"
+                    aria-label="Close modal"
+                >
+                    <Icon icon="material-symbols:close-rounded" width="24" height="24" />
+                </button>
+            </div>
             <MapComponent onLocationSelect={handleLocationSelectInternal} />
-            {/* Display selected address under the map */}
-            {selectedLocation && (
+            {/* Display selected address only */}
+            {selectedLocation?.address && (
                 <div className="mt-4 text-gray-600 text-sm text-center">
                     <p>
-                        <strong>Selected Location:</strong>{" "}
-                        {selectedLocation.address || `LAT : ${selectedLocation.lat}, LNG : ${selectedLocation.lng}`}
+                        <strong>Selected Location:</strong> {selectedLocation.address}
                     </p>
                 </div>
             )}

@@ -24,18 +24,31 @@ const penIcon = new L.Icon({
     popupAnchor: [0, -50],
 });
 
-const LocationMarker = ({ onLocationSelect }: { onLocationSelect: (latlng: { lat: number; lng: number }) => void }) => {
+const LocationMarker = ({ onLocationSelect }: { onLocationSelect: (latlng: { lat: number; lng: number }, address?: string) => void }) => {
     const [position, setPosition] = useState<[number, number] | null>(null);
     useMapEvents({
-        click(e) {
+        click: async (e) => {
             const newPosition: [number, number] = [e.latlng.lat, e.latlng.lng];
             setPosition(newPosition);
-            onLocationSelect({ lat: e.latlng.lat, lng: e.latlng.lng });
+
+            try {
+                const response = await fetch(
+                    `https://nominatim.openstreetmap.org/reverse?format=json&lat=${e.latlng.lat}&lon=${e.latlng.lng}`
+                );
+                const data = await response.json();
+                const address = data.display_name || "Unknown Location";
+
+                onLocationSelect({ lat: e.latlng.lat, lng: e.latlng.lng }, address);
+            } catch (error) {
+                console.error("Error fetching address:", error);
+                onLocationSelect({ lat: e.latlng.lat, lng: e.latlng.lng });
+            }
         },
     });
 
     return position ? <Marker position={position} icon={penIcon} /> : null;
 };
+
 
 const SearchControl = ({ onSearch }: { onSearch: (latlng: { lat: number; lng: number }, address: string) => void }) => {
     const [searchQuery, setSearchQuery] = useState("");
@@ -77,56 +90,6 @@ const SearchControl = ({ onSearch }: { onSearch: (latlng: { lat: number; lng: nu
     );
 };
 
-// New MyLocationControl component
-// const MyLocationControl = ({ onLocationSelect }: { onLocationSelect: (latlng: { lat: number; lng: number }) => void }) => {
-//     const map = useMap();
-
-//     const handleGetMyLocation = () => {
-//         if (navigator.geolocation) {
-//             navigator.geolocation.getCurrentPosition(
-//                 (position) => {
-//                     const latlng = { lat: position.coords.latitude, lng: position.coords.longitude };
-//                     map.setView([latlng.lat, latlng.lng], 13);
-//                     onLocationSelect(latlng);
-//                 },
-//                 (error) => {
-//                     console.error("Error getting location:", error);
-//                     alert("Unable to retrieve your location. Please allow location access or search manually.");
-//                 }
-//             );
-//         } else {
-//             alert("Geolocation is not supported by your browser.");
-//         }
-//     };
-
-//     return (
-//         <div className="absolute bottom-4 right-4 z-[999]">
-//             <button
-//                 type="button"
-//                 title="my location"
-//                 onClick={handleGetMyLocation}
-//                 className="bg-white text-gray-800 p-2 rounded-full shadow-md hover:bg-gray-100 transition-colors w-10 h-10 flex items-center justify-center"
-//                 aria-label="Get my location"
-//             >
-//                 <svg
-//                     xmlns="http://www.w3.org/2000/svg"
-//                     width="20"
-//                     height="20"
-//                     viewBox="0 0 24 24"
-//                     fill="none"
-//                     stroke="currentColor"
-//                     strokeWidth="2"
-//                     strokeLinecap="round"
-//                     strokeLinejoin="round"
-//                 >
-//                     <circle cx="12" cy="12" r="10" />
-//                     <line x1="12" y1="2" x2="12" y2="22" />
-//                     <line x1="2" y1="12" x2="22" y2="12" />
-//                 </svg>
-//             </button>
-//         </div>
-//     );
-// };
 
 const MapComponent = ({ onLocationSelect }: MapComponentProps) => {
     const [position, setPosition] = useState<[number, number]>([31.2001, 29.9187]);
@@ -144,7 +107,6 @@ const MapComponent = ({ onLocationSelect }: MapComponentProps) => {
         >
             <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
             <SearchControl onSearch={handleLocationSelectInternal} />
-            {/* <MyLocationControl onLocationSelect={handleLocationSelectInternal} /> */}
             <LocationMarker onLocationSelect={handleLocationSelectInternal} />
         </MapContainer>
     </>
