@@ -4,7 +4,7 @@ import React from "react";
 import { StaticImageData } from "next/image";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
-
+import { setCookie } from "cookies-next/client";
 type Props = {
   typeTheme: string;
   textColor: string;
@@ -25,7 +25,10 @@ const ExploreCard = ($: Props) => {
         <p className="text-md text-gray-300">{$.PContent}</p>
         <Link
           href={$.typeTheme === "restaurant" ? `/` : `/clinic`}
-          onClick={() => window.scroll({ top: 0, behavior: "smooth" })}
+          onClick={() => {
+            window.scroll({ top: 0, behavior: "smooth" });
+            setCookie("type", $.typeTheme);
+          }}
           className={`mt-2 text-lg flex font-semibold ${$.textColor}`}
         >
           {t("Explore")}

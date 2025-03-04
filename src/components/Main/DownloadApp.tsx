@@ -27,7 +27,7 @@ const DownloadApp = () => {
                   {t("Download Our")}
                   <span className="hidden md:inline">
                     <br />
-                  </span>{" "}
+                  </span>
                   {t("Application now !")}
                 </span>
                 <span
@@ -36,7 +36,7 @@ const DownloadApp = () => {
                   {t("Download Our")}
                   <span className="hidden md:inline">
                     <br />
-                  </span>{" "}
+                  </span>
                   {t("Application now !")}
                 </span>
               </h1>

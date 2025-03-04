@@ -7,7 +7,6 @@ import { Icon } from "@iconify/react";
 import LineWithDot from "@/components/LineWithDot/LineWithDot";
 import { HeroProps } from "@/utils/Main";
 import Image from "next/image";
-
 const Hero: React.FC<HeroProps> = ({
   titleOne,
   titleTwo,
@@ -77,7 +76,9 @@ const Hero: React.FC<HeroProps> = ({
                 className="flex flex-col sm:flex-row items-center justify-start gap-3 p-4"
                 key={feature.title}
               >
-                <span className="bg-main p-4 rounded-full flex items-center justify-center">
+                <span
+                  className={`bg-main p-4 rounded-full flex items-center justify-center`}
+                >
                   <Icon
                     className="text-white"
                     icon={feature.icon}
