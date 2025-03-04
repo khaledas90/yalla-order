@@ -1,5 +1,4 @@
 import Hero from "@/components/Main/Hero";
-import Footer from "@/components/layout/Footer";
 import Header from "@/components/layout/Header";
 import HowWeWork from "@/components/Main/HowWeWork";
 
@@ -48,7 +47,6 @@ export default async function Page() {
       />
       <ExploreCategory />
       <DownloadApp />
-      <Footer />
     </>
   );
 }
