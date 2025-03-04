@@ -93,7 +93,7 @@ const HeaderClient: React.FC = () => {
       </div>
 
       {menuOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 -z-20 lg:hidden">
+        <div className="fixed inset-0 bg-black/30 bg-opacity-50 -z-20 lg:hidden">
           <div
             ref={sidebarRef}
             className="fixed top-0 ltr:left-0 rtl:right-0 h-full w-64 bg-black shadow-lg z-20"
