@@ -40,7 +40,7 @@ const MyAccount = () => {
   return (
     <form
       onSubmit={formik.handleSubmit}
-      className="w-full p-4 sm:p-6 mt-6 space-y-6"
+      className="w-full p-4 sm:p-6"
       dir={t("direction") === "rtl" ? "rtl" : "ltr"}
     >
       {/* Name Inputs */}
@@ -68,7 +68,7 @@ const MyAccount = () => {
       </div>
 
       {/* Email and Password */}
-      <div className="space-y-4">
+      <div className="my-4">
         <CustomInput
           name="email"
           type="email"
@@ -80,9 +80,11 @@ const MyAccount = () => {
           error={formik.errors.email}
           touched={formik.touched.email}
         />
+        </div>
+        <div className="mb-4">
         <CustomInput
           name="password"
-          type="password" // Corrected type to "password" instead of "email"
+          type="password" 
           placeholder={t("Password")}
           value={formik.values.password}
           icon="iconamoon:edit"
@@ -94,11 +96,11 @@ const MyAccount = () => {
       </div>
 
       {/* Gender Selection */}
-      <div className="space-y-2">
-        <label className="block text-lg font-medium text-gray-500">
+      <div className="flex items-center justify-start mb-4">
+        <label className="block text-xl w-1/2 font-medium text-gray-500">
           {t("Gender")}
         </label>
-        <div className="flex flex-col sm:flex-row gap-4">
+        <div className="flex flex-col sm:flex-row gap-4 w-full">
           <label className="flex-1">
             <input
               type="radio"
@@ -140,8 +142,8 @@ const MyAccount = () => {
       </div>
 
       {/* Date of Birth */}
-      <div className="space-y-2">
-        <label className="block text-lg font-medium text-gray-500">
+      <div className="flex justify-center items-center w-full mb-4">
+        <label className="block text-lg font-medium text-gray-500 w-1/6">
           {t("Date of Birth")}
         </label>
         <input

@@ -55,7 +55,7 @@ const Profile = () => {
             </TabsList>
           </div>
           <div className="col-span-3 w-full overflow-x-auto">
-            <div className="max-h-[calc(100vh-9rem)] overflow-y-auto">
+            <div className="max-h-[calc(100vh-7rem)] overflow-y-auto">
               <TabsContent value="account">
                 <MyAccount />
               </TabsContent>
