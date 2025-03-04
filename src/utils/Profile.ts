@@ -15,11 +15,11 @@ export const TabLink: ITabs[] = [
     title: "My Order",
     icon: "material-symbols-light:order-approve-sharp",
   },
-  //   {
-  //     id: 3,
-  //     title: "My reservations",
-  //     icon: "fluent-mdl2:reservation-orders",
-  //   },
+  {
+    id: 3,
+    title: "My reservations",
+    icon: "fluent-mdl2:reservation-orders",
+  },
   {
     id: 4,
     title: "Saved Address",
