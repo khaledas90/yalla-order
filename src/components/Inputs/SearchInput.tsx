@@ -39,7 +39,7 @@ const SearchInput: React.FC<SearchInputProps> = ({
   return (
     <div className="SearchInput lg:w-[80%] w-full">
       <form
-        className="relative flex items-center bg-white rounded-full lg:ms-20 ms-0 py-1 pe-1 ps-4 shadow-md w-full"
+        className="relative flex items-center bg-white rounded-full py-1 pe-1 ps-4 shadow-md w-full"
         onSubmit={formik.handleSubmit}
       >
         <input

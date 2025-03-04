@@ -223,6 +223,9 @@
       "Date of Birth Required": "Date of Birth Required",
       "direction": "Direction",
       "Save Changes": "Save Changes"
+    },
+    "restaurants": {
+      "Restaurants": "Restaurants"
     }
   }
 }

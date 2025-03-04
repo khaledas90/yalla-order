@@ -51,7 +51,7 @@ const Hero: React.FC<HeroProps> = ({
                 </span>
               </h1>
             </div>
-            <div className="flex justify-center lg:justify-start  mt-16">
+            <div className="flex justify-center lg:justify-end mt-16">
               <SearchInput query="" isIconSearch isIconLocation />
             </div>
           </div>

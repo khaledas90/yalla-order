@@ -223,6 +223,9 @@
       "Gender Required": "الجنس مطلوب",
       "direction": "الاتجاهات",
       "Save Changes": "حفظ التغييرات"
+    },
+    "restaurants": {
+      "Restaurants": "المطاعم"
     }
   }
 }
