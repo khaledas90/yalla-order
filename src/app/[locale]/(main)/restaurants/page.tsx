@@ -19,7 +19,7 @@ const Page = () => {
                         >
                             {t("Restaurants")}
                         </h2>
-                        <div className="w-1/2">
+                        <div className="md:w-1/2 w-full">
                             <SearchInput query="" isIconSearch isIconLocation />
                         </div>
                     </div>
