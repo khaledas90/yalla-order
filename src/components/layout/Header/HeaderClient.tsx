@@ -41,12 +41,12 @@ const HeaderClient: React.FC = () => {
   };
   useEffect(() => {
     if (menuOpen) {
-      document.addEventListener("mouseup", handleClickOutside);
+      document.addEventListener("click", handleClickOutside);
     } else {
-      document.removeEventListener("mouseup", handleClickOutside);
+      document.removeEventListener("click", handleClickOutside);
     }
     return () => {
-      document.removeEventListener("mouseup", handleClickOutside);
+      document.removeEventListener("click", handleClickOutside);
     };
   }, [menuOpen]);
 
