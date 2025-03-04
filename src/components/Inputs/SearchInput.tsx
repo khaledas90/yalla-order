@@ -22,7 +22,6 @@ const SearchInput: React.FC<SearchInputProps> = ({
   location,
 }) => {
   const t = useTranslations("common.hero");
-
   const formik = useFormik({
     initialValues: {
       query: query || "",
@@ -74,7 +73,7 @@ const SearchInput: React.FC<SearchInputProps> = ({
         )}
         <button
           type="submit"
-          className="btn bg-main hover:bg-primary transition-all duration-150 text-white rounded-full px-6 py-3 ml-auto flex items-center"
+          className={`btn bg-main hover:bg-primary  transition-all duration-150 text-white rounded-full px-6 py-3 ml-auto flex items-center`}
         >
           {t("Search")}
         </button>

@@ -7,7 +7,6 @@ import { Icon } from "@iconify/react";
 import LineWithDot from "@/components/LineWithDot/LineWithDot";
 import { HeroProps } from "@/utils/Main";
 import Image from "next/image";
-
 const Hero: React.FC<HeroProps> = ({
   titleOne,
   titleTwo,
