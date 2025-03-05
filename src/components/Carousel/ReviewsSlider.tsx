@@ -6,9 +6,11 @@ import { Icon } from "@iconify/react";
 import Image, { StaticImageData } from "next/image";
 
 interface Slide {
-  icon?: string;
   image?: StaticImageData;
-  title: string;
+  name: string;
+  role: string;
+  review: string;
+  date: string;
 }
 
 interface CarouselProps {
@@ -16,7 +18,7 @@ interface CarouselProps {
   autoPlay?: boolean;
 }
 
-const HomeSlider: FC<CarouselProps> = ({ slides, autoPlay = true }) => {
+const ReviewSlider: FC<CarouselProps> = ({ slides, autoPlay = true }) => {
   const autoplayOptions = autoPlay ? [Autoplay({ delay: 3000 })] : [];
   const [emblaRef, emblaApi] = useEmblaCarousel(
     { loop: true },
@@ -38,34 +40,41 @@ const HomeSlider: FC<CarouselProps> = ({ slides, autoPlay = true }) => {
         <Icon icon="gravity-ui:arrow-left" width="20" height="20" />
       </button>
 
-      <div className="relative w-full max-w-6xl">
+      <div className="relative w-full max-w-7xl">
         <div ref={emblaRef} className="overflow-hidden">
           <div className="flex">
             {slides.map((slide, index) => (
               <div
                 key={index}
-                className="px-2 flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/6"
+                className="px-2 flex-shrink-0 w-full sm:w-full md:w-1/3 lg:w-1/4"
               >
-                <div className="bg-black py-5 rounded-2xl shadow-md flex flex-col justify-center items-center gap-3 border border-gray-300">
-                  {slide.image && (
+                <div className="bg-white py-14 px-5  rounded-2xl shadow-lg flex flex-col items-start gap-3 border border-gray-200 relative">
+                  <Icon
+                    icon="radix-icons:quote"
+                    width="40"
+                    height="40"
+                    className="text-main absolute top-1 left-3"
+                  />
+
+                  <div className="flex items-center gap-3">
                     <Image
-                      src={slide.image}
-                      alt={slide.title}
-                      width={200}
-                      height={200}
+                      src={slide.image || ""}
+                      alt={slide.name}
+                      width={60}
+                      height={60}
+                      className="rounded-full object-cover"
                     />
-                  )}
-                  {slide.icon && (
-                    <Icon
-                      icon={slide.icon}
-                      width="50"
-                      height="50"
-                      className="text-white"
-                    />
-                  )}
-                  <p className="text-lg font-semibold text-white">
-                    {slide.title}
-                  </p>
+                    <div>
+                      <p className="font-semibold text-gray-800">
+                        {slide.name}
+                      </p>
+                      <p className="text-gray-500 text-sm">{slide.role}</p>
+                    </div>
+                  </div>
+
+                  <p className="text-gray-700">{slide.review}</p>
+
+                  <p className="text-gray-400 text-sm">{slide.date}</p>
                 </div>
               </div>
             ))}
@@ -86,4 +95,4 @@ const HomeSlider: FC<CarouselProps> = ({ slides, autoPlay = true }) => {
   );
 };
 
-export default HomeSlider;
+export default ReviewSlider;

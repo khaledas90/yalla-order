@@ -5,6 +5,7 @@ import imagetwo from "@/assets/image/betza.png";
 import RestaurantRating from "./RestaurantRating";
 import { useTranslations } from "next-intl";
 import BestSellerCard from "./BestSellerCard";
+import GlobalReviews from "@/components/Reviews/GlobalReviews";
 
 const bestSellers = [
   { img: imagetwo, title: "Pies" },
@@ -53,7 +54,7 @@ export default function RestaurantDetails() {
               <BestSellerCard key={index} img={item.img} title={item.title} />
             ))}
           </div>
-          <div className="flex justify-center">
+          <div className="flex justify-center mb-10">
             <button
               type="button"
               className="bg-[#ff6f61] text-white my-10 px-6 py-3 rounded-full text-lg cursor-pointer sm:w-1/4 w-full shadow-md hover:bg-[#e65b50] transition-colors"
@@ -62,6 +63,7 @@ export default function RestaurantDetails() {
               {t("View Menu")}
             </button>
           </div>
+          <GlobalReviews name="El Maqam" />
         </div>
       </div>
     </>
