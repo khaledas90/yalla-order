@@ -46,7 +46,7 @@ const ReviewSlider: FC<CarouselProps> = ({ slides, autoPlay = true }) => {
         )}
       </button>
 
-      <div className="relative w-full max-w-7xl">
+      <div className="relative w-full max-w-7xl" dir="ltr">
         <div ref={emblaRef} className="overflow-hidden">
           <div className="flex">
             {slides.map((slide, index) => (

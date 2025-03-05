@@ -29,6 +29,20 @@ const reviews = [
     review: "Lorem ipsum dolor sit amet ",
     date: "01/01/2023",
   },
+  {
+    image: imagetwo,
+    name: "Ahmed",
+    role: "Chef",
+    review: "Lorem ipsum dolor sit amet ",
+    date: "01/01/2023",
+  },
+  {
+    image: imagetwo,
+    name: "Ahmed",
+    role: "Chef",
+    review: "Lorem ipsum dolor sit amet ",
+    date: "01/01/2023",
+  },
 ];
 
 const GlobalReviews: FC<Props> = ({ name }) => {

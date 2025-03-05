@@ -1,8 +1,11 @@
 import React from 'react';
 import Image from 'next/image';
 import ImageLogo from '@/assets/image/logo-restaurants.png'
+import { useTranslations } from 'next-intl';
 
 const CardRestaurants = () => {
+    const t = useTranslations("common.restaurants");
+
     const restaurants = [
         { name: 'El Maqam', category: 'Pizza & Pastries', logo: ImageLogo },
         { name: 'Bakiza', category: 'Pizza & Pastries', logo: ImageLogo },
@@ -27,7 +30,7 @@ const CardRestaurants = () => {
                             <Image
                                 src={restaurant.logo}
                                 alt={`${restaurant.name} logo`}
-                                className="object-contain w-full"
+                                className="object-cover w-full h-full"
                             />
                         </div>
                         <div className="w-full p-2 bg-white rounded-b-lg z-20">
@@ -38,7 +41,7 @@ const CardRestaurants = () => {
                 ))}
             </div>
             <div className="flex items-center justify-center w-full p-4 my-4 bg-white rounded-lg transition-shadow duration-300">
-                <button type='button' className="text-main text-xl font-medium">See More</button>
+                <button type='button' className="text-main text-xl font-medium">{t("See More")}</button>
             </div>
         </>
     );

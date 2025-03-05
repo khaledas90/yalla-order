@@ -231,7 +231,14 @@
       "Best Seller Dishes": "Best Seller Dishes",
       "View Menu": "View Menu",
       "Reviews": "Reviews",
-      "Add Review": "Add Review"
+      "Add Review": "Add Review",
+      "See More": "See More",
+      "All": "All"
+    },
+    "clinics": {
+      "See More": "See More",
+      "Clinics": "Clinics",
+      "All": "All"
     }
   }
 }

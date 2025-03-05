@@ -231,7 +231,14 @@
       "Best Seller Dishes": "الوجبات المفضلة",
       "View Menu": "عرض القائمة",
       "Reviews": "التقييمات",
-      "Add Review": "اضافة تقييم"
+      "Add Review": "اضافة تقييم",
+      "See More": "عرض المزيد",
+      "All": "كل"
+    },
+    "clinics": {
+      "See More": "عرض المزيد",
+      "Clinics": "العيادات",
+      "All": "كل"
     }
   }
 }

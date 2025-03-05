@@ -1,8 +1,8 @@
 "use client";
 import { useState, useEffect } from "react";
 import { Icon } from "@iconify/react/dist/iconify.js";
-import AddressSelector from "./Map/AddressSelector";
-import NoAddressFound from "./notFoundData";
+import AddressSelector from "./AddressSelector";
+import NoAddressFound from "../../app/[locale]/(main)/profile/_components/notFoundData";
 import NotFoundImage from "@/assets/image/not-found-location.webp";
 
 const AddressCard = () => {
@@ -138,14 +138,14 @@ const AddressCard = () => {
           </p>
         </div>
       ))}
-          <button
-          type="button"
-          onClick={handleAddClick}
-          className="bg-[#ff6f61] text-white px-6 py-3 rounded-full text-lg cursor-pointer sm:w-full w-full shadow-md hover:bg-[#e65b50] transition-colors"
-          aria-label="Add new address"
-        >
-          Add Address
-        </button>
+      <button
+        type="button"
+        onClick={handleAddClick}
+        className="bg-main text-white px-6 py-3 rounded-full text-lg cursor-pointer sm:w-full w-full shadow-md hover:bg-[#e65b50] transition-colors"
+        aria-label="Add new address"
+      >
+        Add Address
+      </button>
       {isModalOpen && (
         <div
           className="fixed inset-0 bg-black/50 flex items-center justify-center z-[99]"
