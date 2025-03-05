@@ -25,7 +25,7 @@ export default function RestaurantDetails() {
             alt="restaurant"
             width={300}
             height={300}
-            className="w-full max-w-sm mx-auto"
+            className=" mx-auto"
           />
         </div>
         <div className="flex justify-center items-center mb-20">

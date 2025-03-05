@@ -19,6 +19,7 @@ const RestaurantRating: React.FC = () => {
       starRatedColor="gold"
       changeRating={setRating}
       numberOfStars={5}
+      starDimension="28px"
       name="rating"
     />
   );

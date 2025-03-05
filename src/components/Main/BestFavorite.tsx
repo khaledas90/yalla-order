@@ -1,8 +1,19 @@
 import React from "react";
-import Carousel from "../Carousel/Carousel";
 import { cabinSketch, cairoFont } from "@/utils/fonts";
 import { useTranslations } from "next-intl";
 import { IBestFavorite } from "@/utils/Main";
+import HomeSlider from "../Carousel/HomeSlider";
+
+const slides = [
+  { icon: "mdi:food", title: "Food" },
+  { icon: "mdi:coffee", title: "Coffee" },
+  { icon: "mdi:beer", title: "Beer" },
+  { icon: "mdi:beer", title: "Beer" },
+  { icon: "mdi:beer", title: "Beer" },
+  { icon: "mdi:beer", title: "Beer" },
+  { icon: "mdi:beer", title: "Beer" },
+  { icon: "mdi:beer", title: "Beer" },
+];
 
 const BestFavorite: React.FC<IBestFavorite> = ({ title }) => {
   const t = useTranslations("common.howWeWork");
@@ -20,7 +31,7 @@ const BestFavorite: React.FC<IBestFavorite> = ({ title }) => {
           </h2>
         </div>
         <div className="Carousel pt-10">
-          <Carousel />
+          <HomeSlider slides={slides} autoPlay={true} />
         </div>
       </div>
     </>
