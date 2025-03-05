@@ -4,6 +4,7 @@ import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import { Icon } from "@iconify/react";
 import Image, { StaticImageData } from "next/image";
+import { useParams } from "next/navigation";
 
 interface Slide {
   image?: StaticImageData;
@@ -27,6 +28,7 @@ const ReviewSlider: FC<CarouselProps> = ({ slides, autoPlay = true }) => {
 
   const scrollPrev = () => emblaApi?.scrollPrev();
   const scrollNext = () => emblaApi?.scrollNext();
+  const { locale } = useParams();
 
   return (
     <section className="w-full flex justify-center items-center gap-2">
@@ -37,7 +39,11 @@ const ReviewSlider: FC<CarouselProps> = ({ slides, autoPlay = true }) => {
         onClick={scrollPrev}
         aria-label="Scroll to previous slide"
       >
-        <Icon icon="gravity-ui:arrow-left" width="20" height="20" />
+        {locale === "en" ? (
+          <Icon icon="gravity-ui:arrow-left" width="20" height="20" />
+        ) : (
+          <Icon icon="mingcute:arrow-right-line" width="20" height="20" />
+        )}
       </button>
 
       <div className="relative w-full max-w-7xl">
@@ -89,7 +95,11 @@ const ReviewSlider: FC<CarouselProps> = ({ slides, autoPlay = true }) => {
         onClick={scrollNext}
         aria-label="Scroll to next slide"
       >
-        <Icon icon="gravity-ui:arrow-right" width="20" height="20" />
+        {locale === "ar" ? (
+          <Icon icon="gravity-ui:arrow-left" width="20" height="20" />
+        ) : (
+          <Icon icon="mingcute:arrow-right-line" width="20" height="20" />
+        )}
       </button>
     </section>
   );
