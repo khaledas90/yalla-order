@@ -116,6 +116,9 @@ export default function RestaurantDetails() {
           ))}
         </div>
       </div>
+      <div className="flex items-center justify-center w-full p-4 my-4 bg-white rounded-lg transition-shadow duration-300">
+        <button type='button' className="text-primary text-xl font-medium">{t("See More")}</button>
+      </div>
     </div>
   );
 }
