@@ -233,14 +233,25 @@
       "Reviews": "Reviews",
       "Add Review": "Add Review",
       "See More": "See More",
-      "All": "All"
+      "All": "All",
+      "Menu": "Menu",
+      "Info": "Info",
+      "Categories": "Categories",
+      "Cuisines": "Cuisines",
+      "Rating": "Rating",
+      "Payment Method": "Payment Method",
+      "Delivery Time": "Delivery Time",
+      "Delivery Fee": "Delivery Fee",
+      "Working Hours": "Working Hours",
+      "Minimum Order Amount": "Minimum Order Amount",
+      "Location": "Location"
     },
     "clinics": {
       "See More": "See More",
       "Clinics": "Clinics",
       "All": "All",
-      "eye clinics":"eye clinics",
-      "The best doctors in the clinic":"The best doctors in the clinic",
+      "eye clinics": "eye clinics",
+      "The best doctors in the clinic": "The best doctors in the clinic",
       "Select your area to see the clinic near you": "Select your area to see the clinic near you"
     }
   }
