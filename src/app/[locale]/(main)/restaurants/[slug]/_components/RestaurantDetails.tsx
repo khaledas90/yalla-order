@@ -30,7 +30,7 @@ export default function RestaurantDetails() {
           />
         </div>
         <div className="flex justify-center items-center mb-20">
-          <RestaurantRating />
+          <RestaurantRating  />
         </div>
         <div className="mt-6 lg:mx-10 md:mx-10 mx-5">
           <h2 className="md:text-3xl text-xl font-bold mb-4">

@@ -17,7 +17,7 @@ export const links: Links[] = [
     id: 3,
     name: "Clinics",
     icon: "healthicons:ambulatory-clinic-outline",
-    href: "/clinics",
+    href: "/clinic/all",
   },
   {
     id: 4,
