@@ -1,6 +1,10 @@
 import Image from "next/image";
 import React from "react";
 import { StaticImageData } from "next/image";
+import imageOne from "@/assets/image/clinic-card.webp";
+import { useTranslations } from "next-intl";
+import DoctorCard from "../../../../../../../components/Cards/DoctorCard";
+import doctorImg from "@/assets/image/suit-doctor.webp";
 
 interface Doctor {
   img: StaticImageData;
@@ -12,13 +16,6 @@ interface Doctor {
   isFavorite: boolean;
   sale?: number;
 }
-
-
-import imageOne from "@/assets/image/clinic-card.webp";
-import { useTranslations } from "next-intl";
-import DoctorCard from "./DoctorCard";
-import doctorImg from "@/assets/image/suit-doctor.webp";
-
 
 const doctors: Doctor[] = [
   {

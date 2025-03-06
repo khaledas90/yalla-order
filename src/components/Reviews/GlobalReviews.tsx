@@ -5,6 +5,7 @@ import { useTranslations } from "next-intl";
 
 interface Props {
   name: string;
+  mainColor: string;
 }
 
 const reviews = [
@@ -45,7 +46,7 @@ const reviews = [
   },
 ];
 
-const GlobalReviews: FC<Props> = ({ name }) => {
+const GlobalReviews: FC<Props> = ({ name, mainColor }) => {
   const t = useTranslations("common.restaurants");
   return (
     <div className="Reviews my-5">
@@ -53,12 +54,12 @@ const GlobalReviews: FC<Props> = ({ name }) => {
         <h2 className="text-3xl font-bold">
           {name} {t("Reviews")}{" "}
         </h2>
-        <h4 className="text-main cursor-pointer md:text-2xl text-lg">
+        <h4 className={`text-${mainColor} cursor-pointer md:text-2xl text-lg`}>
           {t("Add Review")}
         </h4>
       </div>
       <div className="mt-10">
-        <ReviewSlider slides={reviews} autoPlay />
+        <ReviewSlider slides={reviews} autoPlay mainColor={mainColor} />
       </div>
     </div>
   );
