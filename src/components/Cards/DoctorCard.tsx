@@ -58,8 +58,8 @@ export default function DoctorCard({ doctor }: DoctorCardProps) {
         {/* Schedule */}
         <p className="text-gray-600 text-xs">{doctor.schedule}</p>
 
-        {/* Fees */}
-        <p className="font-bold mt-2">Fees {doctor.fees} L.E</p>
+        {/* fees */}
+        <p className="font-bold mt-2">fees {doctor.fees} L.E</p>
 
         {/* Calendar Icon */}
         <button title="Calendar" type="button" className="mt-2 text-gray-500 hover:text-primary">

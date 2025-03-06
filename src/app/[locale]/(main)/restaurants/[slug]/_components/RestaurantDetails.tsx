@@ -63,7 +63,7 @@ export default function RestaurantDetails() {
               {t("View Menu")}
             </button>
           </div>
-          <GlobalReviews name="El Maqam" />
+          <GlobalReviews name="El Maqam" mainColor="main" />
         </div>
       </div>
     </>

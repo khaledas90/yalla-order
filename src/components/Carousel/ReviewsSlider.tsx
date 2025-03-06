@@ -17,9 +17,10 @@ interface Slide {
 interface CarouselProps {
   slides: Slide[];
   autoPlay?: boolean;
+  mainColor: string;
 }
 
-const ReviewSlider: FC<CarouselProps> = ({ slides, autoPlay = true }) => {
+const ReviewSlider: FC<CarouselProps> = ({ slides, mainColor, autoPlay = true }) => {
   const autoplayOptions = autoPlay ? [Autoplay({ delay: 3000 })] : [];
   const [emblaRef, emblaApi] = useEmblaCarousel(
     { loop: true },
@@ -59,7 +60,7 @@ const ReviewSlider: FC<CarouselProps> = ({ slides, autoPlay = true }) => {
                     icon="radix-icons:quote"
                     width="40"
                     height="40"
-                    className="text-main absolute top-1 left-3"
+                    className={`text-${mainColor} absolute top-1 left-3`}
                   />
 
                   <div className="flex items-center gap-3">

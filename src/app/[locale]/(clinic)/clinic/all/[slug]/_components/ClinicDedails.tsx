@@ -1,6 +1,10 @@
 import Image from "next/image";
 import React from "react";
 import { StaticImageData } from "next/image";
+import imageOne from "@/assets/image/clinic-card.webp";
+import { useTranslations } from "next-intl";
+import DoctorCard from "../../../../../../../components/Cards/DoctorCard";
+import doctorImg from "@/assets/image/suit-doctor.webp";
 
 interface Doctor {
   img: StaticImageData;
@@ -12,13 +16,6 @@ interface Doctor {
   isFavorite: boolean;
   sale?: number;
 }
-
-
-import imageOne from "@/assets/image/clinic-card.webp";
-import { useTranslations } from "next-intl";
-import DoctorCard from "./DoctorCard";
-import doctorImg from "@/assets/image/suit-doctor.webp";
-
 
 const doctors: Doctor[] = [
   {
@@ -102,11 +99,10 @@ export default function RestaurantDetails() {
       {/* Summary */}
       <div className="mt-6 lg:mx-10 md:mx-10 mx-5">
         <h2 className="md:text-3xl text-xl font-bold mb-4">
-          Summary of <span className="text-primary">{t("eye clinics")}</span>
+          {t("Summary of")} <span className="text-primary">{t("eye clinics")}</span>
         </h2>
         <p>
-          Our eye clinic offers a wide range of services including comprehensive eye exams, cataract surgery, and treatment for various eye conditions.
-          We are dedicated to providing the highest quality of care to our patients.
+          {t("Our eye clinic")}
         </p>
 
         {/* Best Doctors */}

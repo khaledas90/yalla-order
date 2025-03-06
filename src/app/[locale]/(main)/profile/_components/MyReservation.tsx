@@ -69,7 +69,7 @@ export default function MyReservations() {
                   <span className="font-bold">{order.deliveryFee}</span>
                 </div>
                 <div className="flex justify-between text-lg font-bold">
-                  <span>Fees</span>
+                  <span>fees</span>
                   <span>{order.total}</span>
                 </div>
               </div>
