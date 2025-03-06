@@ -2,7 +2,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Icon } from "@iconify/react";
 import Button from "@/components/Buttons/Button";
-import { links } from "@/utils/Links";
 import { useTranslations } from "next-intl";
 import NavLinks from "./NavLinks";
 import Link from "next/link";
@@ -10,12 +9,13 @@ import Image from "next/image";
 import logo from "@/assets/image/FOoDc.png";
 import LanguageSwitcher from "./LanguageSwitcher";
 import FavoriteDropdown from "./FavoriteDropdown";
+import { useFilteredLinks } from "@/hooks/getFilteredLinks";
 
 const HeaderClient: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const t = useTranslations("common.header");
-
+  const filteredLinks = useFilteredLinks();
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
@@ -77,13 +77,11 @@ const HeaderClient: React.FC = () => {
           />
         </div>
         <ul className="hidden lg:flex gap-6 text-white">
-          {links.map((link) =>
-            link.name === "Clinics" ? null : (
-              <li key={link.name}>
-                <NavLinks id={link.id} name={t(link.name)} href={link.href} />
-              </li>
-            )
-          )}
+          {filteredLinks.map((link) => (
+            <li key={link.name}>
+              <NavLinks id={link.id} name={t(link.name)} href={link.href} />
+            </li>
+          ))}
         </ul>
         <div className="hidden lg:flex gap-5 text-white">
           <FavoriteDropdown />
@@ -99,18 +97,16 @@ const HeaderClient: React.FC = () => {
             className="fixed top-0 ltr:left-0 rtl:right-0 h-full w-64 bg-black shadow-lg z-20"
           >
             <ul className="flex flex-col gap-4 mt-[90px] text-white px-4">
-              {links.map((link) =>
-                link.name === "Clinics" ? null : (
-                  <li key={link.name}>
-                    <NavLinks
-                      id={link.id}
-                      name={t(link.name)}
-                      icon={link.icon}
-                      href={link.href}
-                    />
-                  </li>
-                )
-              )}
+              {filteredLinks.map((link) => (
+                <li key={link.name}>
+                  <NavLinks
+                    id={link.id}
+                    name={t(link.name)}
+                    icon={link.icon}
+                    href={link.href}
+                  />
+                </li>
+              ))}
               <li className="mt-3">
                 <Button text={t("Login")} href="/login" />
               </li>
