@@ -238,7 +238,10 @@
     "clinics": {
       "See More": "See More",
       "Clinics": "Clinics",
-      "All": "All"
+      "All": "All",
+      "eye clinics":"eye clinics",
+      "The best doctors in the clinic":"The best doctors in the clinic",
+      "Select your area to see the clinic near you": "Select your area to see the clinic near you"
     }
   }
 }
