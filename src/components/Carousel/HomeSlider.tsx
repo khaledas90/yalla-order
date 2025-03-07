@@ -4,7 +4,6 @@ import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import { Icon } from "@iconify/react";
 import Image, { StaticImageData } from "next/image";
-import { useParams } from "next/navigation";
 
 interface Slide {
   icon?: string;
@@ -26,7 +25,6 @@ const HomeSlider: FC<CarouselProps> = ({ slides, autoPlay = true }) => {
 
   const scrollPrev = () => emblaApi?.scrollPrev();
   const scrollNext = () => emblaApi?.scrollNext();
-  const { locale } = useParams();
   return (
     <section className="w-full flex justify-center items-center gap-2" dir="ltr">
       <button
