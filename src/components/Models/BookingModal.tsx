@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Formik, Form, Field, ErrorMessage, FormikHelpers } from "formik";
 import * as Yup from "yup";
+import { useTranslations } from "next-intl";
 
 export default function BookingModal() {
     const [isOpen, setIsOpen] = useState(false);
@@ -18,21 +19,23 @@ export default function BookingModal() {
         bookingTime: string;
     }
 
+      const t = useTranslations("common.booking");
+
     const validationSchema = Yup.object({
-        fullName: Yup.string().required("Full Name is required"),
+        fullName: Yup.string().required(t("Full Name is required")),
         phoneNumber: Yup.string()
-            .matches(/^\+?[\d\s-]{10,}$/, "Invalid phone number")
-            .required("Phone Number is required"),
-        gender: Yup.string().required("Gender is required"),
+            .matches(/^\+?[\d\s-]{10,}$/, t("Invalid phone number"))
+            .required(t("Phone Number is required")),
+        gender: Yup.string().required(t("Gender is required")),
         age: Yup.number()
-            .typeError("Age must be a number")
-            .min(1, "Age must be at least 1")
-            .max(120, "Age must be less than 120")
-            .required("Age is required"),
-        detectionType: Yup.string().required("Detection Type is required"),
-        detectionLocation: Yup.string().required("Detection Location is required"),
-        dayOfBooking: Yup.date().required("Day of Booking is required"),
-        bookingTime: Yup.string().required("Booking Time is required"),
+            .typeError(t("Age must be a number"))
+            .min(1, t("Age must be at least 1"))
+            .max(120, t("Age must be less than 120"))
+            .required(t("Age is required")),
+        detectionType: Yup.string().required(t("Detection Type is required")),
+        detectionLocation: Yup.string().required(t("Detection Location is required")),
+        dayOfBooking: Yup.date().required(t("Day of Booking is required")),
+        bookingTime: Yup.string().required(t("Booking Time is required")),
     });
 
     const initialValues: BookingFormValues = {
@@ -56,19 +59,21 @@ export default function BookingModal() {
         setIsOpen(false);
     };
 
+
     return (
         <>
             <button
+                type="button"
                 onClick={() => setIsOpen(true)}
-                className="bg-primary text-white px-24 py-2 rounded-3xl hover:bg-prtext-primary/0"
+                className="bg-primary text-white px-10 md:px-24 py-2 rounded-3xl hover:bg-prtext-primary/0"
             >
-                Reservation Now
+                {t("Reservation Now")}
             </button>
 
             {isOpen && (
                 <div className="fixed inset-0 bg-black/40 flex justify-center items-center z-50">
                     <div className="bg-white w-11/12 md:w-2/3 lg:w-1/3 rounded-xl shadow-lg p-6">
-                        <h2 className="text-xl font-bold text-primary mb-4">Booking</h2>
+                        <h2 className="text-xl font-bold text-primary mb-4 select-none">{t("Booking")}</h2>
                         <Formik
                             initialValues={initialValues}
                             validationSchema={validationSchema}
@@ -77,7 +82,7 @@ export default function BookingModal() {
                             {({ isSubmitting }) => (
                                 <Form className="space-y-3">
                                     <div>
-                                        <label className="block text-sm font-medium">Full Name</label>
+                                        <label className="block text-sm font-medium">{t("Full Name")}</label>
                                         <Field
                                             type="text"
                                             name="fullName"
@@ -91,7 +96,7 @@ export default function BookingModal() {
                                     </div>
 
                                     <div>
-                                        <label className="block text-sm font-medium">Phone Number</label>
+                                        <label className="block text-sm font-medium">{t("Phone Number")}</label>
                                         <Field
                                             type="tel"
                                             name="phoneNumber"
@@ -105,7 +110,7 @@ export default function BookingModal() {
                                     </div>
 
                                     <div className="flex gap-4">
-                                        <label className="text-sm font-medium">Gender</label>
+                                        <label className="text-sm font-medium">{t("Gender")}</label>
                                         <label>
                                             <Field
                                                 type="radio"
@@ -113,7 +118,7 @@ export default function BookingModal() {
                                                 value="Male"
                                                 className="mr-2"
                                             />
-                                            Male
+                                            {t("Male")}
                                         </label>
                                         <label>
                                             <Field
@@ -122,7 +127,7 @@ export default function BookingModal() {
                                                 value="Female"
                                                 className="mr-2"
                                             />
-                                            Female
+                                            {t("Female")}
                                         </label>
                                         <ErrorMessage
                                             name="gender"
@@ -132,7 +137,7 @@ export default function BookingModal() {
                                     </div>
 
                                     <div>
-                                        <label className="block text-sm font-medium">Age</label>
+                                        <label className="block text-sm font-medium">{t("Age")}</label>
                                         <Field
                                             type="number"
                                             name="age"
@@ -146,7 +151,7 @@ export default function BookingModal() {
                                     </div>
 
                                     <div className="flex gap-4">
-                                        <label className="text-sm font-medium">Detection Type</label>
+                                        <label className="text-sm font-medium">{t("Detection Type")}</label>
                                         <label>
                                             <Field
                                                 type="radio"
@@ -154,7 +159,7 @@ export default function BookingModal() {
                                                 value="normal"
                                                 className="mr-2"
                                             />
-                                            Normal
+                                            {t("Normal")}
                                         </label>
                                         <label>
                                             <Field
@@ -163,7 +168,7 @@ export default function BookingModal() {
                                                 value="urgent"
                                                 className="mr-2"
                                             />
-                                            Urgent
+                                            {t("Urgent")}
                                         </label>
                                         <ErrorMessage
                                             name="detectionType"
@@ -173,7 +178,7 @@ export default function BookingModal() {
                                     </div>
 
                                     <div className="flex gap-4">
-                                        <label className="text-sm font-medium">Detection Location</label>
+                                        <label className="text-sm font-medium">{t("Detection Location")}</label>
                                         <label>
                                             <Field
                                                 type="radio"
@@ -181,7 +186,7 @@ export default function BookingModal() {
                                                 value="home"
                                                 className="mr-2"
                                             />
-                                            Home Consultation
+                                            <span className="block sm:inline">{t("Home Consultation")}</span>
                                         </label>
                                         <label>
                                             <Field
@@ -190,7 +195,7 @@ export default function BookingModal() {
                                                 value="clinic"
                                                 className="mr-2"
                                             />
-                                            In Clinic
+                                            <span className="block sm:inline">{t("In Clinic")}</span>
                                         </label>
                                         <ErrorMessage
                                             name="detectionLocation"
@@ -200,7 +205,7 @@ export default function BookingModal() {
                                     </div>
 
                                     <div>
-                                        <label className="block text-sm font-medium">Day of Booking</label>
+                                        <label className="block text-sm font-medium">{t("Day of Booking")}</label>
                                         <Field
                                             type="date"
                                             name="dayOfBooking"
@@ -214,7 +219,7 @@ export default function BookingModal() {
                                     </div>
 
                                     <div>
-                                        <label className="block text-sm font-medium">Booking Time</label>
+                                        <label className="block text-sm font-medium">{t("Booking Time")}</label>
                                         <Field
                                             type="time"
                                             name="bookingTime"
@@ -233,14 +238,14 @@ export default function BookingModal() {
                                             className="px-4 py-2 border rounded-md"
                                             onClick={() => setIsOpen(false)}
                                         >
-                                            Cancel
+                                            {t("Cancel")}
                                         </button>
                                         <button
                                             type="submit"
                                             className="px-4 py-2 bg-primary text-white rounded-md"
                                             disabled={isSubmitting}
                                         >
-                                            Confirm Reservation
+                                            {t("Confirm Reservation")}
                                         </button>
                                     </div>
                                 </Form>
