@@ -3,11 +3,11 @@ import { Icon } from "@iconify/react";
 
 interface Doctor {
     name: string;
-    specialty: string;
-    schedule: string;
-    fees: number;
+    specialty?: string;
+    schedule?: string;
+    fees?: number;
     rating: number;
-    isFavorite: boolean;
+    isFavorite?: boolean;
     sale?: number;
 }
 

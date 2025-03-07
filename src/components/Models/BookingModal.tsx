@@ -1,5 +1,4 @@
 "use client";
-
 import { useState } from "react";
 import { Formik, Form, Field, ErrorMessage, FormikHelpers } from "formik";
 import * as Yup from "yup";
@@ -19,7 +18,7 @@ export default function BookingModal() {
         bookingTime: string;
     }
 
-      const t = useTranslations("common.booking");
+    const t = useTranslations("common.booking");
 
     const validationSchema = Yup.object({
         fullName: Yup.string().required(t("Full Name is required")),
