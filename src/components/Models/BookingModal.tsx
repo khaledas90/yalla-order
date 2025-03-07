@@ -71,7 +71,7 @@ export default function BookingModal() {
 
             {isOpen && (
                 <div className="fixed inset-0 bg-black/40 flex justify-center items-center z-50">
-                    <div className=" bg-white w-11/12 md:w-2/3 lg:w-1/3 rounded-xl shadow-lg overflow-y-scroll">
+                    <div className=" bg-white w-11/12 md:w-2/3 lg:w-1/3 rounded-xl shadow-lg">
                         <h2 className="text-xl font-bold bg-primary text-white rounded-t-xl select-none px-6 py-3">{t("Booking")}</h2>
                         <div className="p-6">
                             <Formik
