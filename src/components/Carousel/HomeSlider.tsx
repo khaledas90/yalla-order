@@ -4,7 +4,6 @@ import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import { Icon } from "@iconify/react";
 import Image, { StaticImageData } from "next/image";
-import { useParams } from "next/navigation";
 
 interface Slide {
   icon?: string;
@@ -26,9 +25,8 @@ const HomeSlider: FC<CarouselProps> = ({ slides, autoPlay = true }) => {
 
   const scrollPrev = () => emblaApi?.scrollPrev();
   const scrollNext = () => emblaApi?.scrollNext();
-    const { locale } = useParams(); 
   return (
-    <section className="w-full flex justify-center items-center gap-2">
+    <section className="w-full flex justify-center items-center gap-2" dir="ltr">
       <button
         type="button"
         title="Previous Slide"
@@ -36,11 +34,7 @@ const HomeSlider: FC<CarouselProps> = ({ slides, autoPlay = true }) => {
         onClick={scrollPrev}
         aria-label="Scroll to previous slide"
       >
-        {locale === "en" ? (
           <Icon icon="gravity-ui:arrow-left" width="20" height="20" />
-        ) : (
-          <Icon icon="mingcute:arrow-right-line" width="20" height="20" />
-        )}
       </button>
 
       <div className="relative w-full max-w-6xl">
@@ -85,12 +79,7 @@ const HomeSlider: FC<CarouselProps> = ({ slides, autoPlay = true }) => {
         onClick={scrollNext}
         aria-label="Scroll to next slide"
       >
-        {" "}
-        {locale === "ar" ? (
-          <Icon icon="gravity-ui:arrow-left" width="20" height="20" />
-        ) : (
           <Icon icon="mingcute:arrow-right-line" width="20" height="20" />
-        )}
       </button>
     </section>
   );
