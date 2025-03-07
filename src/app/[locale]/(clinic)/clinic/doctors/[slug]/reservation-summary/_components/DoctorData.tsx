@@ -13,7 +13,7 @@ const DoctorDetails=()=> {
         />
       </div>
 
-      <div className="flex justify-center p-5">
+      <div className="flex justify-center px-0 py-5 md:px-5 md:py-5">
         <ReservationTable
           clinicName="Eye Clinic"
           doctorName="Dr. Ramy Shokry"

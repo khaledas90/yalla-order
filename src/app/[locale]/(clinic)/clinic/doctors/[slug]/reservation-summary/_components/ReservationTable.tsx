@@ -48,7 +48,7 @@ const ReservationTable: React.FC<ReservationTableProps> = ({
     };
 
     return (
-        <div className="w-full md:w-2/3 bg-white rounded-lg shadow-lg md:p-5 p-2 font-sans">
+        <div className="w-full md:w-2/3 bg-white rounded-lg shadow-lg p-5 font-sans">
             <div className="bg-black text-white p-2 text-center rounded-t-lg text-lg font-bold mb-5 -mx-5 -mt-5">
                 {t('Reservation Summary')}
             </div>
