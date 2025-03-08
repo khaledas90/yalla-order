@@ -11,7 +11,7 @@ export default function MenuList() {
       <div className="grid grid-cols-1 lg:grid-cols-4 w-full h-auto justify-center shadow-lg rounded-[20px] mt-6">
         <div className="md:col-span-1   border rounded-[20px]">
           <div className="text-center bg-black py-2 px-4 rounded-t-[20px] text-white">
-            <h1 className="font-bold text-3xl px-4 py-4">{t("Categories")}</h1>
+            <h1 className="font-bold text-xl px-4 py-4">{t("Categories")}</h1>
           </div>
           <ul className="my-4">
             <li className="py-4 px-6 text-xl font-semibold justify-center w-full text-black hover:bg-main rounded-md border-white hover:text-white cursor-pointer flex items-center gap-2">
@@ -22,7 +22,7 @@ export default function MenuList() {
         <div className="md:col-span-3 w-full overflow-x-auto ">
           <div className="max-h-[calc(100vh-10rem)] overflow-y-auto">
             <div className="my-3 mx-2">
-              <h5 className="text-2xl font-semibold mx-2">Best Selling</h5>
+              <h5 className="text-xl font-semibold mx-2">Best Selling</h5>
               <div className="cards_Items my-5 mx-3">
                 <div className="card ">
                   <div className="flex md:flex-row flex-col items-center gap-4 rounded-xl border shadow-md relative">
@@ -36,21 +36,19 @@ export default function MenuList() {
                         Sale 50%
                       </span>
                     </div>
-                    <div className="flex-1 md:h-[240px] h-auto grid justify-between p-4">
-                      <h2 className="text-2xl font-bold">Sausage Hawawshi</h2>
-                      <p className="text-pase text-gray-600">
-                        Dough stuffed with Oriental sausage, Mozzarella cheese,
-                        Roumi cheese, and vegetables Dough stuffed with Oriental
-                        sausage, Mozzarella cheese, Roumi cheese, and vegetables
-                        Dough stuffed with Oriental sausage, Mozzarella cheese,
-                        Roumi cheese, and vegetables Dough stuffed with Oriental
+                    <div className="flex-1 h-auto p-5 grid gap-4">
+                      <h2 className="text-xl md:text-2xl font-bold truncate">Sausage Hawawshi</h2>
+                      <p className="text-sm md:text-base text-gray-600 line-clamp-4">
+                        Dough stuffed with Oriental sausage, Mozzarella cheese, Roumi cheese, and vegetables.
+                        Dough stuffed with Oriental sausage, Mozzarella cheese, Roumi cheese, and vegetables.
+                        Dough stuffed with Oriental sausage, Mozzarella cheese, Roumi cheese, and vegetables.
                       </p>
-                      <p className="text-xl font-bold mt-2">EGP 95.00</p>
+                      <p className="text-lg md:text-xl font-bold mt-2">EGP 95.00</p>
                     </div>
-                    <button className="absolute top-3 ltr:right-3 rtl:left-3 sm:text-red-500 text-white">
+                    <button type="button" title="heart" className="absolute top-3 ltr:right-3 rtl:left-3 sm:text-red-500 text-white">
                       <Icon icon="mynaui:heart" width="24" height="24" />
                     </button>
-                    <button className="absolute bottom-3 ltr:right-3 rtl:left-3 bg-white shadow-md rounded-full p-2">
+                    <button type="button" title="cart" className="absolute bottom-3 ltr:right-3 rtl:left-3 bg-white shadow-md rounded-full p-2">
                       <Icon icon="proicons:cart" width="24" height="24" />
                     </button>
                   </div>
