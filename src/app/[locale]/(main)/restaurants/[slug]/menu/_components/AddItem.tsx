@@ -19,7 +19,7 @@ const AddItem: React.FC<AddItemProps> = ({
 }) => {
     return (
         <>
-            <div className="bg-white rounded-lg shadow-md w-full md:w-2/3 mx-auto overflow-hidden">
+            <div className="bg-white rounded-lg shadow-md w-full lg:w-3/4 mx-auto overflow-hidden">
                 <h2 className="text-lg font-semibold px-6 py-4 text-white bg-black border-b">
                     Add Item Choices
                 </h2>

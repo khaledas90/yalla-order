@@ -44,7 +44,7 @@ export default function RestaurantMenu() {
           </div>
         </div>
         <div className="menuTap mt-10">
-          <Tabs defaultValue="menu" className="w-full md:w-2/3 mx-auto">
+          <Tabs defaultValue="menu" className="w-full md:w-3/4 mx-auto">
             <TabsList className="grid w-full h-[70px] bg-white grid-cols-2 border-t-2 border-gray-200">
               <TabsTrigger
                 value="menu"
@@ -53,8 +53,8 @@ export default function RestaurantMenu() {
                 <Icon
                   icon="medical-icon:restaurant"
                   className="mx-2"
-                  width="30"
-                  height="30"
+                  width="25"
+                  height="25"
                 />
                 {t("Menu")}
               </TabsTrigger>
@@ -65,8 +65,8 @@ export default function RestaurantMenu() {
                 <Icon
                   icon="ic:round-info"
                   className="mx-2"
-                  width="30"
-                  height="30"
+                  width="25"
+                  height="25"
                 />
                 {t("Info")}
               </TabsTrigger>

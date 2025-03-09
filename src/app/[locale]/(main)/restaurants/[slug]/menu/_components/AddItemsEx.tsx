@@ -27,7 +27,7 @@ const AddItemsEx: React.FC = () => {
     ];
 
     return (
-        <div className="p-4">
+        <div className="md:p-4 p-0">
             <AddItem
                 itemName="Sausage Hawawshi"
                 basePrice={95.0}

@@ -15,7 +15,7 @@ const OrderSummaryEx: React.FC = () => {
   ];
 
   return (
-    <div className="p-4">
+    <div className="md:p-4 p-0">
       <OrderSummary
         items={items}
         deliveryAddress="Alexandria, Smouha, Circle, Zahra Building, 4th floor, Apartment 7"

@@ -31,12 +31,12 @@ const OrderSummary: React.FC<OrderSummaryProps> = ({
 }) => {
     return (
         <>
-            <div className="bg-white rounded-lg shadow-md w-full md:w-2/3 mx-auto overflow-hidden">
+            <div className="bg-white rounded-lg shadow-md w-full lg:w-3/4 mx-auto overflow-hidden">
                 <div className="flex justify-between items-center px-6 py-4 bg-black">
-                    <h2 className="text-lg font-semibold text-white">Order Summary</h2>
+                    <h2 className="text-md md:text-lg font-semibold text-white">Order Summary</h2>
                     <button
                         type='button'
-                        className="text-main text-sm hover:underline"
+                        className="text-main md:text-sm text-xs hover:underline"
                     >
                         MODIFY ORDER
                     </button>
@@ -44,30 +44,32 @@ const OrderSummary: React.FC<OrderSummaryProps> = ({
                 <div className="bg-white py-6 rounded-lg shadow-md w-full mx-auto">
                     <h3 className='px-4 pb-4 text-black font-bold text-xl'>El Maqam</h3>
                     {/* Items Table */}
-                    <table className="w-full text-sm text-gray-700 mb-4">
-                        <thead className='bg-gray-200'>
-                            <tr className="border-b">
-                                <th className="py-2 px-3 text-left">Item</th>
-                                <th className="py-2 px-3 text-left">Size</th>
-                                <th className="py-2 px-3 text-left">Special Request</th>
-                                <th className="py-2 px-3 text-left">Qty</th>
-                                <th className="py-2 px-3 text-left">Price</th>
-                                <th className="py-2 px-3 text-left">Total</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {items.map((item, index) => (
-                                <tr key={index} className="border-b">
-                                    <td className="py-2 px-3">{item.name}</td>
-                                    <td className="py-2 px-3">{item.size}</td>
-                                    <td className="py-2 px-3">{item.specialRequest || '-'}</td>
-                                    <td className="py-2 px-3">{item.quantity}</td>
-                                    <td className="py-2 px-3">EGP {item.price.toFixed(2)}</td>
-                                    <td className="py-2 px-3">EGP {item.total.toFixed(2)}</td>
+                    <div className="w-full overflow-x-auto mb-4">
+                        <table className="w-full min-w-max text-sm text-gray-700">
+                            <thead className="bg-gray-200">
+                                <tr className="border-b">
+                                    <th className="py-2 px-3 text-left">Item</th>
+                                    <th className="py-2 px-3 text-left">Size</th>
+                                    <th className="py-2 px-3 text-left">Special Request</th>
+                                    <th className="py-2 px-3 text-left">Qty</th>
+                                    <th className="py-2 px-3 text-left">Price</th>
+                                    <th className="py-2 px-3 text-left">Total</th>
                                 </tr>
-                            ))}
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                                {items.map((item, index) => (
+                                    <tr key={index} className="border-b">
+                                        <td className="py-2 px-3">{item.name}</td>
+                                        <td className="py-2 px-3">{item.size}</td>
+                                        <td className="py-2 px-3">{item.specialRequest || '-'}</td>
+                                        <td className="py-2 px-3">{item.quantity}</td>
+                                        <td className="py-2 px-3">EGP {item.price.toFixed(2)}</td>
+                                        <td className="py-2 px-3">EGP {item.total.toFixed(2)}</td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
 
                     {/* Delivery Address */}
                     <div className="mb-4">
@@ -90,7 +92,7 @@ const OrderSummary: React.FC<OrderSummaryProps> = ({
                         </h3>
                         <div className='px-3'>
                             <textarea
-                                value={specialRequests}
+                                defaultValue={specialRequests}
                                 className="w-full p-2 border rounded text-sm text-gray-700"
                                 rows={3}
                                 placeholder="Enter special requests..."
@@ -124,7 +126,7 @@ const OrderSummary: React.FC<OrderSummaryProps> = ({
                             />
                             <span>Delivery</span>
                         </div>
-                        <div className="border rounded-lg p-5 bg-white shadow-sm w-3/4 mx-auto">
+                        <div className="border rounded-lg md:p-5 p-2 bg-white shadow-sm md:w-3/4 w-10/12 mx-auto">
                             <div className="flex justify-between items-center mb-1">
                                 <p className="text-sm text-gray-600">Subtotal</p>
                                 <p className="text-sm text-gray-600">EGP {subtotal.toFixed(2)}</p>
