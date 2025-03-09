@@ -45,8 +45,7 @@ const BeWithUs: React.FC<IBeWithUs> = ({
           <Image
             src={image}
             alt={type}
-            priority={false}
-            loading="lazy"
+
             className="absolute top-1/2  w-1/2  right-7 transform translate-x-1/2 -translate-y-1/2 hidden md:block"
           />
         </div>

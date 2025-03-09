@@ -15,8 +15,7 @@ const Footer: React.FC = () => {
         <div className="mb-6 lg:mb-4">
           <Image
             src={logo}
-            priority={false}
-            loading="lazy"
+
             alt="Logo"
             width={225}
             height={115}
@@ -36,8 +35,8 @@ const Footer: React.FC = () => {
           <div className="flex mt-7 gap-4">
             <button type="button" title="btn" className="border-0">
               <Image
-                priority={false}
-                loading="lazy"
+
+
                 src={appStore}
                 alt="Download on the App Store"
                 className="w-32"
@@ -45,8 +44,8 @@ const Footer: React.FC = () => {
             </button>
             <button type="button" title="btn" className="border-0">
               <Image
-                priority={false}
-                loading="lazy"
+
+
                 src={googlePlay}
                 alt="Get it on Google Play"
                 className="w-32"

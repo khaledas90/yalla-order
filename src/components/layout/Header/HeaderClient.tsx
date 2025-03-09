@@ -48,8 +48,6 @@ const HeaderClient = () => {
         <Link href="/" className="z-30">
           <Image
             src={logo}
-            priority={false}
-            loading="lazy"
             alt="Logo"
             width={125}
             height={115}

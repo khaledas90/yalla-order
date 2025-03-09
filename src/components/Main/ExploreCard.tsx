@@ -36,8 +36,8 @@ const ExploreCard = ($: Props) => {
       </div>
       <div className="w-1/3 h-full">
         <Image
-          priority={false}
-          loading="lazy"
+
+
           src={$.imgButton}
           alt="Button Image"
           width={150}

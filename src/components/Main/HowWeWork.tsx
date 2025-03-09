@@ -27,8 +27,8 @@ const HowWeWork: React.FC<IHowWeWork> = ({
                 alt="Hero Image"
                 width={500}
                 height={500}
-                priority={false}
-                loading="lazy"
+
+
                 className="w-full max-w-lg mx-auto"
               />
             </div>
