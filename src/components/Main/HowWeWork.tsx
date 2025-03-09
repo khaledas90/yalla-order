@@ -35,7 +35,7 @@ const HowWeWork: React.FC<IHowWeWork> = ({
             <div className="Content w-full lg:w-1/2 flex justify-center items-center">
               <div className="w-full ps-10 relative ltr:text-left rtl:text-right">
                 <LineWithDot />
-                <h2 className={`text-5xl mb-3`}>
+                <h1 className={`text-5xl mb-3`}>
                   <span
                     className={`${cairoFont.className} rtl:inline ltr:hidden`}
                   >
@@ -46,13 +46,13 @@ const HowWeWork: React.FC<IHowWeWork> = ({
                   >
                     {t(title)}
                   </span>
-                </h2>
-                <h4 className="text-4xl font-bold">
+                </h1>
+                <h2 className="text-4xl font-bold">
                   <span className="text-[#fe7e7e] font-semibold">
                     {t(descriptionOne)}
                   </span>{" "}
                   <span>{t(descriptionTwo)}</span> <p>{t(descriptionThree)}</p>
-                </h4>
+                </h2>
                 <p className="leading-loose text-xl font-semibold">
                   {t(Features[0])}
                   <br />

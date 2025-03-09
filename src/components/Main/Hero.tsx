@@ -86,9 +86,9 @@ const Hero: React.FC<HeroProps> = ({
                     height="44"
                   />
                 </span>
-                <h6 className="text-black text-[18px] font-semibold text-center sm:text-left">
+                <h2 className="text-black text-[18px] font-semibold text-center sm:text-left">
                   {t("feature-" + feature.title)}
-                </h6>
+                </h2>
               </div>
             ))}
           </div>
