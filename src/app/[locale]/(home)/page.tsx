@@ -5,10 +5,10 @@ import HowWeWork from "@/components/Main/HowWeWork";
 import BeWithUs from "../../../components/Main/BeWithUsPartner";
 import DownloadApp from "../../../components/Main/DownloadApp";
 import ExploreCategory from "../../../components/Main/ExploreCategory";
-import heroRestaurantImg from "@/assets/image/hero_restaurant.png";
 import { FeatureHeroRestaurants } from "@/utils/FeatureHero";
-import burgerFrizze from "@/assets/image/burger-frizze.png";
 import BestFavorite from "@/components/Main/BestFavorite";
+import heroRestaurantImg from "@/assets/image/hero_restaurant.png";
+import burgerFrizze from "@/assets/image/burger-frizze.png";
 import pizzaImg from "@/assets/image/pizzaImg.png";
 export default async function Page() {
   return (

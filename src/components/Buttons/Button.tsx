@@ -15,10 +15,9 @@ const Button: React.FC<ButtonProps> = ({ text, href, variant, className }) => {
         href={href || "#"}
         title="button"
         type="submit"
-        className={`ring-1 ring-white px-16 py-1 rounded-3xl transition-all duration-300 text-md font-semibold ${className} 
-    ${variant === "contained"
-            ? "bg-white text-main hover:bg-transparent hover:text-white"
-            : "bg-transparent hover:bg-white hover:text-main"
+        className={`ring-[0.8px] px-16 py-1 rounded-3xl transition-all duration-300 text-md ${className} ${variant === "contained"
+            ? "bg-white text-gray-800 hover:bg-transparent hover:text-white"
+            : "hover:bg-white hover:text-gray-800 bg-transparent border border-white"
           }`}
       >
         {text}

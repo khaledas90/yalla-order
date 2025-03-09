@@ -41,13 +41,19 @@ const HeaderClient = () => {
 
   return (
     <div
-      className={`fixed top-0 start-0 end-0 z-40 transition-all duration-300 ${
-        scrolled ? "bg-black/30" : "bg-transparent"
-      }`}
+      className={`fixed top-0 start-0 end-0 z-40 transition-all duration-300 ${scrolled ? "bg-black/30" : "bg-transparent"
+        }`}
     >
       <div className="flex items-center justify-between p-5 lg:px-20">
         <Link href="/" className="z-30">
-          <Image src={logo} loading="lazy" alt="Logo" width={125} height={115} />
+          <Image
+            src={logo}
+            priority={false}
+            loading="lazy"
+            alt="Logo"
+            width={125}
+            height={115}
+          />
         </Link>
         <div className="lg:hidden cursor-pointer flex items-center gap-3 text-2xl z-600 text-white">
           <FavoriteDropdown />

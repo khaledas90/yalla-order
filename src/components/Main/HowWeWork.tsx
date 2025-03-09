@@ -27,12 +27,14 @@ const HowWeWork: React.FC<IHowWeWork> = ({
                 alt="Hero Image"
                 width={500}
                 height={500}
+                priority={false}
+                loading="lazy"
                 className="w-full max-w-lg mx-auto"
               />
             </div>
             <div className="Content w-full lg:w-1/2 flex justify-center items-center">
               <div className="w-full ps-10 relative ltr:text-left rtl:text-right">
-                <LineWithDot  />
+                <LineWithDot />
                 <h2 className={`text-5xl mb-3`}>
                   <span
                     className={`${cairoFont.className} rtl:inline ltr:hidden`}

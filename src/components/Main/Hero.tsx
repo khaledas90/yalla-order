@@ -62,6 +62,8 @@ const Hero: React.FC<HeroProps> = ({
               alt="Hero Image"
               width={400}
               height={400}
+              priority={false}
+              loading="lazy"
               className="w-full lg:block hidden max-w-lg"
             />
           </div>

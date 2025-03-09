@@ -46,12 +46,16 @@ const DownloadApp = () => {
               </p>
               <span className="mt-10 flex flex-col md:flex-row justify-start items-center gap-3">
                 <Image
+                  priority={false}
+                  loading="lazy"
                   src={appStore}
                   width={180}
                   height={100}
                   alt="App Store"
                 />
                 <Image
+                  priority={false}
+                  loading="lazy"
                   src={googlePlay}
                   width={180}
                   height={100}
@@ -61,6 +65,8 @@ const DownloadApp = () => {
             </div>
             <div className="w-1/2 hidden md:block">
               <Image
+                priority={false}
+                loading="lazy"
                 src={Phone}
                 className="w-5/6 -translate-y-28"
                 alt="Phone"
