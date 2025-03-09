@@ -21,6 +21,7 @@ export default async function Page() {
         titleFour=""
         image={heroRestaurantImg}
         FeatureHero={FeatureHeroRestaurants}
+        mainColor="main"
       />
       <HowWeWork
         title="How We Work"
@@ -35,6 +36,7 @@ export default async function Page() {
           "Choose your cuisine",
           "Get your food delivered to your address",
         ]}
+        mainColor="main"
       />
       <BestFavorite title="Customer Favorite Cuisine" />
       <BeWithUs
@@ -44,9 +46,12 @@ export default async function Page() {
         btnTitle="Join us"
         type="pizza"
         image={pizzaImg}
+        mainColor="main"
       />
       <ExploreCategory />
-      <DownloadApp />
+      <DownloadApp
+        mainColor="main"
+      />
       <Footer />
     </>
   );

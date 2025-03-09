@@ -13,6 +13,7 @@ const HowWeWork: React.FC<IHowWeWork> = ({
   descriptionThree,
   image,
   Features,
+  mainColor,
 }) => {
   const t = useTranslations("common.howWeWork");
   return (
@@ -34,7 +35,7 @@ const HowWeWork: React.FC<IHowWeWork> = ({
             </div>
             <div className="Content w-full lg:w-1/2 flex justify-center items-center">
               <div className="w-full ps-10 relative ltr:text-left rtl:text-right">
-                <LineWithDot />
+                <LineWithDot mainColor={mainColor} />
                 <h1 className={`text-5xl mb-3`}>
                   <span
                     className={`${cairoFont.className} rtl:inline ltr:hidden`}
@@ -48,7 +49,7 @@ const HowWeWork: React.FC<IHowWeWork> = ({
                   </span>
                 </h1>
                 <h2 className="text-4xl font-bold">
-                  <span className="text-[#fe7e7e] font-semibold">
+                  <span className={`text-${mainColor} font-semibold`}>
                     {t(descriptionOne)}
                   </span>{" "}
                   <span>{t(descriptionTwo)}</span> <p>{t(descriptionThree)}</p>

@@ -5,8 +5,11 @@ import { cabinSketch, cairoFont } from "@/utils/fonts";
 import appStore from "@/assets/image/app-store.png";
 import googlePlay from "@/assets/image/google-play.png";
 import Phone from "@/assets/image/OnePlus.png";
+import { downloadApp } from "@/utils/Main";
 
-const DownloadApp = () => {
+const DownloadApp: React.FC<downloadApp> = ({
+  mainColor,
+}) => {
   const t = useTranslations("common.downloadApp");
 
   return (
@@ -41,7 +44,7 @@ const DownloadApp = () => {
                 </span>
               </h1>
               <p className="font-medium text-white text-3xl rtl:text-right lg:ltr:text-left">
-                <span className="text-main">{t("Enjoy")} </span>
+                <span className={`text-${mainColor}`}>{t("Enjoy")} </span>
                 {t("the best meal")}
               </p>
               <span className="mt-10 flex flex-col md:flex-row justify-start items-center gap-3">

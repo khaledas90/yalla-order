@@ -13,7 +13,7 @@ import DownloadApp from "@/components/Main/DownloadApp";
 export default async function Page() {
   return (
     <>
-      <Header />
+      <Header/>
       <Hero
         titleOne="Book your medical"
         titleTwo="consultation now"
@@ -21,6 +21,7 @@ export default async function Page() {
         titleFour="and safety"
         image={heroClinicImg}
         FeatureHero={FeatureHeroClinics}
+        mainColor="primary"
       />
       <HowWeWork
         title="How We Work"
@@ -35,6 +36,7 @@ export default async function Page() {
           "Choose the appropriate doctor and appointment",
           "Arrive on time and receive excellent service",
         ]}
+        mainColor="primary"
       />
       <BestFavorite title="Best rated doctors" />
       <BeWithUs
@@ -44,9 +46,12 @@ export default async function Page() {
         btnTitle="Join us"
         type="doctor"
         image={doctorImg}
+        mainColor="primary"
       />
       <ExploreCategory />
-      <DownloadApp />
+      <DownloadApp
+        mainColor="primary"
+      />
     </>
   );
 }

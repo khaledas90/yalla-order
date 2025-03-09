@@ -8,6 +8,7 @@ export interface HeroProps {
   titleFour?: string;
   image: StaticImageData;
   FeatureHero: IFeatureHero[];
+  mainColor: string;
 }
 
 export interface IHowWeWork {
@@ -17,6 +18,7 @@ export interface IHowWeWork {
   descriptionThree: string;
   image: StaticImageData;
   Features: string[];
+  mainColor: string;
 }
 
 export interface IBestFavorite {
@@ -30,4 +32,9 @@ export interface IBeWithUs {
   btnTitle: string;
   image: StaticImageData;
   type: string;
+  mainColor: string;
+}
+
+export interface downloadApp {
+  mainColor: string;
 }

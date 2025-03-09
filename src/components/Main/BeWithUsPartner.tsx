@@ -11,6 +11,7 @@ const BeWithUs: React.FC<IBeWithUs> = ({
   btnTitle,
   type,
   image,
+  mainColor,
 }) => {
   const t = useTranslations("common.beWithUs");
 
@@ -29,7 +30,7 @@ const BeWithUs: React.FC<IBeWithUs> = ({
             </span>
           </h1>
           <p className="font-medium text-white text-4xl text-center rtl:text-right lg:ltr:text-left mt-10">
-            <span className="text-main text-4xl">{t(descriptionOne)} </span>
+            <span className={`text-${mainColor} text-4xl`}>{t(descriptionOne)} </span>
             {t(descriptionTwo)}
           </p>
           <span className="mt-8 flex justify-center md:justify-start items-center">

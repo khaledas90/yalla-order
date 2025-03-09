@@ -73,7 +73,7 @@ const SearchInput: React.FC<SearchInputProps> = ({
         )}
         <button
           type="submit"
-          className="btn bg-red-800 hover:bg-blue-800 transition-all duration-150 text-white rounded-full px-6 py-3 ml-auto flex items-center"
+          className="btn bg-gray-600 hover:bg-gray-800 transition-all duration-150 text-white rounded-full px-6 py-3 ml-auto flex items-center"
           >
           {t("Search")}
         </button>

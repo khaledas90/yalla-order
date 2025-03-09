@@ -14,6 +14,7 @@ const Hero: React.FC<HeroProps> = ({
   titleFour,
   image,
   FeatureHero,
+  mainColor,
 }) => {
   const t = useTranslations("common.hero");
 
@@ -23,7 +24,7 @@ const Hero: React.FC<HeroProps> = ({
         <div className="flex flex-col lg:flex-row">
           <div className="lg:w-1/2">
             <div className="mt-20 lg:ms-[100px] ms-0 md:ps-16 md:pt-10 ps-10 pt-5 relative">
-              <LineWithDot />
+              <LineWithDot mainColor={mainColor} />
               <h1
                 className={`text-4xl md:text-6xl ltr:text-left rtl:right-0 pe-5 md:pe-10 font-light`}
               >
@@ -78,7 +79,7 @@ const Hero: React.FC<HeroProps> = ({
                 className="flex flex-col sm:flex-row items-center justify-start gap-3 p-4"
                 key={feature.title}
               >
-                <span className="bg-main p-4 rounded-full flex items-center justify-center">
+                <span className={`bg-${mainColor} p-4 rounded-full flex items-center justify-center`}>
                   <Icon
                     className="text-white"
                     icon={feature.icon}

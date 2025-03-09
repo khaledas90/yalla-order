@@ -15,7 +15,7 @@ const NavLinks = ({ id, name, icon, href }: Links) => {
         key={id}
         className={clsx(
           "relative flex  gap-2 text-lg font-medium transition-all duration-[0.4s] hover:text-red-500 ",
-          pathname === href ? "text-main" : "text-text-main"
+          pathname === href ? "text-main" : "text-white"
         )}
       >
         <Icon icon={icon as string} width="24" height="24" /> {name}
