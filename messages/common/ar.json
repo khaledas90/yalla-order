@@ -186,7 +186,12 @@
       "profile-My Order": "طلباتي",
       "profile-Saved Address": "العناوين المحفوظة",
       "profile-My reservations": "حجوزاتي",
-      "profile-logout": "تسجيل خروج"
+      "profile-logout": "تسجيل خروج",
+      "add-address": "اضافة عنوان",
+      "Delivery Address": "عنوان التوصيل",
+      "Selected Location": "الموقع المحدد",
+      "Deliver Here": "توصيل هنا",
+      "Cancel": "الغاء"
     },
     "downloadApp": {
       "Enjoy": "استمتع",

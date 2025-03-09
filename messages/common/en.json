@@ -186,7 +186,12 @@
       "profile-My Order": "My Order",
       "profile-Saved Address": "Saved Address",
       "profile-My reservations": "My reservations",
-      "profile-logout": "logout"
+      "profile-logout": "logout",
+      "add-address": "Add Address",
+      "Delivery Address": "Delivery Address",
+      "Selected Location": "Selected Location",
+      "Deliver Here": "Deliver Here",
+      "Cancel": "Cancel"
     },
     "downloadApp": {
       "Enjoy": "Enjoy",

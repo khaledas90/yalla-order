@@ -6,8 +6,8 @@ import { useTranslations } from "next-intl";
 import MyAccount from "./MyAccount";
 import clsx from "clsx";
 import MyOrder from "./MyOrder";
-import AddressCard from "../../../../../components/Map/AddressCard";
 import MyReservations from "./MyReservation";
+import SavedAddress from "./SavedAddress";
 
 const Profile = () => {
   const t = useTranslations("common.profile");
@@ -67,7 +67,7 @@ const Profile = () => {
                 <MyReservations />
               </TabsContent>
               <TabsContent value="saved-address">
-                <AddressCard />
+                <SavedAddress />
               </TabsContent>
             </div>
           </div>
