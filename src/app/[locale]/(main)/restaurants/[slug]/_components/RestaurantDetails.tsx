@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
-import imageOne from "@/assets/image/restaurantElmaqam.png";
-import imagetwo from "@/assets/image/betza.png";
+import imageOne from "@/assets/image/restaurantElmaqam.webp";
+import imagetwo from "@/assets/image/betza.webp";
 import RestaurantRating from "./RestaurantRating";
 import { useTranslations } from "next-intl";
 import BestSellerCard from "./BestSellerCard";
@@ -30,7 +30,7 @@ export default function RestaurantDetails() {
           />
         </div>
         <div className="flex justify-center items-center mb-20">
-          <RestaurantRating  />
+          <RestaurantRating />
         </div>
         <div className="mt-6 lg:mx-10 md:mx-10 mx-5">
           <h2 className="md:text-3xl text-xl font-bold mb-4">

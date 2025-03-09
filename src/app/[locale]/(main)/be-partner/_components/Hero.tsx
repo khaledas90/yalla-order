@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 
-import heroImg from "@/assets/image/be_a_partener.png";
+import heroImg from "@/assets/image/be_a_partener.webp";
 import { useTranslations } from "next-intl";
 import { cabinSketch } from "@/utils/fonts";
 import BePartnerForm from "./BePartnerForm";

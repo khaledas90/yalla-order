@@ -1,6 +1,6 @@
 import React from "react";
-import Food from "@/assets/image/burger.jpg";
-import Clinic from "@/assets/image/clinic-tool.png";
+import Food from "@/assets/image/burger.webp";
+import Clinic from "@/assets/image/clinic-tool.webp";
 import ExploreCard from "@/components/Main/ExploreCard";
 import { useTranslations } from "next-intl";
 export default function ExploreCategory() {

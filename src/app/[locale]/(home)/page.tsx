@@ -7,9 +7,9 @@ import DownloadApp from "../../../components/Main/DownloadApp";
 import ExploreCategory from "../../../components/Main/ExploreCategory";
 import { FeatureHeroRestaurants } from "@/utils/FeatureHero";
 import BestFavorite from "@/components/Main/BestFavorite";
-import heroRestaurantImg from "@/assets/image/hero_restaurant.png";
-import burgerFrizze from "@/assets/image/burger-frizze.png";
-import pizzaImg from "@/assets/image/pizzaImg.png";
+import heroRestaurantImg from "@/assets/image/hero_restaurant.webp";
+import burgerFrizze from "@/assets/image/burger-frizze.webp";
+import pizzaImg from "@/assets/image/pizzaImg.webp";
 export default async function Page() {
   return (
     <>

@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import ImageLogo from '@/assets/image/logo-restaurants.png'
+import ImageLogo from '@/assets/image/logo-restaurants.webp'
 import { useTranslations } from 'next-intl';
 
 const CardRestaurants = () => {

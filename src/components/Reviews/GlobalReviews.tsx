@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import imagetwo from "@/assets/image/betza.png";
+import imagetwo from "@/assets/image/betza.webp";
 import ReviewSlider from "../Carousel/ReviewsSlider";
 import { useTranslations } from "next-intl";
 

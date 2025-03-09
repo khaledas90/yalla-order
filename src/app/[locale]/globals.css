@@ -18,6 +18,7 @@
   color utility to any element that depends on these defaults.
 */
 @layer base {
+
   *,
   ::after,
   ::before,
@@ -28,6 +29,7 @@
 }
 
 @layer base {
+
   button:not(:disabled),
   [role="button"]:not(:disabled) {
     cursor: pointer;
@@ -43,7 +45,7 @@
   }
 
   .download-app {
-    background-image: url(/assets/image/downloadApp.png);
+    background-image: url(/assets/image/downloadApp.webp);
     background-size: cover;
     background-repeat: no-repeat;
   }
@@ -56,7 +58,7 @@
   }
 
   .background-pan {
-    background-image: url(/assets/image/pan.png);
+    background-image: url(/assets/image/pan.webp);
     background-size: 40%;
     background-position: bottom right;
     background-repeat: no-repeat;
@@ -64,7 +66,7 @@
   }
 
   .background-download {
-    background-image: url(/assets/image/pan.png);
+    background-image: url(/assets/image/pan.webp);
     background-size: 40%;
     background-position: bottom left;
     background-repeat: no-repeat;
@@ -72,11 +74,12 @@
   }
 
   .background-work-with-us {
-    background-image: url(/assets/image/bgWorkWith.png);
+    background-image: url(/assets/image/bgWorkWith.webp);
     background-size: 40%;
     background-position: bottom left;
     background-repeat: no-repeat;
   }
+
   /* scrollbar */
   ::-webkit-scrollbar {
     width: 12px;
@@ -96,7 +99,7 @@
     background: #555;
   }
 
-  
+
 }
 
 @layer base {
@@ -109,6 +112,7 @@
   .background-pan {
     background-size: 60%;
   }
+
   .background-download {
     background-size: 60%;
   }

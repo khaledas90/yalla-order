@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import imageOne from "@/assets/image/restaurantElmaqam.png";
+import imageOne from "@/assets/image/restaurantElmaqam.webp";
 import { useTranslations } from "next-intl";
 import RestaurantRating from "../../_components/RestaurantRating";
 import openImag from "@/assets/image/openResturant.webp";

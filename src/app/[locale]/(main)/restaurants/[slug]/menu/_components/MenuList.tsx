@@ -1,7 +1,7 @@
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import React from "react";
-import MenuItem from "@/assets/image/menuItem.png";
+import MenuItem from "@/assets/image/menuItem.webp";
 import { Icon } from "@iconify/react/dist/iconify.js";
 
 export default function MenuList() {
