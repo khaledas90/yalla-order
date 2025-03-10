@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /private/
+Allow: /
+Sitemap: https://yalla-order-mu.vercel.app/en/sitemap.xml
