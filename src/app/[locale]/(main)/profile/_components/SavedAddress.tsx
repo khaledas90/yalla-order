@@ -14,9 +14,10 @@ export default function SavedAddress() {
         />
         <div className="grid items-center justify-center">
           <AddAddress />
+          
         </div>
       </div>
-      <div className="address">
+      <div className="address ">
         {/* <div className="bg-white rounded-2xl ring-1 ring-gray-300 mb-4 flex flex-col gap-3 p-6">
           <div className="flex justify-start gap-3 text-gray-800 font-semibold">
             <div
