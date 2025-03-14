@@ -1,9 +1,5 @@
 {
-  "cSpell.words": [
-    "gether",
-    "partener",
-    "Yalla"
-  ],
+  "cSpell.words": ["gether", "NEXTAUTH", "partener", "Yalla"],
   "typescript.tsdk": "node_modules\\typescript\\lib",
   "WillLuke.nextjs.addTypesOnSave": true,
   "WillLuke.nextjs.hasPrompted": true,
