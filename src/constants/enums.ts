@@ -107,3 +107,20 @@ export enum UserRole {
   USER = "USER",
   ADMIN = "ADMIN",
 }
+
+export enum CategoryType {
+  FAST_FOOD,
+  FINE_DINING,
+  CASUAL,
+}
+
+export enum Size {
+  SMALL,
+  MEDIUM,
+  LARGE,
+}
+
+export enum PaymentMethod {
+  CASH,
+  VISA,
+}

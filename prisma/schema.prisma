@@ -13,7 +13,7 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-// Enums for predefined values
+ 
 enum CategoryType {
   FAST_FOOD
   FINE_DINING
@@ -30,25 +30,94 @@ enum PaymentMethod {
   CASH
   VISA
 }
+enum UserRole {
+  USER
+  ADMIN
+}
+
+
+// user Model
+model User {
+  id            String         @id @default(uuid())
+  email         String         @unique
+  password      String
+  name          String
+  image         String?
+  phone         String?
+  streetAddress String?
+  postalCode    String?
+  city          String?
+  country       String?
+  role          UserRole       @default(USER)
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+  orders        OrderItem[]
+  accounts      Account[]
+  sessions      Session[]
+}
+
+
+// Session model
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+// Verification model
+model VerificationRequest {
+  id         String   @id @default(cuid())
+  identifier String
+  token      String   @unique
+  expires    DateTime
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@unique([identifier, token])
+}
+// account model
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.Text
+  session_state     String?
+  user              User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+  @@index([userId])
+}
+
 
 // Restaurant Model
 model Restaurant {
   id            Int      @id @default(autoincrement())
   name          String   @unique
-  logo          String? // URL or path to logo image
+  logo          String? 
   category      Category @relation(fields: [categoryId], references: [id])
   categoryId    Int
   description   String?
-  review        String? // Could also be a separate Review model if reviews are complex
-  rating        Float?   @default(0.0) // e.g., 4.5 out of 5
+  review        String?  
+  rating        Float?   @default(0.0) 
   address       String
   isOpen        Boolean  @default(false)
-  minOrderPrice Float // Minimum price for an order
-  deliveryTime  Int? // In minutes
-  deliveryFee   Float? // Delivery fee
-  workingHours  String // e.g., "09:00-22:00"
-  menus         Menu[] // One-to-many relation with Menu
-  orders        Order[] // One-to-many relation with Order
+  minOrderPrice Float  
+  deliveryTime  Int? 
+  deliveryFee   Float?  
+  workingHours  String  
+  menus         Menu[]  
+  orders        Order[]  
   createdAt     DateTime @default(now())
   updatedAt     DateTime @updatedAt
 }
@@ -57,7 +126,9 @@ model Restaurant {
 model Category {
   id          Int          @id @default(autoincrement())
   type        CategoryType @default(FAST_FOOD)
-  restaurants Restaurant[] // One-to-many relation with Restaurant
+  restaurants Restaurant[]  
+  order    Int       @default(autoincrement())
+  products      Product[]
   createdAt   DateTime     @default(now())
   updatedAt   DateTime     @updatedAt
 }
@@ -67,31 +138,49 @@ model Menu {
   id           Int        @id @default(autoincrement())
   restaurant   Restaurant @relation(fields: [restaurantId], references: [id])
   restaurantId Int
-  name         String // e.g., "Breakfast Menu", "Dinner Menu"
-  dishes       Dish[] // One-to-many relation with Dish
+  name         String  
+  dishes       Product[]  
   createdAt    DateTime   @default(now())
   updatedAt    DateTime   @updatedAt
 }
 
-// Dish Model
-model Dish {
+// product Model
+model Product {
   id          Int         @id @default(autoincrement())
   menu        Menu        @relation(fields: [menuId], references: [id])
   menuId      Int
   name        String
   description String?
   price       Float
-  picture     String? // URL or path to dish image
+  picture     String?  
+  category Category @relation(fields: [categoryId], references: [id])
+  categoryId Int
   isDiscount  Boolean     @default(false)
-  discount    Float? // Discount percentage or amount (optional)
+  discount    Float?  
   isFavourite Boolean     @default(false)
   isInCart    Boolean     @default(false)
-  size        Size        @default(MEDIUM)
-  extras      String[] // List of extras (e.g., ["Extra Cheese", "Bacon"])
-  sauces      String[] // List of sauces (e.g., ["Ketchup", "BBQ"])
-  orderItems  OrderItem[] // Many-to-many relation with Order through OrderItem
+  size        ProductSizes[]       
+  extras      Extra[]
+  sauces      String[]  
+  orderItems  OrderItem[]  
   createdAt   DateTime    @default(now())
   updatedAt   DateTime    @updatedAt
+}
+
+model ProductSizes  {
+  id        String       @id @default(cuid())
+  name      Size
+  price     Float
+  product   Product      @relation(fields: [productId], references: [id], onDelete: Cascade)
+  productId Int
+}
+
+model Extra {
+   id        String           @id @default(cuid())
+  name      String
+  price     Float
+  product   Product          @relation(fields: [productId], references: [id], onDelete: Cascade)
+  productId Int
 }
 
 // Order Model
@@ -99,27 +188,29 @@ model Order {
   id            Int           @id @default(autoincrement())
   restaurant    Restaurant    @relation(fields: [restaurantId], references: [id])
   restaurantId  Int
-  userName      String // Name of the user placing the order
-  userId        String? // Optional user ID for registered users
-  items         OrderItem[] // Many-to-many relation with Dish through OrderItem
-  totalAmount   Float // Total amount for the order
+  paid          Boolean      @default(false)
+  userName      String  
+  userId        String?  
+  items         OrderItem[]  
+  totalAmount   Float  
   paymentMethod PaymentMethod @default(CASH)
   address       Address       @relation(fields: [addressId], references: [id])
   addressId     Int
   createdAt     DateTime      @default(now())
   updatedAt     DateTime      @updatedAt
 }
-
-// Intermediate model for Order and Dish (many-to-many relationship)
+ 
 model OrderItem {
   id        Int      @id @default(autoincrement())
   order     Order    @relation(fields: [orderId], references: [id])
   orderId   Int
-  dish      Dish     @relation(fields: [dishId], references: [id])
-  dishId    Int
-  quantity  Int      @default(1) // Number of this dish in the order
-  extras    String[] // Selected extras for this dish
-  sauces    String[] // Selected sauces for this dish
+  product      Product  @relation(fields: [productId], references: [id])
+  productId    Int
+  quantity  Int      @default(1)  
+  user      User?    @relation(fields: [userId], references: [id])
+  userId    String?
+  extras    String[]  
+  sauces    String[]  
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
@@ -129,16 +220,16 @@ model Address {
   id             Int      @id @default(autoincrement())
   userName       String
   phone          String
-  site           String? // Optional website or reference
+  site           String?  
   city           String
   area           String
   floor          String?
   apt            String?
   buildingNumber String?
-  address        String // Full address details
-  title          String? // e.g., "Home", "Work"
-  note           String? // Additional delivery notes
-  orders         Order[] // One-to-many relation with Order
+  address        String  
+  title          String? 
+  note           String?  
+  orders         Order[]  
   createdAt      DateTime @default(now())
   updatedAt      DateTime @updatedAt
 }
