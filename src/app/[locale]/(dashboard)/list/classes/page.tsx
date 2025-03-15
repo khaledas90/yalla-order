@@ -1,12 +1,9 @@
-import React from 'react';
-
+import React from "react";
 const Page = () => {
   return (
-    <>
-      <div>
-        page
-      </div>
-    </>
+    <div className="p-4 flex gap-4 flex-col md:flex-row">
+      page
+    </div>
   );
 };
 
