@@ -1,13 +1,13 @@
-import React from 'react'
+import React from 'react';
 
-const page = () => {
+const Page = () => {
   return (
     <>
-      <div className="p-4 flex gap-4 flex-col md:flex-row">
+      <div>
         page
       </div>
     </>
-  )
-}
+  );
+};
 
-export default page
+export default Page;
