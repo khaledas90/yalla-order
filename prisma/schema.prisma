@@ -79,6 +79,7 @@ model VerificationRequest {
 
   @@unique([identifier, token])
 }
+
 // account model
 model Account {
   id                String  @id @default(cuid())
