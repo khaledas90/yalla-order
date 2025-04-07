@@ -78,7 +78,9 @@
       "Email Address": "البريد الالكتروني",
       "Password": "كلمة المرور",
       "Password must be at least 6 characters": "يجب أن تكون كلمة المرور مكونة من 6 أحرف على الأقل",
-      "Invalid email format": "تنسيق البريد الإلكتروني غير صالح"
+      "Invalid email format": "تنسيق البريد الإلكتروني غير صالح",
+      "Invalid email or password": "البريد الالكتروني او كلمة المرور غير صحيحة",
+      "Logging in": "جاري تسجيل الدخول..."
     },
     "be-partner": {
       "login": "تسجيل الدخول",

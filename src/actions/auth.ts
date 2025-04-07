@@ -1,40 +1,42 @@
-import { Environments } from "@/constants/enums";
 import { db } from "@/lib/prisma";
-import Credentials from "next-auth/providers/credentials";
-import { PrismaAdapter } from "@next-auth/prisma-adapter";
-import { SessionStrategy } from "next-auth";
-export const AuthOptions = {
-  session: {
-    strategy: "jwt" as SessionStrategy,
-    maxAge: 30 * 24 * 60 * 60, // 30 days
-    updateAge: 24 * 60 * 60, // 24 hours
-  },
-  secret: process.env.NEXTAUTH_SECRET,
-  debugger: process.env.NODE_ENV === Environments.DEV,
-  providers: [
-    Credentials({
-      name: "Credentials",
-      credentials: {
-        email: {
-          label: "Email",
-          type: "email",
-        },
-        password: {
-          label: "Password",
-          type: "password",
-        },
-      },
-      authorize: (credentials) => {
-        const user = credentials;
-        return {
-          id: crypto.randomUUID(),
-          ...user,
-        };
-      },
-    }),
-  ],
-  adapter: PrismaAdapter(db),
-  page: {
-    signIn: "/login",
-  },
+import bcrypt from "bcrypt";
+
+interface LoginResponse {
+  message: string;
+  status: number;
+  user?: unknown;
+}
+
+export const login = async (
+  email: string,
+  password: string
+): Promise<LoginResponse> => {
+  try {
+    const user = await db.user.findUnique({
+      where: { email },
+    });
+
+    if (!user) {
+      return { message: "User not found", status: 401 };
+    }
+
+    const { password: hashedPassword, ...userWithoutPassword } = user;
+
+    const isValidPassword = await bcrypt.compare(password, hashedPassword);
+    if (!isValidPassword) {
+      return { message: "Invalid password", status: 401 };
+    }
+
+    return {
+      user: userWithoutPassword,
+      status: 200,
+      message: "Login successful",
+    };
+  } catch (error) {
+    console.error("Login error:", error);
+    return {
+      status: 500,
+      message: "Internal server error",
+    };
+  }
 };
