@@ -6,19 +6,27 @@ interface ButtonProps {
   href?: string | undefined;
   variant?: "contained" | "outlined";
   className?: string;
+  onclick?: () => void;
 }
 
-const Button: React.FC<ButtonProps> = ({ text, href, variant, className }) => {
+const Button: React.FC<ButtonProps> = ({
+  text,
+  href,
+  variant,
+  className,
+  onclick,
+}) => {
   return (
-    <div className="button">
+    <div className="button" onClick={onclick}>
       <Link
         href={href || "#"}
         title="button"
         type="submit"
-        className={`ring-[0.8px] px-16 py-1 rounded-3xl transition-all duration-300 text-md ${className} ${variant === "contained"
+        className={`ring-[0.8px] px-16 py-1 rounded-3xl transition-all duration-300 text-md ${className} ${
+          variant === "contained"
             ? "bg-white text-gray-800 hover:bg-transparent hover:text-white"
             : "hover:bg-white hover:text-gray-800 bg-transparent border border-white"
-          }`}
+        }`}
       >
         {text}
       </Link>

@@ -7,11 +7,11 @@ import { useTranslations } from "next-intl";
 import CustomInput from "@/components/Inputs/CustomInputForm";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import toast from "react-hot-toast";
 
 export default function LoginForm() {
   const t = useTranslations("common.login");
   const router = useRouter();
-  const [authError, setAuthError] = React.useState<string | null>(null);
 
   const validationSchema = Yup.object({
     email: Yup.string()
@@ -26,7 +26,6 @@ export default function LoginForm() {
     initialValues: { email: "", password: "" },
     validationSchema,
     onSubmit: async (values, { setSubmitting }) => {
-      setAuthError(null);
       try {
         const result = await signIn("credentials", {
           email: values.email,
@@ -35,13 +34,15 @@ export default function LoginForm() {
         });
 
         if (result?.error) {
-          setAuthError(t("Invalid email or password"));
+          toast.error(t("Invalid email or password"));
+
           console.error("Login failed:", result.error);
         } else if (result?.ok) {
+          toast.success(t("Login successful"));
           router.push("/");
         }
       } catch (error) {
-        setAuthError(t("An unexpected error occurred"));
+        toast.error(t("An unexpected error occurred"));
         console.error("Login error:", error);
       } finally {
         setSubmitting(false);
@@ -51,9 +52,6 @@ export default function LoginForm() {
 
   return (
     <form onSubmit={formik.handleSubmit} className="space-y-4">
-      {authError && (
-        <p className="text-red-500 text-sm text-center">{authError}</p>
-      )}
       <CustomInput
         name="email"
         type="email"
