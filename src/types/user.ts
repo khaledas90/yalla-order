@@ -1,5 +1,10 @@
 import { OrderItem } from "./restaurant";
 
+export enum Role {
+  User = "User",
+  Admin = "Admin",
+}
+
 export interface User {
   id: number | string;
   name: string;

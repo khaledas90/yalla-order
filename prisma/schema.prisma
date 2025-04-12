@@ -32,7 +32,7 @@ enum PaymentMethod {
 }
 enum UserRole {
   USER
-  ADMIN
+  ADMIN 
 }
 
 
