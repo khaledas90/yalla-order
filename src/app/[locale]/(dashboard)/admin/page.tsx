@@ -1,180 +1,174 @@
 "use client"
 
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import Image from "next/image"
-import Avatar from "../../../../../public/avatar.png"
+import { cn } from "@/lib/utils"
+import { useEffect, useState } from "react"
+import { Users, Package, FolderClosed, DollarSign } from "lucide-react"
+import { Header } from "./components/header"
+import { StatCard } from "./components/stat-card"
+import { AreaChart } from "./components/charts/area-chart"
+import { BarChart } from "./components/charts/bar-chart"
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { Badge } from "@/components/ui/badge"
+import { useSidebar } from "@/hooks/use-sidebar"
 
-export default function Page() {
-  const [activeTab, setActiveTab] = useState("overview")
+// Sample data for charts
+const revenueData = [
+  { name: "Jan", value: 4000 },
+  { name: "Feb", value: 3000 },
+  { name: "Mar", value: 5000 },
+  { name: "Apr", value: 4000 },
+  { name: "May", value: 2000 },
+  { name: "Jun", value: 1500 },
+  { name: "Jul", value: 3500 },
+]
+
+const trafficData = [
+  { name: "Jan", visits: 4000, orders: 2400 },
+  { name: "Feb", visits: 3000, orders: 1500 },
+  { name: "Mar", visits: 5000, orders: 3000 },
+  { name: "Apr", visits: 2800, orders: 4000 },
+  { name: "May", visits: 1800, orders: 5000 },
+  { name: "Jun", visits: 2500, orders: 4000 },
+  { name: "Jul", visits: 3500, orders: 4500 },
+]
+
+// Sample data for recent orders
+const recentOrders = [
+  {
+    customer: { name: "Tony Reichert", avatar: "/placeholder.svg?height=32&width=32" },
+    product: "Nike Air Max",
+    amount: "$299.99",
+    status: "completed",
+  },
+  {
+    customer: { name: "Zoey Lang", avatar: "/placeholder.svg?height=32&width=32" },
+    product: "iPhone 15 Pro",
+    amount: "$999.99",
+    status: "pending",
+  },
+  {
+    customer: { name: "Jane Fisher", avatar: "/placeholder.svg?height=32&width=32" },
+    product: "MacBook Pro",
+    amount: "$1999.99",
+    status: "processing",
+  },
+  {
+    customer: { name: "William Howard", avatar: "/placeholder.svg?height=32&width=32" },
+    product: "AirPods Pro",
+    amount: "$249.99",
+    status: "completed",
+  },
+]
+
+export default function Home() {
+  const { isCollapsed } = useSidebar()
+  const [, setContentWidth] = useState("100%")
+
+  useEffect(() => {
+    // Update content width based on sidebar state
+    setContentWidth("100%")
+  }, [isCollapsed])
 
   return (
-    <div className="w-full h-full p-4">
-      <div className="w-full mx-auto">
-        <h1 className="text-2xl font-bold mb-6">Dashboard</h1>
+    <div className="flex flex-col h-screen w-full">
+      <Header />
+      <main className="flex-1 p-4 md:p-6 overflow-y-auto w-full">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <StatCard
+            title="Total Users"
+            value="12,345"
+            icon={<Users className="h-6 w-6 text-white" />}
+            iconColor="bg-purple-500"
+            change={{ value: "+10.2% from last month", positive: true }}
+          />
+          <StatCard
+            title="Total Products"
+            value="1,234"
+            icon={<Package className="h-6 w-6 text-white" />}
+            iconColor="bg-green-500"
+            change={{ value: "+5.2% from last month", positive: true }}
+          />
+          <StatCard
+            title="Total Categories"
+            value="156"
+            icon={<FolderClosed className="h-6 w-6 text-white" />}
+            iconColor="bg-yellow-500"
+            change={{ value: "+2.3% from last month", positive: true }}
+          />
+          <StatCard
+            title="Total Sales"
+            value="$89,123"
+            icon={<DollarSign className="h-6 w-6 text-white" />}
+            iconColor="bg-purple-500"
+            change={{ value: "-0.5% from last month", positive: false }}
+          />
+        </div>
 
-        <Tabs defaultValue="overview" onValueChange={setActiveTab} className="w-full">
-          <TabsList className="grid grid-cols-3 mb-8 max-w-full">
-            <TabsTrigger value="overview">Overview</TabsTrigger>
-            <TabsTrigger value="analytics">Analytics</TabsTrigger>
-            <TabsTrigger value="settings">Settings</TabsTrigger>
-          </TabsList>
+        <div className="mt-6 grid gap-6 md:grid-cols-2">
+          <AreaChart
+            title="Revenue Overview"
+            subtitle="Monthly revenue statistics"
+            data={revenueData}
+            dataKey="value"
+            gradientColor="#8b5cf6"
+          />
+          <BarChart title="Traffic Analytics" subtitle="Monthly visits and orders" data={trafficData} />
+        </div>
 
-          <TabsContent value="overview" className="w-full">
-            <div className="grid gap-6 w-full">
-              <Card className="w-full">
-                <CardHeader>
-                  <CardTitle>Welcome Back</CardTitle>
-                  <CardDescription>Here is a summary of your account</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div className="flex flex-col space-y-1.5">
-                      <label htmlFor="name">Name</label>
-                      <Input
-                        className="focus-visible:ring-offset-0 focus-visible:ring-0"
-                        id="name"
-                        placeholder="Your name"
-                      />
-                    </div>
-                    <div className="flex flex-col space-y-1.5">
-                      <label htmlFor="email">Email</label>
-                      <Input
-                        className="focus-visible:ring-offset-0 focus-visible:ring-0"
-                        id="email"
-                        placeholder="Your email"
-                      />
-                    </div>
-                  </div>
-                </CardContent>
-                <CardFooter className="flex flex-col sm:flex-row justify-between gap-3">
-                  <Button variant="outline" className="w-full sm:w-auto">
-                    Cancel
-                  </Button>
-                  <Button className="w-full sm:w-auto">Save Changes</Button>
-                </CardFooter>
-              </Card>
-
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 w-full">
-                <Card className="w-full">
-                  <CardHeader>
-                    <CardTitle>Recent Activity</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <ul className="space-y-4">
-                      {[1, 2, 3].map((item) => (
-                        <li key={item} className="flex items-center gap-4">
-                          <Image
-                            src={Avatar || "/placeholder.svg"}
-                            alt="avatar"
-                            width={40}
-                            height={40}
-                            className="h-10 w-10 rounded-full bg-gray-200 object-cover"
-                          />
-                          <div>
-                            <p className="text-sm font-medium">Activity {item}</p>
-                            <p className="text-xs text-gray-500">2 hours ago</p>
-                          </div>
-                        </li>
-                      ))}
-                    </ul>
-                  </CardContent>
-                </Card>
-
-                <Card className="w-full">
-                  <CardHeader>
-                    <CardTitle>Quick Stats</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="grid grid-cols-2 gap-4">
-                      <div className="flex flex-col">
-                        <span className="text-2xl font-bold">24</span>
-                        <span className="text-sm text-gray-500">Tasks</span>
+        <div className="mt-6">
+          <h2 className="mb-4 text-xl font-bold">Recent Orders</h2>
+          <div className="rounded-3xl border bg-white shadow-sm">
+            <Table>
+              <TableHeader>
+                <TableRow>
+                  <TableHead>CUSTOMER</TableHead>
+                  <TableHead>PRODUCT</TableHead>
+                  <TableHead>AMOUNT</TableHead>
+                  <TableHead>STATUS</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                {recentOrders.map((order, index) => (
+                  <TableRow key={index}>
+                    <TableCell className="font-medium">
+                      <div className="flex items-center gap-2">
+                        <Avatar className="h-8 w-8">
+                          <AvatarImage src={order.customer.avatar || "/placeholder.svg"} alt={order.customer.name} />
+                          <AvatarFallback>
+                            {order.customer.name
+                              .split(" ")
+                              .map((n) => n[0])
+                              .join("")}
+                          </AvatarFallback>
+                        </Avatar>
+                        {order.customer.name}
                       </div>
-                      <div className="flex flex-col">
-                        <span className="text-2xl font-bold">8</span>
-                        <span className="text-sm text-gray-500">Projects</span>
-                      </div>
-                      <div className="flex flex-col">
-                        <span className="text-2xl font-bold">16</span>
-                        <span className="text-sm text-gray-500">Completed</span>
-                      </div>
-                      <div className="flex flex-col">
-                        <span className="text-2xl font-bold">4</span>
-                        <span className="text-sm text-gray-500">Teams</span>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
-            </div>
-          </TabsContent>
-
-          <TabsContent value="analytics" className="w-full">
-            <Card className="w-full">
-              <CardHeader>
-                <CardTitle>Analytics</CardTitle>
-                <CardDescription>View your analytics data here</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="h-[300px] w-full bg-gray-100 rounded-md flex items-center justify-center">
-                  <p className="text-gray-500">Analytics chart placeholder</p>
-                </div>
-              </CardContent>
-            </Card>
-          </TabsContent>
-
-          <TabsContent value="settings" className="w-full">
-            <Card className="w-full">
-              <CardHeader>
-                <CardTitle>Settings</CardTitle>
-                <CardDescription>Manage your account settings</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-4 max-w-md">
-                  <div className="space-y-2">
-                    <label htmlFor="username">Username</label>
-                    <Input
-                      className="focus-visible:ring-offset-0 focus-visible:ring-0"
-                      id="username"
-                      placeholder="Username"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <label htmlFor="password">Password</label>
-                    <Input
-                      className="focus-visible:ring-offset-0 focus-visible:ring-0"
-                      id="password"
-                      type="password"
-                      placeholder="Password"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <label htmlFor="notifications">Notifications</label>
-                    <div className="flex items-center space-x-2">
-                      <input
-                        className="focus-visible:ring-offset-0 focus-visible:ring-0"
-                        type="checkbox"
-                        id="notifications"
-                      />
-                      <label htmlFor="notifications" className="text-sm">
-                        Enable email notifications
-                      </label>
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-              <CardFooter>
-                <Button className="w-full sm:w-auto">Save Settings</Button>
-              </CardFooter>
-            </Card>
-          </TabsContent>
-        </Tabs>
-      </div>
+                    </TableCell>
+                    <TableCell>{order.product}</TableCell>
+                    <TableCell>{order.amount}</TableCell>
+                    <TableCell>
+                      <Badge
+                        variant="outline"
+                        className={cn(
+                          "rounded-xl",
+                          order.status === "completed"
+                            ? "border-green-500 bg-green-50 text-green-700"
+                            : order.status === "pending"
+                              ? "border-yellow-500 bg-yellow-50 text-yellow-700"
+                              : "border-purple-500 bg-purple-50 text-purple-700",
+                        )}
+                      >
+                        {order.status}
+                      </Badge>
+                    </TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </div>
+        </div>
+      </main>
     </div>
   )
 }
-

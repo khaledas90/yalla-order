@@ -80,6 +80,16 @@
     background-repeat: no-repeat;
   }
 
+  /* Custom styles for charts */
+  .recharts-area path {
+    stroke-width: 2px !important;
+  }
+
+  .recharts-default-tooltip {
+    border-radius: 0.75rem !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+  }
+
   /* scrollbar */
   ::-webkit-scrollbar {
     width: 12px;
