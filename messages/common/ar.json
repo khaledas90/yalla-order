@@ -14,7 +14,9 @@
       "Login": "تسجيل الدخول",
       "My Favorite": "المفضلة",
       "Chocolate Pie": "فطيرة بالشوكولاتة",
-      "Sausage Hawawshi": "حواوشي سجق"
+      "Sausage Hawawshi": "حواوشي سجق",
+      "Logout": "تسجيل الخروج",
+      "Logout successful": "تسجيل الخروج بنجاح"
     },
     "hero": {
       "A unique experience for food lovers": "خبرة فريدة لمحبي الطعام",
@@ -80,7 +82,9 @@
       "Password must be at least 6 characters": "يجب أن تكون كلمة المرور مكونة من 6 أحرف على الأقل",
       "Invalid email format": "تنسيق البريد الإلكتروني غير صالح",
       "Invalid email or password": "البريد الالكتروني او كلمة المرور غير صحيحة",
-      "Logging in": "جاري تسجيل الدخول..."
+      "Logging in": "جاري تسجيل الدخول...",
+      "Login successful": "تم تسجيل الدخول بنجاح",
+      "An unexpected error occurred": "حدث خطأ غير متوقع"
     },
     "be-partner": {
       "login": "تسجيل الدخول",
@@ -129,7 +133,12 @@
       "Password must be at least 6 characters": "يجب أن تكون كلمة المرور مكونة من 6 أحرف على الأقل",
       "Invalid email format": "تنسيق البريد الإلكتروني غير صالح",
       "Name Required": "الاسم مطلوب",
-      "Name must be at least 3 characters": "يجب أن يكون الاسم مكونًا من 3 أحرف على الأقل"
+      "Name must be at least 3 characters": "يجب أن يكون الاسم مكونًا من 3 أحرف على الأقل",
+      "Registration successful": "تم التسجيل بنجاح",
+      "Invalid email or password": "البريد الإلكتروني او كلمة المرور غير صالحة",
+      "An unexpected error occurred": "حدث خطأ غير متوقع",
+      "User already exists": "المستخدم موجود بالفعل",
+      "Creating": "جاري الانشاء"
     },
     "forget-password": {
       "Forget Password?": "نسيت كلمة المرور؟",

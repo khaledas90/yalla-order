@@ -5,6 +5,8 @@ import { NextIntlClientProvider } from "next-intl";
 import { cairoFont } from "@/utils/fonts";
 import { headers } from "next/headers";
 import Head from "next/head";
+import { Toaster } from "react-hot-toast";
+import NextAuthSessionProvider from "@/components/NextAuthSessionProvider";
 
 export async function generateMetadata({
   params,
@@ -111,7 +113,10 @@ export default async function RootLayout({
       </Head>
       <body className={`${cairoFont.className}`}>
         <NextIntlClientProvider locale={locale} messages={messages}>
-          {children}
+          <NextAuthSessionProvider>
+            <Toaster />
+            {children}
+          </NextAuthSessionProvider>
         </NextIntlClientProvider>
       </body>
     </html>

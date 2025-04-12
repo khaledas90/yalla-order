@@ -5,12 +5,12 @@ export interface User {
   name: string;
   email: string;
   password: string;
-  image: string;
-  phone: string;
-  streetAddress: string;
-  postalCode: string;
-  city: string;
-  country: string;
+  image: string | null;
+  phone: string | null;
+  streetAddress: string | null;
+  postalCode: string | null;
+  city: string | null;
+  country: string | null;
   role: string;
   createdAt: string;
   updatedAt: string;

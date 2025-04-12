@@ -79,7 +79,11 @@
       "Password must be at least 6 characters": "Password must be at least 6 characters",
       "Invalid email format": "Invalid email format",
       "Invalid email or password": "Invalid email or password",
-      "Logging in": "Logging in..."
+      "Logging in": "Logging in...",
+      "Login successful": "Login successful",
+      "An unexpected error occurred": "An unexpected error occurred",
+      "Logout": "Logout",
+      "Logout successful": "Logout successful"
     },
     "be-partner": {
       "login": "Login",
@@ -128,7 +132,11 @@
       "Password must be at least 6 characters": "Password must be at least 6 characters",
       "Invalid email format": "Invalid email format",
       "Name Required": "Name Required",
-      "Name must be at least 3 characters": "Name must be at least 3 characters"
+      "Name must be at least 3 characters": "Name must be at least 3 characters",
+      "Registration successful": "Registration successful",
+      "Invalid email or password": "Invalid email or password",
+      "User already exists": "User already exists",
+      "Creating": "Creating..."
     },
     "forget-password": {
       "Forget Password?": "Forget Password?",
