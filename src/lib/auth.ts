@@ -8,6 +8,9 @@ import { SessionStrategy } from "next-auth";
 import { Environments } from "@/constants/enums";
 import { UserRole } from "@prisma/client";
 import { JWT } from "next-auth/jwt";
+import Google from "next-auth/providers/google";
+import Facebook from "next-auth/providers/facebook";
+import bcrypt from "bcrypt";
 
 declare module "next-auth" {
   interface Session extends DefaultSession {
@@ -23,6 +26,7 @@ declare module "next-auth/jwt" {
     role: UserRole;
   }
 }
+
 export const AuthOptions: NextAuthOptions = {
   session: {
     strategy: "jwt" as SessionStrategy,
@@ -32,6 +36,14 @@ export const AuthOptions: NextAuthOptions = {
   secret: process.env.NEXTAUTH_SECRET,
   debug: process.env.NODE_ENV === Environments.DEV,
   providers: [
+    Google({
+      clientId: process.env.GOOGLE_CLIENT_ID as string,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET as string,
+    }),
+    Facebook({
+      clientId: process.env.FACEBOOK_CLIENT_ID as string,
+      clientSecret: process.env.FACEBOOK_CLIENT_SECRET as string,
+    }),
     Credentials({
       name: "Credentials",
       credentials: {
@@ -44,21 +56,18 @@ export const AuthOptions: NextAuthOptions = {
           return null;
         }
         if (credentials.name && credentials.email && credentials.password) {
-          {
-            const res = await signup(
-              credentials.name,
-              credentials.email,
-              credentials.password
-            );
-            if (res.status === 201 && res.user) {
-              return { id: (res.user as User).id.toString(), ...res.user };
-            }
-            return null;
+          const res = await signup(
+            credentials.name,
+            credentials.email,
+            credentials.password
+          );
+          if (res.status === 201 && res.user) {
+            return { id: (res.user as User).id.toString(), ...res.user };
           }
+          return null;
         }
         if (credentials.email && credentials.password) {
           const res = await login(credentials.email, credentials.password);
-
           if (res.status === 200 && res.user) {
             return { id: (res.user as User).id.toString(), ...res.user };
           }
@@ -70,9 +79,59 @@ export const AuthOptions: NextAuthOptions = {
   ],
   adapter: PrismaAdapter(db),
   pages: {
-    signIn: "/login",
+    signIn: "/en/login",
   },
   callbacks: {
+    async signIn({ user, account, profile }) {
+      if (account?.provider === "google" || account?.provider === "facebook") {
+        const existingUser = await db.user.findUnique({
+          where: { email: user.email! },
+        });
+
+        if (existingUser) {
+          const existingAccount = await db.account.findFirst({
+            where: {
+              userId: existingUser.id,
+              provider: account.provider,
+            },
+          });
+
+          if (!existingAccount) {
+            await db.account.create({
+              data: {
+                userId: existingUser.id,
+                provider: account.provider,
+                providerAccountId: account.providerAccountId,
+                type: "oauth",
+                access_token: account.access_token,
+                expires_at: account.expires_at,
+                token_type: account.token_type,
+                scope: account.scope,
+                id_token: account.id_token,
+              },
+            });
+          }
+          return true;
+        } else {
+          await db.user.create({
+            data: {
+              email: user.email!,
+              name: user.name || profile?.name || `${account.provider} User`,
+              image: user.image || profile?.image,
+              role: UserRole.USER,
+              city: null,
+              country: null,
+              phone: null,
+              postalCode: null,
+              streetAddress: null,
+              password: await bcrypt.hash("default-password", 10),
+            },
+          });
+          return true;
+        }
+      }
+      return true;
+    },
     jwt: async ({ token }): Promise<JWT> => {
       const dbUser = await db.user.findUnique({
         where: {

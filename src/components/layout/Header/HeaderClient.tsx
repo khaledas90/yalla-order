@@ -86,10 +86,10 @@ const HeaderClient = ({
           <FavoriteDropdown />
           <LanguageSwitcher />
           {session?.data?.user ? (
-            <li className="mt-3">
+            <li className="mt-3 list-none">
               <Button
                 onClick={handleLogout}
-                className="ring-[0.8px] px-16 py-1 rounded-3xl transition-all duration-300 text-md hover:bg-white hover:text-gray-800 bg-transparent border border-white"
+                className="ring-[0.8px] px-16 py-1  rounded-3xl transition-all duration-300 text-md hover:bg-white hover:text-gray-800 bg-transparent border border-white"
               >
                 {t("Logout")}
               </Button>
@@ -110,7 +110,7 @@ const HeaderClient = ({
             ref={sidebarRef}
             className="fixed top-0 left-0 h-full w-64 bg-black shadow-lg z-20"
           >
-            <ul className="flex flex-col gap-4 mt-[90px] text-white px-4">
+            <ul className="flex flex-col  gap-4 mt-[90px] text-white px-4">
               {filteredLinks.map((link) => (
                 <li key={link.name}>
                   <NavLinks
@@ -122,7 +122,7 @@ const HeaderClient = ({
                 </li>
               ))}
               {session?.data?.user ? (
-                <li className="mt-3">
+                <li className="mt-3 list-none">
                   <Button
                     onClick={handleLogout}
                     className="ring-[0.8px] px-16 py-1 rounded-3xl transition-all duration-300 text-md hover:bg-white hover:text-gray-800 bg-transparent border border-white"
@@ -131,7 +131,7 @@ const HeaderClient = ({
                   </Button>
                 </li>
               ) : (
-                <li className="mt-3">
+                <li className="mt-3 list-none">
                   <Button className="ring-[0.8px] px-16 py-1 rounded-3xl transition-all duration-300 text-md hover:bg-white hover:text-gray-800 bg-transparent border border-white">
                     <Link href="/login">{t("Login")}</Link>
                   </Button>

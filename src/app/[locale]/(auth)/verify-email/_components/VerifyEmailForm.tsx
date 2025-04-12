@@ -26,7 +26,7 @@ export default function VerifyEmailForm() {
 
   useEffect(() => {
     formik.setFieldValue("otp", otp.join(""));
-  }, [otp]);
+  }, [otp, formik]);
 
   const handleChange = (index: number, value: string) => {
     if (!/^\d?$/.test(value)) return;

@@ -1,12 +1,18 @@
-"use client"
+"use client";
 
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Bar, BarChart as RechartsBarChart, ResponsiveContainer, Tooltip, XAxis } from "recharts"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Bar,
+  BarChart as RechartsBarChart,
+  ResponsiveContainer,
+  Tooltip,
+  XAxis,
+} from "recharts";
 
 interface BarChartProps {
-  title: string
-  subtitle: string
-  data: any[]
+  title: string;
+  subtitle: string;
+  data: unknown[];
 }
 
 export function BarChart({ title, subtitle, data }: BarChartProps) {
@@ -27,7 +33,13 @@ export function BarChart({ title, subtitle, data }: BarChartProps) {
               bottom: 0,
             }}
           >
-            <XAxis dataKey="name" stroke="#888888" fontSize={12} tickLine={false} axisLine={false} />
+            <XAxis
+              dataKey="name"
+              stroke="#888888"
+              fontSize={12}
+              tickLine={false}
+              axisLine={false}
+            />
             <Tooltip />
             <Bar dataKey="visits" fill="#8b5cf6" radius={[4, 4, 0, 0]} />
             <Bar dataKey="orders" fill="#ffa726" radius={[4, 4, 0, 0]} />
@@ -35,5 +47,5 @@ export function BarChart({ title, subtitle, data }: BarChartProps) {
         </ResponsiveContainer>
       </CardContent>
     </Card>
-  )
+  );
 }

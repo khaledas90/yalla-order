@@ -12,7 +12,7 @@ import {
 interface AreaChartProps {
   title: string;
   subtitle: string;
-  data: any[];
+  data: unknown[];
   dataKey: string;
   gradientColor: string;
 }
