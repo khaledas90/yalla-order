@@ -100,6 +100,14 @@ model Account {
   @@index([userId])
 }
 
+model PasswordResetToken {
+  id        String   @id @default(cuid())
+  token     String   @unique 
+  // user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId    String
+  expires   DateTime
+  createdAt DateTime @default(now())
+}
 
 // Restaurant Model
 model Restaurant {
