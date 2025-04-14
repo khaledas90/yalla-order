@@ -22,7 +22,6 @@ export default function LoginIcons() {
         icon="logos:facebook"
         className="text-3xl cursor-pointer"
       />
-      <Icon icon="cib:apple" className="text-3xl cursor-pointer" />
     </div>
   );
 }
