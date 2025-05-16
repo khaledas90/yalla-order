@@ -7,7 +7,6 @@ import { DefaultSession, NextAuthOptions } from "next-auth";
 import { SessionStrategy } from "next-auth";
 import { Environments } from "@/constants/enums";
 import { UserRole } from "@prisma/client";
-import { JWT } from "next-auth/jwt";
 import Google from "next-auth/providers/google";
 import Facebook from "next-auth/providers/facebook";
 import bcrypt from "bcrypt";
@@ -80,12 +79,14 @@ export const AuthOptions: NextAuthOptions = {
   adapter: PrismaAdapter(db),
   pages: {
     signIn: "/en/login",
+    error: "/en/auth/error",
   },
   callbacks: {
     async signIn({ user, account, profile }) {
       if (account?.provider === "google" || account?.provider === "facebook") {
         const existingUser = await db.user.findUnique({
           where: { email: user.email! },
+          include: { accounts: true },
         });
 
         if (existingUser) {
@@ -111,6 +112,7 @@ export const AuthOptions: NextAuthOptions = {
               },
             });
           }
+
           return true;
         } else {
           await db.user.create({
@@ -124,23 +126,36 @@ export const AuthOptions: NextAuthOptions = {
               phone: null,
               postalCode: null,
               streetAddress: null,
-              password: await bcrypt.hash("default-password", 10),
+              password: await bcrypt.hash(
+                Math.random().toString(36).slice(-8),
+                10
+              ),
             },
           });
           return true;
         }
       }
+
+      // Always allow credential-based sign-in
       return true;
     },
-    jwt: async ({ token }): Promise<JWT> => {
+    // Allow linking different authentication methods for the same email
+    async jwt({ token, user, account }) {
+      // If user is just logging in, merge the account info into the token
+      if (user && account) {
+        token.provider = account.provider;
+      }
+
       const dbUser = await db.user.findUnique({
         where: {
           email: token?.email,
         },
       });
+
       if (!dbUser) {
         return token;
       }
+
       return {
         id: dbUser.id,
         name: dbUser.name,

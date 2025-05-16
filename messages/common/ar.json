@@ -17,7 +17,10 @@
       "Sausage Hawawshi": "حواوشي سجق",
       "Logout": "تسجيل الخروج",
       "Logoutus": "تسجيل الخروج",
-      "Logout successful": "تسجيل الخروج بنجاح"
+      "Logout successful": "تسجيل الخروج بنجاح",
+      "dashboard": "لوحة التحكم",
+      "profile": "حسابي",
+      "admin": "ادمن"
     },
     "hero": {
       "A unique experience for food lovers": "خبرة فريدة لمحبي الطعام",

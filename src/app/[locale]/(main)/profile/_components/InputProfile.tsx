@@ -65,7 +65,9 @@ const CustomInput: React.FC<CustomInputProps> = ({
           </span>
         )}
         {touched && error ? (
-          <p className="text-red-500 text-sm ps-3">{error}</p>
+          <p className="text-red-500 block rtl:text-right ltr:text-left text-sm ps-3">
+            {error}
+          </p>
         ) : null}
       </div>
     </div>

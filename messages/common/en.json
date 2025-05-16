@@ -16,7 +16,10 @@
       "Logout successful": "Logout successful",
       "My Favorite": "My Favorite",
       "Chocolate Pie": "Chocolate Pie",
-      "Sausage Hawawshi": "Sausage Hawawshi"
+      "Sausage Hawawshi": "Sausage Hawawshi",
+      "dashboard": "Dashboard",
+      "profile": "Profile",
+      "admin": "Admin"
     },
     "hero": {
       "A unique": "A unique",

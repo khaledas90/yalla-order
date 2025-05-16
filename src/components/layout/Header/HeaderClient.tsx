@@ -11,10 +11,9 @@ import FavoriteDropdown from "./FavoriteDropdown";
 import { useFilteredLinks } from "@/hooks/getFilteredLinks";
 import { Session } from "next-auth";
 import { useClientSession } from "@/hooks/useClientSession";
-import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
-import { signOut } from "next-auth/react";
-import toast from "react-hot-toast";
+import userIcon from "@/assets/image/user.png";
+import UserDropdown from "./UserDropdown";
 const HeaderClient = ({
   initialSession,
 }: {
@@ -26,7 +25,7 @@ const HeaderClient = ({
   const filteredLinks = useFilteredLinks();
   const sidebarRef = useRef(null);
   const session = useClientSession(initialSession);
-  const router = useRouter();
+
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
@@ -50,11 +49,6 @@ const HeaderClient = ({
     return () => document.removeEventListener("click", handleClickOutside);
   }, [menuOpen]);
 
-  const handleLogout = () => {
-    signOut();
-    router.push("/");
-    toast.success(t("Logout successful"));
-  };
   return (
     <div
       className={`fixed top-0 start-0 end-0 z-40 transition-all duration-300 ${
@@ -86,14 +80,7 @@ const HeaderClient = ({
           <FavoriteDropdown />
           <LanguageSwitcher />
           {session?.data?.user ? (
-            <li className="mt-3 list-none">
-              <Button
-                onClick={handleLogout}
-                className="ring-[0.8px] px-16 py-1  rounded-3xl transition-all duration-300 text-md hover:bg-white hover:text-gray-800 bg-transparent border border-white"
-              >
-                {t("Logout")}
-              </Button>
-            </li>
+            <UserDropdown initialSession={initialSession} />
           ) : (
             <li className="mt-3 list-none">
               <Button className="ring-[0.8px] px-16 py-1 rounded-3xl transition-all duration-300 text-md hover:bg-white hover:text-gray-800 bg-transparent border border-white">
@@ -122,14 +109,17 @@ const HeaderClient = ({
                 </li>
               ))}
               {session?.data?.user ? (
-                <li className="mt-3 list-none">
-                  <Button
-                    onClick={handleLogout}
-                    className="ring-[0.8px] px-16 py-1 rounded-3xl transition-all duration-300 text-md hover:bg-white hover:text-gray-800 bg-transparent border border-white"
-                  >
-                    {t("Logout")}
-                  </Button>
-                </li>
+                <Link
+                  href={
+                    session?.data?.user.role !== "USER" ? "/admin" : "/profile"
+                  }
+                  className={`flex  gap-2 text-lg font-medium transition-all duration-[0.4s] hover:text-red-500 `}
+                >
+                  <Image src={userIcon} alt="Logo" width={33} height={33} />
+                  {session?.data?.user.role !== "USER"
+                    ? t("admin")
+                    : t("profile")}
+                </Link>
               ) : (
                 <li className="mt-3 list-none">
                   <Button className="ring-[0.8px] px-16 py-1 rounded-3xl transition-all duration-300 text-md hover:bg-white hover:text-gray-800 bg-transparent border border-white">
